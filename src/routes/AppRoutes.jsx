@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
+import PublicRoute from "./PublicRoute";
 
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
@@ -14,13 +16,25 @@ function AppRoutes() {
   return (
     <Routes>
       {/* Authentication */}
-      <Route element={<AuthLayout />}>
+      <Route
+        element={
+          <PublicRoute>
+            <AuthLayout />
+          </PublicRoute>
+        }
+      >
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
 
       {/* Main App */}
-      <Route element={<MainLayout />}>
+      <Route
+        element={
+          <ProtectedRoute>
+            <MainLayout />
+          </ProtectedRoute>
+        }
+      >
         <Route path="/" element={<Dashboard />} />
         <Route path="/users" element={<Users />} />
       </Route>
