@@ -2,8 +2,10 @@ import { useState } from "react";
 import { loginUser } from "../../services/authService";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useAuth } from "../../context/AuthContext";
 
 function Login() {
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -24,23 +26,13 @@ function Login() {
     try {
       const res = await loginUser(formData);
 
-      console.log("Login Response:", res);
-
-      // Store JWT token
-      localStorage.setItem("token", res.token);
-
-      // Optional: Store user information
-      localStorage.setItem("user", JSON.stringify(res.user));
+      login(res.user, res.token);
 
       toast.success(res.message);
 
       navigate("/");
     } catch (error) {
-      console.error(error);
-
-      toast.error(
-        error.response?.data?.message || error.message || "Login failed",
-      );
+      toast.error(error.response?.data?.message || "Login failed");
     }
   };
 
