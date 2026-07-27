@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { loginUser } from "../../services/authService";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+
+import { loginUser } from "../../services/authService";
 import { useAuth } from "../../context/AuthContext";
 
 function Login() {
-  const { login } = useAuth();
   const navigate = useNavigate();
+  const { login } = useAuth();
+
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -23,22 +26,33 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!formData.email || !formData.password) {
+      return toast.error("Please fill all fields");
+    }
+
     try {
+      setLoading(true);
+
       const res = await loginUser(formData);
 
+      // Save user & token in AuthContext + localStorage
       login(res.user, res.token);
 
       toast.success(res.message);
 
-      navigate("/");
+      navigate("/", { replace: true });
     } catch (error) {
       toast.error(error.response?.data?.message || "Login failed");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h1>Login</h1>
+
+      <br />
 
       <input
         type="email"
@@ -62,7 +76,9 @@ function Login() {
       <br />
       <br />
 
-      <button type="submit">Login</button>
+      <button type="submit" disabled={loading}>
+        {loading ? "Logging in..." : "Login"}
+      </button>
     </form>
   );
 }

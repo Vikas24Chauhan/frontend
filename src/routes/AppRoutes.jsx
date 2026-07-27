@@ -7,6 +7,7 @@ import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Users from "../pages/users/Users";
+import Demo from "../pages/auth/Demo";
 import NotFound from "../pages/NotFound";
 
 import MainLayout from "../layouts/MainLayout";
@@ -25,6 +26,7 @@ function AppRoutes() {
       >
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/demo" element={<Demo />} />
       </Route>
 
       {/* Main App */}

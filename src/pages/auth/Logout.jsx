@@ -1,16 +1,7 @@
-import { useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
-function Navbar() {
-  const { logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
-
-  return <button onClick={handleLogout}>Logout</button>;
+function Logout() {
+  return <div></div>;
 }
 
 export default Logout;
