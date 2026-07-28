@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
 
 function Navbar() {
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
@@ -71,13 +80,22 @@ function Navbar() {
           </Link>
         </nav>
 
-        {/* Login Button */}
-        <Link
-          to="/login"
-          className="rounded-full bg-blue-600 px-7 py-3 font-semibold text-white transition hover:bg-blue-700"
-        >
-          Log-In | Sign-Up
-        </Link>
+        {/* Auth Button */}
+        {isAuthenticated ? (
+          <button
+            onClick={handleLogout}
+            className="rounded-full bg-red-500 px-7 py-3 font-semibold text-white transition hover:bg-red-600"
+          >
+            Log Out
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="rounded-full bg-blue-600 px-7 py-3 font-semibold text-white transition hover:bg-blue-700"
+          >
+            Log-In | Sign-Up
+          </Link>
+        )}
       </div>
     </header>
   );
