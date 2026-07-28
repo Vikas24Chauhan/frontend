@@ -1,5 +1,22 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: "Lora", serif;
+}
+
+/* Color Palette
+-----------------------------------
+#155DFC → Buttons, links, icons, active states
+#0E4FD1 → Button hover, selected items
+#F8FAFC → Website background and sections
+#0F172A → Headings and primary text
+#10B981 → Success messages, verified badges, "FREE" labels
+----------------------------------- */

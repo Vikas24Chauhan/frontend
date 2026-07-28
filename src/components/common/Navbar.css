@@ -1,0 +1,140 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  height: 80px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #155dfc;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-menu > a,
+.nav-dropdown-toggle {
+  text-decoration: none;
+  color: #374151;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-menu > a:hover,
+.nav-dropdown-toggle:hover {
+  color: #155dfc;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 220px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.3s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 12px 15px;
+  border-radius: 10px;
+  color: #374151;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-dropdown-menu a:hover {
+  background: #eef4ff;
+  color: #155dfc;
+}
+
+.nav-login-btn,
+.nav-logout-btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.nav-login-btn {
+  background: #155dfc;
+  color: #ffffff;
+}
+
+.nav-login-btn:hover {
+  background: #0e4fd1;
+}
+
+.nav-logout-btn {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+}
+
+.nav-logout-btn:hover {
+  background: #dc2626;
+}
+
+/* -------------------- Responsive ------------------- */
+
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .navbar-container {
+    height: 70px;
+  }
+
+  .nav-logo {
+    font-size: 28px;
+  }
+}

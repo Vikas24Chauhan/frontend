@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
+import "./Navbar.css";
 
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();
@@ -12,87 +13,44 @@ function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+    <header className="navbar">
+      <div className="navbar-container">
         {/* Logo */}
-        <Link to="/" className="text-3xl font-bold text-blue-600">
+        <Link to="/" className="nav-logo">
           MedGuide
         </Link>
 
         {/* Navigation */}
-        <nav className="flex items-center gap-8 font-medium text-gray-700">
-          <Link to="/" className="hover:text-blue-600">
-            Home
-          </Link>
+        <nav className="nav-menu">
+          <Link to="/">Home</Link>
 
-          <div className="group relative cursor-pointer">
-            <div className="flex items-center gap-1 hover:text-blue-600">
+          <div className="nav-dropdown">
+            <div className="nav-dropdown-toggle">
               Counsellings
               <ChevronDown size={18} />
             </div>
 
-            {/* Dropdown */}
-            <div className="invisible absolute left-0 top-12 w-56 rounded-xl bg-white p-3 opacity-0 shadow-xl transition-all duration-300 group-hover:visible group-hover:opacity-100">
-              <Link
-                to="/neet-pg"
-                className="block rounded-lg px-4 py-3 hover:bg-blue-50 hover:text-blue-600"
-              >
-                NEET PG
-              </Link>
-
-              <Link
-                to="/neet-ug"
-                className="block rounded-lg px-4 py-3 hover:bg-blue-50 hover:text-blue-600"
-              >
-                NEET UG
-              </Link>
-
-              <Link
-                to="/inicet"
-                className="block rounded-lg px-4 py-3 hover:bg-blue-50 hover:text-blue-600"
-              >
-                INICET
-              </Link>
-
-              <Link
-                to="/neet-ss"
-                className="block rounded-lg px-4 py-3 hover:bg-blue-50 hover:text-blue-600"
-              >
-                NEET SS
-              </Link>
+            <div className="nav-dropdown-menu">
+              <Link to="/neet-pg">NEET PG</Link>
+              <Link to="/neet-ug">NEET UG</Link>
+              <Link to="/inicet">INICET</Link>
+              <Link to="/neet-ss">NEET SS</Link>
             </div>
           </div>
 
-          <Link to="/blog" className="hover:text-blue-600">
-            Blog
-          </Link>
-
-          <Link to="/news" className="hover:text-blue-600">
-            News
-          </Link>
-
-          <Link to="/careers" className="hover:text-blue-600">
-            Careers
-          </Link>
-
-          <Link to="/contact" className="hover:text-blue-600">
-            Contact
-          </Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/news">News</Link>
+          <Link to="/careers">Careers</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
 
-        {/* Auth Button */}
+        {/* Auth */}
         {isAuthenticated ? (
-          <button
-            onClick={handleLogout}
-            className="rounded-full bg-red-500 px-7 py-3 font-semibold text-white transition hover:bg-red-600"
-          >
+          <button className="nav-logout-btn" onClick={handleLogout}>
             Log Out
           </button>
         ) : (
-          <Link
-            to="/login"
-            className="rounded-full bg-blue-600 px-7 py-3 font-semibold text-white transition hover:bg-blue-700"
-          >
+          <Link to="/login" className="nav-login-btn">
             Log-In | Sign-Up
           </Link>
         )}

@@ -18,12 +18,11 @@ import HomePage from "../pages/HomePage";
 import NeetugPage from "../pages/NeetugPage";
 import NeetpgPage from "../pages/NeetpgPage";
 import InicetPage from "../pages/InicetPage";
+import NotFound from "../pages/NotFound";
 
 // Protected
 import Dashboard from "../pages/dashboard/Dashboard";
 import Users from "../pages/users/Users";
-
-import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
   return (
@@ -34,9 +33,10 @@ function AppRoutes() {
         <Route path="/neet-ug" element={<NeetugPage />} />
         <Route path="/neet-pg" element={<NeetpgPage />} />
         <Route path="/inicet" element={<InicetPage />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
 
-      {/* ================= AUTH ================= */}
+      {/* ================= Public Route ================= */}
       <Route
         element={
           <PublicRoute>
@@ -51,7 +51,7 @@ function AppRoutes() {
         <Route path="/reset-password" element={<ResetPassword />} />
       </Route>
 
-      {/* ================= DASHBOARD ================= */}
+      {/* ================= Protected Route ================= */}
       <Route
         element={
           <ProtectedRoute>
@@ -62,9 +62,6 @@ function AppRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/users" element={<Users />} />
       </Route>
-
-      {/* ================= 404 ================= */}
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
