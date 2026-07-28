@@ -1,10 +1,133 @@
-import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+
+import { registerUser } from "../../services/authService";
 
 function Register() {
+  const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    age: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { name, email, age, password, confirmPassword } = formData;
+
+    if (!name || !email || !age || !password || !confirmPassword) {
+      return toast.error("Please fill all fields");
+    }
+
+    if (password.length < 6) {
+      return toast.error("Password must be at least 6 characters");
+    }
+
+    if (password !== confirmPassword) {
+      return toast.error("Passwords do not match");
+    }
+
+    try {
+      setLoading(true);
+
+      const payload = {
+        name,
+        email,
+        age,
+        password,
+      };
+
+      const res = await registerUser(payload);
+
+      toast.success(res.message);
+
+      navigate("/login");
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Registration failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div>
-      <h1>Register Page</h1>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <h1>Register</h1>
+
+      <br />
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        value={formData.name}
+        onChange={handleChange}
+      />
+
+      <br />
+      <br />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+
+      <br />
+      <br />
+
+      <input
+        type="number"
+        name="age"
+        placeholder="Age"
+        value={formData.age}
+        onChange={handleChange}
+      />
+
+      <br />
+      <br />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={formData.password}
+        onChange={handleChange}
+      />
+
+      <br />
+      <br />
+
+      <input
+        type="password"
+        name="confirmPassword"
+        placeholder="Confirm Password"
+        value={formData.confirmPassword}
+        onChange={handleChange}
+      />
+
+      <br />
+      <br />
+
+      <button type="submit" disabled={loading}>
+        {loading ? "Registering..." : "Register"}
+      </button>
+    </form>
   );
 }
 
