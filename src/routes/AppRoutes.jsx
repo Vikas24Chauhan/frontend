@@ -10,6 +10,10 @@ import Users from "../pages/users/Users";
 import Demo from "../pages/auth/Demo";
 import NotFound from "../pages/NotFound";
 
+import ForgotPassword from "../pages/auth/ForgotPassword";
+import VerifyOtp from "../pages/auth/VerifyOtp";
+import ResetPassword from "../pages/auth/ResetPassword";
+
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
 
@@ -40,6 +44,10 @@ function AppRoutes() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/users" element={<Users />} />
       </Route>
+
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/verify-otp" element={<VerifyOtp />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
 
       {/* 404 */}
       <Route path="*" element={<NotFound />} />
