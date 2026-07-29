@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./HomeFaqs.css";
-import { FiPlus, FiMinus } from "react-icons/fi";
+import { FiPlus, FiMinus, FiArrowRight } from "react-icons/fi";
 
 function HomeFaqs() {
   const [activeFAQ, setActiveFAQ] = useState(0);
@@ -87,6 +87,25 @@ function HomeFaqs() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="home-faq-cta">
+          <div className="home-faq-cta-content">
+            <h2>Take Control Today</h2>
+
+            <p>
+              Stop guessing. Start planning with clarity and confidence.
+              Everything is FREE!
+            </p>
+
+            <button
+              onClick={() => navigate("/login")}
+              className="home-faq-cta-btn"
+            >
+              <span>Get started - FREE Access</span>
+              <FiArrowRight size={22} />
+            </button>
+          </div>
         </div>
       </div>
     </section>
