@@ -10,7 +10,7 @@
 
 .hero-container {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1400px;
   margin: auto;
 }
 
@@ -151,7 +151,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   .hero {
     text-align: center;
     padding: 60px 20px;
@@ -162,7 +162,7 @@
   }
 
   .hero h1 {
-    font-size: 40px;
+    font-size: 38px;
   }
 
   .hero-typewriter {
@@ -170,15 +170,14 @@
   }
 
   .hero p {
-    font-size: 17px;
+    font-size: 16px;
+  }
+
+  .hero h4 {
+    font-size: 20px;
   }
 
   .hero-buttons {
     justify-content: center;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    width: 100%;
   }
 }

@@ -8,25 +8,22 @@ import "./Hero.css";
 gsap.registerPlugin(ScrollTrigger);
 
 function Hero() {
+  const heroRef = useRef(null);
   const imageRef = useRef(null);
 
   useGSAP(() => {
-    gsap.fromTo(
-      imageRef.current,
-      {
-        scale: 0.8,
+    gsap.to(imageRef.current, {
+      scale: 1.15,
+      ease: "none",
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: "top top",
+        end: "+=1000", // Increase for slower zoom
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
       },
-      {
-        scale: 1.15,
-        ease: "none",
-        scrollTrigger: {
-          trigger: imageRef.current,
-          start: "top 85%",
-          end: "bottom top",
-          scrub: true,
-        },
-      },
-    );
+    });
   }, []);
 
   return (
