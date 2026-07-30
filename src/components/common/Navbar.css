@@ -3,8 +3,7 @@
   top: 0;
   z-index: 1000;
   background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-container {
@@ -94,13 +93,10 @@
 .nav-logout-btn {
   padding: 14px 28px;
   border-radius: 999px;
-
   font-size: 15px;
   font-weight: 600;
-
   cursor: pointer;
   text-decoration: none;
-
   transition: 0.3s;
 }
 
@@ -123,6 +119,54 @@
   background: #dc2626;
 }
 
+/* --------------- Mobile Menu ---------------- */
+
+.hamburger {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #155dfc;
+}
+
+.desktop-auth {
+  display: flex;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-dropdown-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+}
+
+.mobile-dropdown-content {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-dropdown-content a {
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+
 /* -------------------- Responsive ------------------- */
 
 @media (max-width: 992px) {
@@ -136,5 +180,50 @@
 
   .nav-logo {
     font-size: 28px;
+  }
+
+  .nav-menu,
+  .desktop-auth {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+    padding: 0 24px;
+  }
+
+  .mobile-menu.active {
+    max-height: 700px;
+    padding: 20px 24px;
+  }
+
+  .mobile-menu > a {
+    text-decoration: none;
+    color: #374151;
+    padding: 18px 0;
+    font-weight: 500;
+  }
+
+  .mobile-menu > a:hover {
+    color: #155dfc;
+  }
+
+  .mobile-menu .nav-login-btn,
+  .mobile-menu .nav-logout-btn {
+    margin-top: 20px;
+    width: fit-content;
+    color: #ffffff;
+    padding: 8px 16px;
   }
 }
