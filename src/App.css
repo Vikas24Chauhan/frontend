@@ -12,12 +12,13 @@ body {
   font-family: "Lora", serif;
 }
 
-/* heading → font-size:38px; / color: #000000
-sub-heading → font-size:28px; / color: #155dfc
-para/desc → font-size: 18px / color: #3f3f3f
+/* heading → font-size:38px; / color: #0F172A
+sub-heading → font-size:28px; / color: #334155
+para/desc → font-size: 18px / color: #334155
 
-cta - color: #155dfc
-
+primary color - #155dfc
+secondary color - #7C3AED
+cta color: #f59e0b
 
 @media (max-width: 868px) {
   heading → font-size:32px;

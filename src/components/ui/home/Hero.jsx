@@ -79,8 +79,8 @@ function Hero() {
         </div>
       </div>
 
-      <div className="blur blur1"></div>
-      <div className="blur blur2"></div>
+      <div className="hero-blur hero-blur1"></div>
+      <div className="hero-blur hero-blur2"></div>
     </section>
   );
 }

@@ -48,8 +48,6 @@ function HomeFaqs() {
     <section className="home-faq-section">
       <div className="home-faq-container">
         <div className="home-faq-header">
-          <span>FAQ</span>
-
           <h2>Frequently Asked Questions</h2>
 
           <p>Here are some answers to questions you might be looking for.</p>

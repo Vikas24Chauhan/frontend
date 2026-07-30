@@ -26,7 +26,7 @@
 .chaos-heading h2 {
   font-size: 42px;
   font-weight: 700;
-  color: #000000;
+  color: #0f172a;
   margin-bottom: 20px;
 }
 
@@ -35,7 +35,7 @@
   margin: auto;
   font-size: 18px;
   line-height: 1.8;
-  color: #3f3f3f;
+  color: #334155;
 }
 
 .chaos-list {
@@ -129,7 +129,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000000;
+  color: #0f172a;
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 18px;
@@ -144,13 +144,13 @@
 .chaos-content h3 {
   font-size: 28px;
   margin-bottom: 25px;
-  color: #000000;
+  color: #0f172a;
 }
 
 .chaos-content p {
   font-size: 18px;
   line-height: 1.9;
-  color: #3f3f3f;
+  color: #334155;
 }
 
 /* Card Hover */

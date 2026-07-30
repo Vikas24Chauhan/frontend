@@ -4,7 +4,7 @@
   background: linear-gradient(135deg, #eef5ff 0%, #dbe8ff 45%, #f4f7ff 100%);
   overflow: hidden;
   position: relative;
-  color: #3f3f3f;
+  color: #334155;
 }
 
 .eca-announcements::before {
@@ -40,7 +40,7 @@
   font-size: 38px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #000000;
+  color: #0f172a;
   line-height: 1.12;
 }
 
@@ -49,7 +49,7 @@
   max-width: 480px;
   font-size: 18px;
   line-height: 1.6;
-  color: #3f3f3f;
+  color: #334155;
 }
 
 .eca-stats {
@@ -77,7 +77,7 @@
 
 .eca-stat-label {
   font-size: 16px;
-  color: #3f3f3f;
+  color: #334155;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -100,7 +100,7 @@
   border: 1px solid #e4e7ee;
   border-radius: 14px;
   padding: 12px 16px;
-  color: #3f3f3f;
+  color: #334155;
   box-shadow: 0 16px 36px -22px rgba(0, 0, 0, 0.22);
   transition: border-color 0.2s ease;
 }
@@ -115,7 +115,7 @@
   outline: none;
   background: transparent;
   font-size: 16px;
-  color: #000000;
+  color: #0f172a;
 }
 
 .eca-search input::placeholder {
@@ -127,7 +127,7 @@
   border-radius: 14px;
   border: 1px solid #e4e7ee;
   background: #ffffff;
-  color: #000000;
+  color: #0f172a;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -174,7 +174,7 @@
   margin-left: auto;
   font-size: 14px;
   font-weight: 600;
-  color: #3f3f3f;
+  color: #334155;
   background: #eef2fb;
   padding: 5px 10px;
   border-radius: 999px;
@@ -246,7 +246,7 @@
 .eca-month-label {
   font-size: 16px;
   font-weight: 700;
-  color: #000000;
+  color: #0f172a;
 }
 
 .eca-month-count {
@@ -260,7 +260,7 @@
 }
 
 .eca-chevron-sm {
-  color: #3f3f3f;
+  color: #334155;
   transition: transform 0.25s ease;
   flex-shrink: 0;
 }
@@ -324,14 +324,14 @@
 .eca-card-date {
   margin-left: auto;
   font-size: 14px;
-  color: #3f3f3f;
+  color: #334155;
 }
 
 .eca-card-title {
   margin: 0 0 6px;
   font-size: 18px;
   font-weight: 700;
-  color: #000000;
+  color: #0f172a;
   line-height: 1.4;
 }
 
@@ -340,7 +340,7 @@
   margin: 0 0 12px;
   font-size: 16px;
   line-height: 1.6;
-  color: #3f3f3f;
+  color: #334155;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -357,7 +357,7 @@
 
 .eca-source {
   font-size: 14px;
-  color: #3f3f3f;
+  color: #334155;
 }
 
 .eca-read-more {
@@ -372,7 +372,7 @@
 .eca-empty {
   padding: 60px 20px;
   text-align: center;
-  color: #3f3f3f;
+  color: #334155;
   font-size: 16px;
 }
 
@@ -409,7 +409,7 @@
 .eca-modal-close {
   border: none;
   background: #eaf0fe;
-  color: #000000;
+  color: #0f172a;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -421,7 +421,7 @@
 }
 
 .eca-modal-close:hover {
-  background: #000000;
+  background: #0f172a;
   color: #fff;
 }
 
@@ -429,21 +429,21 @@
   margin: 0 0 6px;
   font-size: 28px;
   font-weight: 700;
-  color: #000000;
+  color: #0f172a;
   line-height: 1.3;
 }
 
 .eca-modal-date {
   margin: 0 0 16px;
   font-size: 14px;
-  color: #3f3f3f;
+  color: #334155;
 }
 
 .eca-modal-content {
   margin: 0 0 22px;
   font-size: 18px;
   line-height: 1.7;
-  color: #3f3f3f;
+  color: #334155;
   white-space: pre-wrap;
 }
 
@@ -472,7 +472,7 @@
 }
 
 .eca-modal-link:hover {
-  background: #000000;
+  background: #0f172a;
 }
 
 /* -------------------- Responsive ------------------- */
