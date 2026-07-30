@@ -17,9 +17,8 @@ const Footer = () => {
           </Link>
 
           <p>
-            Believers Consultancy helps aspiring medical students navigate NEET
-            UG, NEET PG, INICET and NEET SS counselling with trusted guidance
-            and expert support.
+            Your ultimate guide to counselling. 100% free access to all
+            resources and expert guidance.
           </p>
 
           <div className="footer-socials">

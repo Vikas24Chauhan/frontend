@@ -4,10 +4,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import "./Hero.css";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Hero() {
+  const navigate = useNavigate();
   const heroRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -66,7 +68,9 @@ function Hero() {
           </h4>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Get Started</button>
+            <button onClick={() => navigate("/login")} className="primary-btn">
+              Get Started &rarr;
+            </button>
           </div>
         </div>
 

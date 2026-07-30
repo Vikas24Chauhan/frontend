@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./HomeFaqs.css";
 import { FiPlus, FiMinus, FiArrowRight } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 function HomeFaqs() {
+  const navigate = useNavigate();
   const [activeFAQ, setActiveFAQ] = useState(0);
 
   const faqs = [

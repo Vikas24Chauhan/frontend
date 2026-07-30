@@ -1,9 +1,12 @@
 import React from "react";
+import NeetpgHero from "../components/ui/neetpg/NeetpgHero";
+import NeetpgFeatures from "../components/ui/neetpg/NeetpgFeatures";
 
 function NeetpgPage() {
   return (
     <div>
-      <h1>Welcome to NEET PG Page</h1>
+      <NeetpgHero />
+      <NeetpgFeatures />
     </div>
   );
 }
