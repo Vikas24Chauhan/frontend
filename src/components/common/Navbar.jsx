@@ -26,7 +26,10 @@ function Navbar() {
     <header className="navbar">
       <div className="navbar-container">
         <Link to="/" className="nav-logo">
-          MedGuide
+          <img
+            src="https://cdn.dribbble.com/userupload/48551110/file/f730ea2ceb0ebb81692e526e355c1c90.png"
+            alt=""
+          />
         </Link>
 
         {/* Desktop Menu */}
@@ -49,8 +52,7 @@ function Navbar() {
 
           <Link to="/blog">Blog</Link>
           <Link to="/announcements">Announcements</Link>
-          <Link to="/careers">Careers</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact-us">Contact Us</Link>
         </nav>
 
         {/* Desktop Auth */}
@@ -111,11 +113,8 @@ function Navbar() {
         <Link to="/announcements" onClick={closeMenu}>
           Announcements
         </Link>
-        <Link to="/careers" onClick={closeMenu}>
-          Careers
-        </Link>
-        <Link to="/contact" onClick={closeMenu}>
-          Contact
+        <Link to="/contact-us" onClick={closeMenu}>
+          Contact Us
         </Link>
 
         {isAuthenticated ? (

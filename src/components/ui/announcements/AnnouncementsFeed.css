@@ -303,7 +303,7 @@
 .eca-tag-new {
   padding: 3px 9px;
   border-radius: 999px;
-  background: #155dfc;
+  background: #7c3aed;
   color: #fff;
   font-size: 14px;
   font-weight: 800;
@@ -314,8 +314,8 @@
 .eca-tag-category {
   padding: 3px 9px;
   border-radius: 999px;
-  background: #eaf0fe;
-  color: #155dfc;
+  background: #efe6ff;
+  color: #7c3aed;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -366,7 +366,7 @@
   gap: 4px;
   font-size: 14px;
   font-weight: 700;
-  color: #155dfc;
+  color: #7c3aed;
 }
 
 .eca-empty {

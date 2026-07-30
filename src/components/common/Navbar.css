@@ -7,20 +7,20 @@
 }
 
 .navbar-container {
-  max-width: 1280px;
-  height: 80px;
+  max-width: 1400px;
   margin: auto;
-  padding: 0 24px;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .nav-logo {
-  font-size: 32px;
-  font-weight: 800;
-  color: #155dfc;
-  text-decoration: none;
+  width: 140px;
+}
+
+.nav-logo img {
+  width: 100%;
 }
 
 .nav-menu {
@@ -174,12 +174,8 @@
     display: none;
   }
 
-  .navbar-container {
-    height: 70px;
-  }
-
   .nav-logo {
-    font-size: 28px;
+    width: 120px;
   }
 
   .nav-menu,
