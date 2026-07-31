@@ -14,12 +14,10 @@
   display: grid;
   grid-template-columns: 360px minmax(0, 1fr);
   gap: 32px;
-  align-items: start;
 }
 
 .pg-feature-sticky-col {
   position: relative;
-  align-self: start;
 }
 
 .pg-feature-dark-card {
