@@ -43,11 +43,11 @@ function NeetpgOverview() {
 
       <div className="pg-overview-container">
         <div className="pg-overview-hero">
-          <span className="pg-overview-eyebrow">Counselling Guide · 2025</span>
-          <h2 className="pg-overview-heading">NEET PG 2025 Overview</h2>
+          <span className="pg-overview-eyebrow">Counselling Guide </span>
+          <h2 className="pg-overview-heading">NEET PG Overview</h2>
           <p className="pg-overview-subdesc">
-            Discover everything you need to know about NEET PG 2025 and plan
-            your medical career with confidence.
+            Discover everything you need to know about NEET PG and plan your
+            medical career with confidence.
           </p>
         </div>
 

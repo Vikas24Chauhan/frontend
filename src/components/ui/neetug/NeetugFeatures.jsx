@@ -19,86 +19,86 @@ import "./NeetugFeatures.css";
 const features = [
   {
     icon: <BarChart3 size={24} />,
-    title: "Allotments",
+    title: "Seat Allotments",
     description:
-      "Track multi-year official allotments across rounds, states, and quotas, all in one structured view.",
+      "Analyze previous NEET UG seat allotments across multiple counselling rounds to understand admission patterns at participating Institutes of National Importance.",
     colorKey: "blue",
   },
   {
     icon: <TrendingUp size={24} />,
     title: "Closing Ranks",
     description:
-      "Explore multi-year cut-off ranks for every round, course and institute, filtered by category, quota, and more.",
+      "Review institute-wise and specialty-wise closing ranks from previous NEET UG sessions to estimate your admission chances.",
     colorKey: "indigo",
   },
   {
     icon: <FileText size={24} />,
-    title: "Seat Matrix",
+    title: "Seat Availability",
     description:
-      "Access real-time seat availability for each round across institutes, quotas, and categories to stay ahead.",
+      "Stay updated with round-wise seat availability across AIIMS, JIPMER, PGIMER, NIMHANS, and other participating institutes.",
     colorKey: "purple",
   },
   {
     icon: <DollarSign size={24} />,
-    title: "Fee, Stipend & Bond",
+    title: "Fees & Stipend",
     description:
-      "Compare tuition fees, stipends, bond obligations, and penalties categorised by institute, course and quota.",
+      "Compare tuition fees, resident stipends, bond requirements, and institutional policies before finalizing your preferences.",
     colorKey: "blue",
   },
   {
     icon: <MapPin size={24} />,
-    title: "Allotment Mapping",
+    title: "Institute Comparison",
     description:
-      "Track how candidates near your rank are moving across states and rounds, and spot better opportunities instantly.",
+      "Compare participating institutes based on academics, location, clinical exposure, infrastructure, and previous admission trends.",
     colorKey: "orange",
   },
   {
     icon: <Search size={24} />,
-    title: "Rank Scan",
+    title: "Rank Analysis",
     description:
-      "Zoom into any rank and see what options candidates actually landed. A quick snapshot from all allotments across states.",
+      "Search any NEET UG rank to explore specialties and institutes that candidates secured in previous counselling rounds.",
     colorKey: "cyan",
   },
   {
     icon: <Target size={24} />,
-    title: "My Choice List",
+    title: "Preference List",
     description:
-      "Build, save, and refine multiple choice lists for each counselling with live data and smart filters.",
+      "Create, save, and optimize your NEET UG choice list with data-driven insights and personalized admission planning.",
     colorKey: "pink",
   },
   {
     icon: <Building2 size={24} />,
     title: "Institutes",
     description:
-      "Get verified information on 1000+ colleges, from beds in the hospital to facilities and clinical information.",
+      "Explore detailed profiles of AIIMS, JIPMER, PGIMER, NIMHANS, SCTIMST, and other Institutes of National Importance.",
     colorKey: "teal",
   },
   {
     icon: <GraduationCap size={24} />,
     title: "Courses",
     description:
-      "Explore all available courses with duration, recognition, and clinical info.",
+      "Browse MD, MS, MDS, DM, and MCh programs with seat intake, eligibility, and specialty-specific information.",
     colorKey: "yellow",
   },
   {
     icon: <Users size={24} />,
-    title: "Universities",
+    title: "Departments",
     description:
-      "Browse all medical universities with their profiles, affiliations, and participating institutes.",
+      "Learn about individual departments, faculty strength, research opportunities, and clinical training across premier institutes.",
     colorKey: "red",
   },
   {
     icon: <Calendar size={24} />,
-    title: "Counsellings",
+    title: "Counselling Schedule",
     description:
-      "Understand all quotas, counselling timelines, key events and announcements – all in one place.",
+      "Track important counselling dates, registration deadlines, choice filling windows, seat allotment results, and reporting timelines.",
     colorKey: "violet",
   },
   {
     icon: <BookOpen size={24} />,
-    title: "Resources",
+    title: "Official Resources",
     description:
-      "Explore the official sources behind our data, from govt sites to verified documents.",
+      "Access official notifications, prospectuses, counselling guidelines, seat matrices, and admission documents from participating institutes.",
     colorKey: "slate",
   },
 ];
@@ -126,16 +126,18 @@ function NeetugFeatures() {
           <div className="ug-feature-sticky-col">
             <div className="ug-feature-dark-card">
               <h2 className="ug-feature-dark-card-title">
-                Explore,
+                Plan,
                 <br />
-                Choose,
+                Discover,
                 <br />
-                Succeed
+                Achieve
               </h2>
+
               <p className="ug-feature-dark-card-para">
-                Everything you need to navigate NEET UG counselling, all in one
-                free platform.
+                Everything you need to navigate NEET UG counselling with
+                confidence—all in one free platform.
               </p>
+
               <button
                 type="button"
                 onClick={() => navigate("/login")}

@@ -45,13 +45,9 @@ function NeetugOverview() {
 
       <div className="ug-overview-container">
         <div className="ug-overview-hero">
-          <span className="ug-overview-eyebrow">
-            Medical Admission Guide · 2025
-          </span>
+          <span className="ug-overview-eyebrow">Medical Admission Guide</span>
 
-          <h2 className="ug-overview-heading">
-            NEET UG Counselling 2025 Overview
-          </h2>
+          <h2 className="ug-overview-heading">NEET UG Counselling Overview</h2>
 
           <p className="ug-overview-subdesc">
             Understand the complete NEET UG counselling process, admission
@@ -166,26 +162,6 @@ function NeetugOverview() {
             choices, receive seat allotment, and complete admission formalities
             at the allotted college.
           </p>
-
-          <div className="ug-overview-timeline">
-            <div className="ug-overview-timeline-track">
-              <div className="ug-overview-timeline-track-fill" />
-            </div>
-
-            {rounds.map((round, i) => (
-              <div
-                className="ug-overview-timeline-node"
-                key={round.id}
-                style={{ transitionDelay: `${220 + i * 140}ms` }}
-              >
-                <span className="ug-overview-timeline-dot">{round.id}</span>
-
-                <span className="ug-overview-timeline-label">
-                  {round.label}
-                </span>
-              </div>
-            ))}
-          </div>
 
           <div className="ug-overview-steps">
             {roundSteps.map((step, i) => (

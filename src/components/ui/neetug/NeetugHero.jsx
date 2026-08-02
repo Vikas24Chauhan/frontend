@@ -15,19 +15,20 @@ const NeetugHero = () => {
           <span className="neetug-hero-tag">NEET UG Counselling</span>
 
           <h1>
-            Your <span>NEET UG</span> rank has potential. Let’s unlock the right
-            college for it
+            Turn your <span>NEET UG</span> rank into the best medical college
+            opportunity
           </h1>
 
           <p>
-            Find the Right Medical Seat Based on Your Rank The NEET UG
-            counselling process can feel overwhelming but it doesn’t have to be
-            ZyNerd brings structure, clarity, and precision to your MBBS/BDS
-            seat selection. Get access to real-time cut-offs, seat availability,
-            and expert insights all in one place. Whether you're targeting a
-            government college or a private institution, our advanced tools help
-            you plan smart and choose confidently. Join 28,000+ students who
-            have already used ZyNerd to find their best-fit medical college.
+            Make informed MBBS and BDS counselling decisions with reliable data
+            and intelligent planning tools. ZyNerd simplifies the entire NEET UG
+            counselling journey by helping you evaluate colleges based on your
+            rank, category, and preferences. Explore previous years' closing
+            ranks, live seat availability, college details, fee structures, and
+            admission trends—all in one place. Whether your goal is a government
+            medical college, a private institution, or a deemed university, our
+            platform gives you the confidence to build the right choice list and
+            maximize your admission chances.
           </p>
 
           <div className="neetug-hero-actions">
