@@ -16,12 +16,12 @@ function NeetugFaqs() {
     {
       question: "What is the difference between AIQ and State Quota?",
       answer:
-        "All India Quota (AIQ) covers 15% of Government college seats and 100% of Deemed/Central university seats — conducted by MCC. State Quota covers the remaining 85% of Government college seats and is conducted by individual state counselling authorities. You can participate in both simultaneously.",
+        "All India Quota (AIQ) covers 15% of Government college seats and 100% of Deemed/Central university seats - conducted by MCC. State Quota covers the remaining 85% of Government college seats and is conducted by individual state counselling authorities. You can participate in both simultaneously.",
     },
     {
       question: "How many rounds does NEET UG counselling have?",
       answer:
-        "MCC conducts Round 1, Round 2, Round 3, and a Stray Vacancy Round for AIQ seats. State counselling has its own rounds (varies by state — typically 2–4 rounds plus a mop-up round). Believers Consultancy tracks all rounds in real time.",
+        "MCC conducts Round 1, Round 2, Round 3, and a Stray Vacancy Round for AIQ seats. State counselling has its own rounds (varies by state - typically 2–4 rounds plus a mop-up round). Believers Consultancy tracks all rounds in real time.",
     },
     {
       question:
@@ -32,7 +32,7 @@ function NeetugFaqs() {
     {
       question: "Is Believers Consultancy free for NEET UG data?",
       answer:
-        "Yes! All NEET UG data — cut-offs, seat matrices, allotments, college profiles, fee data, and choice list tools — are completely free. Just create an account and access everything without any payment.",
+        "Yes! All NEET UG data - cut-offs, seat matrices, allotments, college profiles, fee data, and choice list tools - are completely free. Just create an account and access everything without any payment.",
     },
   ];
   return (

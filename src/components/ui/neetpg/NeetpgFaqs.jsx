@@ -31,7 +31,7 @@ function NeetpgFaqs() {
     {
       question: "Is Believers Consultancy free to use?",
       answer:
-        "Yes! Believers Consultancy is 100% free. Just create an account and access all features — cut-offs, seat matrix, fee data, choice list tools, webinars, and expert guidance — without any payment, subscription, or hidden charges.",
+        "Yes! Believers Consultancy is 100% free. Just create an account and access all features - cut-offs, seat matrix, fee data, choice list tools, webinars, and expert guidance - without any payment, subscription, or hidden charges.",
     },
   ];
 

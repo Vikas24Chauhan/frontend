@@ -165,7 +165,7 @@ function InicetOverview() {
           </h3>
 
           <p className="inicet-overview-timeline-lead">
-            Every counselling round follows a transparent process—from filling
+            Every counselling round follows a transparent process-from filling
             your choices to seat allotment and final reporting at your allotted
             institute.
           </p>

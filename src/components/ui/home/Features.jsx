@@ -45,7 +45,7 @@ const features = [
   {
     title: "Webinars & Live Doubt Sessions",
     description:
-      "Get expert strategies and answers — tailored for each counselling and round.",
+      "Get expert strategies and answers - tailored for each counselling and round.",
     icon: <FaVideo />,
     color: "#06b6d4",
     bg: "#ecfeff",

@@ -25,7 +25,7 @@ const NeetugHero = () => {
             counselling journey by helping you evaluate colleges based on your
             rank, category, and preferences. Explore previous years' closing
             ranks, live seat availability, college details, fee structures, and
-            admission trends—all in one place. Whether your goal is a government
+            admission trends-all in one place. Whether your goal is a government
             medical college, a private institution, or a deemed university, our
             platform gives you the confidence to build the right choice list and
             maximize your admission chances.

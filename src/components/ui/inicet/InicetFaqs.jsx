@@ -11,12 +11,12 @@ function InicetFaqs() {
     {
       question: "What is INICET counselling?",
       answer:
-        "INICET counselling is conducted by AIIMS New Delhi for allotment of PG medical seats at Institutes of National Importance — AIIMS (all campuses), JIPMER, NIMHANS, PGIMER, and SCTIMST. It's a centralised, highly competitive process with limited seats.",
+        "INICET counselling is conducted by AIIMS New Delhi for allotment of PG medical seats at Institutes of National Importance - AIIMS (all campuses), JIPMER, NIMHANS, PGIMER, and SCTIMST. It's a centralised, highly competitive process with limited seats.",
     },
     {
       question: "How many INICET sessions are held per year?",
       answer:
-        "INICET is typically held twice a year — January and May sessions. Each session has its own cut-offs, seat matrix, and counselling schedule.",
+        "INICET is typically held twice a year - January and May sessions. Each session has its own cut-offs, seat matrix, and counselling schedule.",
     },
     {
       question: "What happens if I don't participate in a counselling round?",

@@ -214,7 +214,7 @@ export const announcements = [
   {
     title: "MCC Issues Notice for NRI Category Conversion in NEET-PG",
     content:
-      "MCC Issues Notice for NRI Category Conversion in NEET-PG Counselling 2025-26 — Candidates Must Submit Documents by Feb 16, 2026",
+      "MCC Issues Notice for NRI Category Conversion in NEET-PG Counselling 2025-26 - Candidates Must Submit Documents by Feb 16, 2026",
     date: "2026-02-14T08:00:00Z",
     priority: "high",
     category: "NEET PG",
@@ -700,7 +700,7 @@ export const announcements = [
   {
     title: "NEET PG Counselling 2025:",
     content:
-      "MCC Releases Complete NEET PG 2025 Counselling Calendar—All India Quota, State Quota, and Deemed University Schedule Announced",
+      "MCC Releases Complete NEET PG 2025 Counselling Calendar-All India Quota, State Quota, and Deemed University Schedule Announced",
     date: "2025-11-15T08:00:00Z",
     priority: "high",
     category: "NEET PG",

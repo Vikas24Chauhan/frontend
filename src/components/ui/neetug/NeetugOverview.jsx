@@ -158,7 +158,7 @@ function NeetugOverview() {
           <h3 className="ug-overview-process-title">Four counselling rounds</h3>
 
           <p className="ug-overview-timeline-lead">
-            Every counselling round follows the same process—register, fill your
+            Every counselling round follows the same process-register, fill your
             choices, receive seat allotment, and complete admission formalities
             at the allotted college.
           </p>

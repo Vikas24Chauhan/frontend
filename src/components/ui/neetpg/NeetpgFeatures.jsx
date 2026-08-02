@@ -135,7 +135,7 @@ function NeetpgFeatures() {
 
               <p className="pg-feature-dark-card-para">
                 Everything you need to navigate NEET PG counselling with
-                confidence—all in one free platform.
+                confidence-all in one free platform.
               </p>
 
               <button

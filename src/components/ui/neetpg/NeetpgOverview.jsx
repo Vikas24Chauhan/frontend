@@ -139,7 +139,7 @@ function NeetpgOverview() {
             Four rounds to your seat
           </h3>
           <p className="pg-overview-timeline-lead">
-            Every round follows the same rhythm — choice filling, seat
+            Every round follows the same rhythm - choice filling, seat
             allotment, then joining at the allotted institute.
           </p>
 

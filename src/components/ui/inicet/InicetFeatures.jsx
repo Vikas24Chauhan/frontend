@@ -135,7 +135,7 @@ function InicetFeatures() {
 
               <p className="inicet-feature-dark-card-para">
                 Everything you need to navigate INI-CET counselling with
-                confidence—all in one free platform.
+                confidence-all in one free platform.
               </p>
 
               <button
