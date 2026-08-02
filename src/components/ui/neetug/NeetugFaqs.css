@@ -1,36 +1,36 @@
-.pg-faq-section {
+.ug-faq-section {
   padding: 80px 20px;
   background: #ffffff;
 }
 
-.pg-faq-container {
+.ug-faq-container {
   max-width: 1200px;
   margin: auto;
 }
 
-.pg-faq-header {
+.ug-faq-header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.pg-faq-header h2 {
+.ug-faq-header h2 {
   font-size: 42px;
   color: #0f172a;
   margin-bottom: 18px;
 }
 
-.pg-faq-header p {
+.ug-faq-header p {
   font-size: 18px;
   color: #334155;
 }
 
-.pg-faq-list {
+.ug-faq-list {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.pg-faq-card {
+.ug-faq-card {
   background: #fff;
   border-radius: 22px;
   border: 1px solid #e8edf5;
@@ -39,12 +39,12 @@
   box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
 }
 
-.pg-faq-card.active {
+.ug-faq-card.active {
   border-color: #155dfc;
   box-shadow: 0 20px 40px rgba(21, 93, 252, 0.08);
 }
 
-.pg-faq-question {
+.ug-faq-question {
   width: 100%;
   background: none;
   border: none;
@@ -56,13 +56,13 @@
   text-align: left;
 }
 
-.pg-faq-left {
+.ug-faq-left {
   display: flex;
   align-items: center;
   gap: 22px;
 }
 
-.pg-faq-number {
+.ug-faq-number {
   width: 52px;
   height: 52px;
   min-width: 52px;
@@ -76,14 +76,14 @@
   font-size: 18px;
 }
 
-.pg-faq-left h3 {
+.ug-faq-left h3 {
   font-size: 22px;
   color: #0f172a;
   line-height: 1.5;
   font-weight: 600;
 }
 
-.pg-faq-icon {
+.ug-faq-icon {
   width: 46px;
   height: 46px;
   min-width: 46px;
@@ -96,7 +96,7 @@
   font-size: 22px;
 }
 
-.pg-faq-answer {
+.ug-faq-answer {
   max-height: 0;
   overflow: hidden;
   transition:
@@ -105,19 +105,19 @@
   padding: 0 28px;
 }
 
-.pg-faq-answer.show {
+.ug-faq-answer.show {
   max-height: 300px;
   padding: 0 28px 28px;
 }
 
-.pg-faq-answer p {
+.ug-faq-answer p {
   margin-left: 74px;
   font-size: 17px;
   line-height: 1.9;
   color: #334155;
 }
 
-.pg-faq-cta {
+.ug-faq-cta {
   margin-top: 80px;
   border-radius: 32px;
   overflow: hidden;
@@ -127,7 +127,7 @@
   text-align: center;
 }
 
-.pg-faq-cta::before {
+.ug-faq-cta::before {
   content: "";
   position: absolute;
   width: 420px;
@@ -138,7 +138,7 @@
   left: -120px;
 }
 
-.pg-faq-cta::after {
+.ug-faq-cta::after {
   content: "";
   position: absolute;
   width: 320px;
@@ -149,19 +149,19 @@
   right: -80px;
 }
 
-.pg-faq-cta-content {
+.ug-faq-cta-content {
   position: relative;
   z-index: 2;
 }
 
-.pg-faq-cta h2 {
+.ug-faq-cta h2 {
   font-size: 42px;
   color: #0f172a;
   margin-bottom: 18px;
   line-height: 1.2;
 }
 
-.pg-faq-cta p {
+.ug-faq-cta p {
   max-width: 700px;
   margin: 0 auto 20px;
   font-size: 18px;
@@ -169,7 +169,7 @@
   color: #334155;
 }
 
-.pg-faq-cta-btn {
+.ug-faq-cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 14px;
@@ -185,7 +185,7 @@
   box-shadow: 0 10px 30px rgba(245, 158, 11, 0.35);
 }
 
-.pg-faq-cta-btn:hover {
+.ug-faq-cta-btn:hover {
   box-shadow: 0 18px 40px rgba(245, 158, 11, 0.45);
   transform: translateY(-3px);
 }
@@ -193,63 +193,63 @@
 /* -------------------- Responsive ------------------- */
 
 @media (max-width: 868px) {
-  .pg-faq-section {
+  .ug-faq-section {
     padding: 60px 20px;
   }
 
-  .pg-faq-header h2 {
+  .ug-faq-header h2 {
     font-size: 32px;
   }
 
-  .pg-faq-header p {
+  .ug-faq-header p {
     font-size: 16px;
   }
 
-  .pg-faq-question {
+  .ug-faq-question {
     padding: 22px;
     align-items: flex-start;
   }
 
-  .pg-faq-left {
+  .ug-faq-left {
     gap: 15px;
   }
 
-  .pg-faq-number {
+  .ug-faq-number {
     width: 44px;
     height: 44px;
     min-width: 44px;
     font-size: 16px;
   }
 
-  .pg-faq-left h3 {
+  .ug-faq-left h3 {
     font-size: 18px;
   }
 
-  .pg-faq-answer.show {
+  .ug-faq-answer.show {
     padding: 0 22px 22px;
   }
 
-  .pg-faq-answer p {
+  .ug-faq-answer p {
     margin-left: 0;
     font-size: 16px;
   }
 
-  .pg-faq-icon {
+  .ug-faq-icon {
     width: 40px;
     height: 40px;
     min-width: 40px;
     font-size: 18px;
   }
 
-  .pg-faq-cta {
+  .ug-faq-cta {
     margin-top: 40px;
   }
 
-  .pg-faq-cta h2 {
+  .ug-faq-cta h2 {
     font-size: 32px;
   }
 
-  .pg-faq-cta-btn {
+  .ug-faq-cta-btn {
     font-size: 16px;
     padding: 16px 24px;
   }

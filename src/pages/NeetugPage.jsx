@@ -1,9 +1,16 @@
 import React from "react";
+import NeetugHero from "../components/ui/neetug/NeetugHero";
+import NeetugFeatures from "../components/ui/neetug/NeetugFeatures";
+import NeetugOverview from "../components/ui/neetug/NeetugOverview";
+import NeetugFaqs from "../components/ui/neetug/NeetugFaqs";
 
 function NeetugPage() {
   return (
     <div>
-      <h1>Welcome to NEET UG Page</h1>
+      <NeetugHero />
+      <NeetugFeatures />
+      <NeetugOverview />
+      <NeetugFaqs />
     </div>
   );
 }
