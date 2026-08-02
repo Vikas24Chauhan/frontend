@@ -14,21 +14,21 @@ import {
   Calendar,
   BookOpen,
 } from "lucide-react";
-import "./NeetpgFeatures.css";
+import "./NeetssFeatures.css";
 
 const features = [
   {
     icon: <BarChart3 size={24} />,
     title: "Seat Allotments",
     description:
-      "Analyze previous NEET PG seat allotments across multiple counselling rounds to understand admission patterns at participating Institutes of National Importance.",
+      "Analyze previous NEET SS seat allotments across multiple counselling rounds to understand admission patterns at participating Institutes of National Importance.",
     colorKey: "blue",
   },
   {
     icon: <TrendingUp size={24} />,
     title: "Closing Ranks",
     description:
-      "Review institute-wise and specialty-wise closing ranks from previous NEET PG sessions to estimate your admission chances.",
+      "Review institute-wise and specialty-wise closing ranks from previous NEET SS sessions to estimate your admission chances.",
     colorKey: "indigo",
   },
   {
@@ -56,14 +56,14 @@ const features = [
     icon: <Search size={24} />,
     title: "Rank Analysis",
     description:
-      "Search any NEET PG rank to explore specialties and institutes that candidates secured in previous counselling rounds.",
+      "Search any NEET SS rank to explore specialties and institutes that candidates secured in previous counselling rounds.",
     colorKey: "cyan",
   },
   {
     icon: <Target size={24} />,
     title: "Preference List",
     description:
-      "Create, save, and optimize your NEET PG choice list with data-driven insights and personalized admission planning.",
+      "Create, save, and optimize your NEET SS choice list with data-driven insights and personalized admission planning.",
     colorKey: "pink",
   },
   {
@@ -103,7 +103,7 @@ const features = [
   },
 ];
 
-function NeetpgFeatures() {
+function NeetssFeatures() {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -120,12 +120,12 @@ function NeetpgFeatures() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pg-feature">
-      <div className="pg-feature-container">
-        <div className="pg-feature-grid">
-          <div className="pg-feature-sticky-col">
-            <div className="pg-feature-dark-card">
-              <h2 className="pg-feature-dark-card-title">
+    <section ref={sectionRef} className="ss-feature">
+      <div className="ss-feature-container">
+        <div className="ss-feature-grid">
+          <div className="ss-feature-sticky-col">
+            <div className="ss-feature-dark-card">
+              <h2 className="ss-feature-dark-card-title">
                 Plan,
                 <br />
                 Discover,
@@ -133,35 +133,35 @@ function NeetpgFeatures() {
                 Achieve
               </h2>
 
-              <p className="pg-feature-dark-card-para">
-                Everything you need to navigate NEET PG counselling with
+              <p className="ss-feature-dark-card-para">
+                Everything you need to navigate NEET SS counselling with
                 confidence-all in one free platform.
               </p>
 
               <button
                 type="button"
                 onClick={() => navigate("/login")}
-                className="pg-feature-dark-card-btn"
+                className="ss-feature-dark-card-btn"
               >
                 Start Free &rarr;
               </button>
             </div>
           </div>
 
-          <div className="pg-feature-list">
+          <div className="ss-feature-list">
             {features.map((f, i) => (
               <div
                 key={i}
-                className={`pg-feature-card is-${f.colorKey} ${
+                className={`ss-feature-card is-${f.colorKey} ${
                   visible ? "is-visible" : ""
                 }`}
                 style={{ transitionDelay: `${i * 40}ms` }}
               >
-                <div className={`pg-feature-card-icon is-${f.colorKey}`}>
+                <div className={`ss-feature-card-icon is-${f.colorKey}`}>
                   {f.icon}
                 </div>
-                <h3 className="pg-feature-card-title">{f.title}</h3>
-                <p className="pg-feature-card-desc">{f.description}</p>
+                <h3 className="ss-feature-card-title">{f.title}</h3>
+                <p className="ss-feature-card-desc">{f.description}</p>
               </div>
             ))}
           </div>
@@ -171,4 +171,4 @@ function NeetpgFeatures() {
   );
 }
 
-export default NeetpgFeatures;
+export default NeetssFeatures;
