@@ -143,24 +143,6 @@ function NeetpgOverview() {
             allotment, then joining at the allotted institute.
           </p>
 
-          <div className="pg-overview-timeline">
-            <div className="pg-overview-timeline-track">
-              <div className="pg-overview-timeline-track-fill" />
-            </div>
-            {rounds.map((round, i) => (
-              <div
-                className="pg-overview-timeline-node"
-                key={round.id}
-                style={{ transitionDelay: `${220 + i * 140}ms` }}
-              >
-                <span className="pg-overview-timeline-dot">{round.id}</span>
-                <span className="pg-overview-timeline-label">
-                  {round.label}
-                </span>
-              </div>
-            ))}
-          </div>
-
           <div className="pg-overview-steps">
             {roundSteps.map((step, i) => (
               <React.Fragment key={step}>

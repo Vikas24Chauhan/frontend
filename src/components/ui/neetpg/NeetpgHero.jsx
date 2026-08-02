@@ -15,17 +15,17 @@ const NeetpgHero = () => {
           <span className="neetpg-hero-tag">NEET PG Counselling</span>
 
           <h1>
-            Get real insights before you fill your <span>NEET PG</span> choice
-            list
+            Make smarter <span>NEET PG</span> counselling decisions with
+            confidence
           </h1>
 
           <p>
-            MD/MS Seat Planning Backed by Real Data, Not Guesswork. Choosing a
-            specialisation is a major step and Believers Consultancy helps you
-            take it with clarity. Align your NEET PG rank with actual seat
-            trends, category-wise eligibility, and college preferences. Access
-            last-round cut-offs, seat allotment trends, and tools designed to
-            keep you informed at every step.
+            Plan your MD/MS journey using authentic counselling data instead of
+            assumptions. Believers Consultancy helps you evaluate colleges,
+            specializations, and seat opportunities based on previous allotment
+            trends, closing ranks, category-wise eligibility, and real
+            counselling insights. Everything you need to build a stronger choice
+            list is available in one place.
           </p>
 
           <div className="neetpg-hero-actions">

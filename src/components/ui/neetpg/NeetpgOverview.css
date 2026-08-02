@@ -273,81 +273,6 @@
   margin: 10px 0 40px;
 }
 
-.pg-overview-timeline {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-bottom: 32px;
-}
-
-.pg-overview-timeline-track {
-  position: absolute;
-  top: 22px;
-  left: 12.5%;
-  right: 12.5%;
-  height: 2px;
-  background: #e2e8f0;
-  z-index: 0;
-}
-
-.pg-overview-timeline-track-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #155dfc, #f59e0b);
-  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
-}
-
-.pg-overview-section.is-visible .pg-overview-timeline-track-fill {
-  width: 100%;
-}
-
-.pg-overview-timeline-node {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(14px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-.pg-overview-section.is-visible .pg-overview-timeline-node {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.pg-overview-timeline-dot {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #155dfc;
-  color: #155dfc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.pg-overview-timeline-node:last-child .pg-overview-timeline-dot {
-  border-color: #f59e0b;
-  color: #b45309;
-  background: #fffbeb;
-}
-
-.pg-overview-timeline-label {
-  font-size: 14px;
-  font-weight: 700;
-  color: #0f172a;
-}
-
 .pg-overview-steps {
   display: flex;
   align-items: center;
@@ -411,9 +336,7 @@
 @media (prefers-reduced-motion: reduce) {
   .pg-overview-hero,
   .pg-overview-info-card,
-  .pg-overview-authority-card,
-  .pg-overview-timeline-node,
-  .pg-overview-timeline-track-fill {
+  .pg-overview-authority-card {
     transition-duration: 0.01ms !important;
     transform: none !important;
   }
@@ -464,32 +387,9 @@
     padding: 30px 18px 26px;
   }
 
-  .pg-overview-timeline {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 32px;
-  }
-
-  .pg-overview-timeline-track {
-    top: 22px;
-    left: 12.5%;
-    right: 62.5%;
-    width: 25%;
-  }
-
-  .pg-overview-timeline-dot {
-    width: 38px;
-    height: 38px;
-    font-size: 12px;
-  }
-
   .pg-overview-factor-chip,
   .pg-overview-step-chip {
     font-size: 13px;
     padding: 7px 14px;
-  }
-
-  .pg-overview-timeline-track,
-  .pg-overview-timeline-track-fill {
-    display: none;
   }
 }
