@@ -45,7 +45,7 @@ const Footer = () => {
           <h3>Quick Links</h3>
 
           <Link to="/">Home</Link>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blogs">Blogs</Link>
           <Link to="/announcements">Announcements</Link>
           <Link to="/contact-us">Contact Us</Link>
         </div>

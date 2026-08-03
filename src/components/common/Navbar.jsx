@@ -50,7 +50,7 @@ function Navbar() {
             </div>
           </div>
 
-          <Link to="/blog">Blog</Link>
+          <Link to="/blogs">Blogs</Link>
           <Link to="/announcements">Announcements</Link>
           <Link to="/contact-us">Contact Us</Link>
         </nav>
@@ -107,8 +107,8 @@ function Navbar() {
           )}
         </div>
 
-        <Link to="/blog" onClick={closeMenu}>
-          Blog
+        <Link to="/blogs" onClick={closeMenu}>
+          Blogs
         </Link>
         <Link to="/announcements" onClick={closeMenu}>
           Announcements

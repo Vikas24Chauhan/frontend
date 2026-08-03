@@ -77,7 +77,7 @@ function Hero() {
         <div className="hero-image">
           <img
             ref={imageRef}
-            src="https://layers-r2.com/cdn-cgi/image/width=2560,format=avif/28d76dae-0b2f-4a68-8bd5-09764f93df65--5.png"
+            src="https://cdn.dribbble.com/userupload/47828308/file/096f4fed81b7a6ef11d4504fbfc973ae.png"
             alt="Medical Counselling"
           />
         </div>

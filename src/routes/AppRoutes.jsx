@@ -19,6 +19,8 @@ import NeetugPage from "../pages/NeetugPage";
 import NeetpgPage from "../pages/NeetpgPage";
 import InicetPage from "../pages/InicetPage";
 import NeetssPage from "../pages/NeetssPage";
+import BlogHome from "../pages/blog/BlogHome";
+import BlogPage from "../pages/blog/BlogPage";
 import AnnouncementsPage from "../pages/AnnouncementsPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import NotFound from "../pages/NotFound";
@@ -37,6 +39,8 @@ function AppRoutes() {
         <Route path="/neet-pg" element={<NeetpgPage />} />
         <Route path="/inicet" element={<InicetPage />} />
         <Route path="/neet-ss" element={<NeetssPage />} />
+        <Route path="/blogs" element={<BlogHome />} />
+        <Route path="/blog/:blogId" element={<BlogPage />} />
         <Route path="/announcements" element={<AnnouncementsPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="*" element={<NotFound />} />
