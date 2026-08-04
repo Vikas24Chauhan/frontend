@@ -23,6 +23,7 @@ import BlogHome from "../pages/blog/BlogHome";
 import BlogPage from "../pages/blog/BlogPage";
 import AnnouncementsPage from "../pages/AnnouncementsPage";
 import ContactUsPage from "../pages/ContactUsPage";
+import PrivacyPolicy from "../pages/policies/PrivacyPolicy";
 import NotFound from "../pages/NotFound";
 
 // Protected
@@ -43,6 +44,7 @@ function AppRoutes() {
         <Route path="/blog/:blogId" element={<BlogPage />} />
         <Route path="/announcements" element={<AnnouncementsPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 
