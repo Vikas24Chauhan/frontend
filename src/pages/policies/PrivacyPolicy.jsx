@@ -1,30 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-  ArrowLeft,
   Shield,
   Lock,
   Eye,
   Users,
   Database,
   Cookie,
-  Calendar,
   CheckCircle,
-  Menu,
-  X,
-  FileCheck,
 } from "lucide-react";
 import "./PrivacyPolicy.css";
 import PP from "../../assets/images/pp.svg";
 
 function PrivacyPolicy() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = useRef([]);
-
-  const handleNavigation = (path) => {
-    window.location.href = path;
-  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -42,7 +32,9 @@ function PrivacyPolicy() {
       },
       { rootMargin: "-15% 0px -70% 0px", threshold: 0 },
     );
+
     sectionRefs.current.forEach((el) => el && observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
 
@@ -50,7 +42,6 @@ function PrivacyPolicy() {
     {
       num: "01",
       icon: <Database className="pp-icon" />,
-      accent: "blue",
       title: "Information We Collect",
       content: [
         "Personal Information: Name, email address, phone number, and educational details when you register",
@@ -62,7 +53,6 @@ function PrivacyPolicy() {
     {
       num: "02",
       icon: <Eye className="pp-icon" />,
-      accent: "blue",
       title: "How We Use Your Information",
       content: [
         "Provide personalized counselling guidance and college recommendations",
@@ -75,7 +65,6 @@ function PrivacyPolicy() {
     {
       num: "03",
       icon: <Shield className="pp-icon" />,
-      accent: "violet",
       title: "Data Protection",
       content: [
         "We use industry-standard encryption to protect your personal data",
@@ -88,7 +77,6 @@ function PrivacyPolicy() {
     {
       num: "04",
       icon: <Cookie className="pp-icon" />,
-      accent: "blue",
       title: "Cookies and Tracking",
       content: [
         "We use cookies to enhance your browsing experience and remember your preferences",
@@ -100,7 +88,6 @@ function PrivacyPolicy() {
     {
       num: "05",
       icon: <Users className="pp-icon" />,
-      accent: "amber",
       title: "Sharing Information",
       content: [
         "We do not share your personal information with external parties for marketing",
@@ -112,7 +99,6 @@ function PrivacyPolicy() {
     {
       num: "06",
       icon: <Lock className="pp-icon" />,
-      accent: "violet",
       title: "Your Rights",
       content: [
         "Access: Request a copy of the personal information we hold about you",
@@ -130,9 +116,11 @@ function PrivacyPolicy() {
       <header className="pp-hero">
         <div className="pp-hero-blob pp-hero-blob--1" />
         <div className="pp-hero-blob pp-hero-blob--2" />
+
         <div className={`pp-hero-inner ${isVisible ? "pp-is-visible" : ""}`}>
           <div className="pp-hero-copy">
             <h1 className="pp-h1">Privacy Policy</h1>
+
             <p className="pp-lead">
               This document explains, in plain terms, what information we
               collect from students preparing for NEET counselling, how we use
@@ -141,46 +129,51 @@ function PrivacyPolicy() {
           </div>
 
           <div className="pp-hero-img">
-            <img src={PP} alt="" />
+            <img src={PP} alt="Privacy Policy" />
           </div>
         </div>
       </header>
 
-      {/* Trust strip */}
+      {/* Trust Strip */}
       <section className="pp-trust">
         <div className="pp-trust-inner">
           <div className="pp-trust-card">
-            <CheckCircle className="pp-trust-icon pp-trust-icon--blue" />
+            <CheckCircle className="pp-trust-icon" />
             <h3 className="pp-trust-title">100% Free</h3>
             <p className="pp-trust-desc">No hidden charges or premium plans</p>
           </div>
+
           <div className="pp-trust-card">
-            <Lock className="pp-trust-icon pp-trust-icon--blue" />
+            <Lock className="pp-trust-icon" />
             <h3 className="pp-trust-title">Secure</h3>
             <p className="pp-trust-desc">
               Your data is encrypted and protected
             </p>
           </div>
+
           <div className="pp-trust-card">
-            <Users className="pp-trust-icon pp-trust-icon--violet" />
+            <Users className="pp-trust-icon" />
             <h3 className="pp-trust-title">Confidential</h3>
-            <p className="pp-trust-desc">Never shared without consent</p>
+            <p className="pp-trust-desc">Never shared without your consent</p>
           </div>
         </div>
       </section>
 
-      {/* Main content: TOC + articles */}
+      {/* Content */}
       <section className="pp-content">
         <div className="pp-content-inner">
           <aside className="pp-toc">
             <span className="pp-toc-label">On this page</span>
+
             <nav>
               <ul className="pp-toc-list">
                 {sections.map((section, index) => (
                   <li key={section.num}>
                     <a
                       href={`#article-${section.num}`}
-                      className={`pp-toc-link ${activeSection === index ? "pp-toc-link--active" : ""}`}
+                      className={`pp-toc-link ${
+                        activeSection === index ? "pp-toc-link--active" : ""
+                      }`}
                     >
                       <span className="pp-toc-num">{section.num}</span>
                       {section.title}
@@ -198,12 +191,14 @@ function PrivacyPolicy() {
                 id={`article-${section.num}`}
                 data-index={index}
                 ref={(el) => (sectionRefs.current[index] = el)}
-                className={`pp-article pp-article--${section.accent}`}
+                className="pp-article"
               >
                 <div className="pp-article-head">
                   <div className="pp-article-icon">{section.icon}</div>
+
                   <h2 className="pp-h2">{section.title}</h2>
                 </div>
+
                 <ul className="pp-article-list">
                   {section.content.map((item, itemIndex) => (
                     <li key={itemIndex} className="pp-article-item">

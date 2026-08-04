@@ -24,6 +24,7 @@ import BlogPage from "../pages/blog/BlogPage";
 import AnnouncementsPage from "../pages/AnnouncementsPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import PrivacyPolicy from "../pages/policies/PrivacyPolicy";
+import TermsConditions from "../pages/policies/TermsConditions";
 import NotFound from "../pages/NotFound";
 
 // Protected
@@ -45,6 +46,7 @@ function AppRoutes() {
         <Route path="/announcements" element={<AnnouncementsPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsConditions />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 
