@@ -309,55 +309,59 @@ function BlogPage() {
 
         {/* Recommended / Related Section */}
         <section className="bp-related">
-          <div className="bp-related-header">
-            <div className="bp-related-accent"></div>
-            <h2 className="bp-related-title">You Might Also Like</h2>
-          </div>
+          <div className="bp-related-wrap">
+            <div className="bp-related-header">
+              <div className="bp-related-accent"></div>
+              <h2 className="bp-related-title">You Might Also Like</h2>
+            </div>
 
-          <div className="bp-related-cards" ref={carouselRef}>
-            {relatedBlogs.map((data) => (
-              <Link
-                key={data.id}
-                to={`/blog/${data.id}`}
-                className="bp-related-card"
+            <div className="bp-related-cards" ref={carouselRef}>
+              {relatedBlogs.map((data) => (
+                <Link
+                  key={data.id}
+                  to={`/blog/${data.id}`}
+                  className="bp-related-card"
+                >
+                  <div className="bp-related-card-img">
+                    <img src={data.image} alt={data.alt} />
+                  </div>
+                  <div className="bp-related-card-body">
+                    <span
+                      className={`bp-card-tag ${CATEGORY_TAG_CLASS[data.category] || "bp-tag-blue"}`}
+                    >
+                      {data.category || "Medicine"}
+                    </span>
+                    <div className="bp-related-card-title">
+                      {data.blogTitle}
+                    </div>
+                    <div className="bp-related-card-desc">
+                      {getExcerpt(data.para)}
+                    </div>
+                    <div className="bp-related-card-meta">
+                      <span>📅 {data.blogDate}</span>
+                      <span className="bp-rc-read">Read →</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <hr className="bp-related-hr" />
+
+            <div className="bp-related-nav-btns">
+              <button
+                className="bp-related-nav-btn"
+                onClick={() => handleScroll("prev")}
               >
-                <div className="bp-related-card-img">
-                  <img src={data.image} alt={data.alt} />
-                </div>
-                <div className="bp-related-card-body">
-                  <span
-                    className={`bp-card-tag ${CATEGORY_TAG_CLASS[data.category] || "bp-tag-blue"}`}
-                  >
-                    {data.category || "Medicine"}
-                  </span>
-                  <div className="bp-related-card-title">{data.blogTitle}</div>
-                  <div className="bp-related-card-desc">
-                    {getExcerpt(data.para)}
-                  </div>
-                  <div className="bp-related-card-meta">
-                    <span>📅 {data.blogDate}</span>
-                    <span className="bp-rc-read">Read →</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <hr className="bp-related-hr" />
-
-          <div className="bp-related-nav-btns">
-            <button
-              className="bp-related-nav-btn"
-              onClick={() => handleScroll("prev")}
-            >
-              ← Previous
-            </button>
-            <button
-              className="bp-related-nav-btn"
-              onClick={() => handleScroll("next")}
-            >
-              Next →
-            </button>
+                ← Previous
+              </button>
+              <button
+                className="bp-related-nav-btn"
+                onClick={() => handleScroll("next")}
+              >
+                Next →
+              </button>
+            </div>
           </div>
         </section>
       </div>
