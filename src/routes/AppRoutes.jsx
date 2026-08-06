@@ -5,6 +5,7 @@ import PublicRoute from "./PublicRoute";
 
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 // Auth
 import Login from "../pages/auth/Login";
@@ -66,15 +67,22 @@ function AppRoutes() {
       </Route>
 
       {/* ================= Protected Route ================= */}
-      <Route
+      {/* <Route
+        path="/dashboard"
         element={
           <ProtectedRoute>
-            <MainLayout />
+            <DashboardLayout />
           </ProtectedRoute>
         }
       >
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/users" element={<Users />} />
+        <Route index element={<Dashboard />} />
+        <Route path="neet-pg" element={<NeetpgPage />} />
+        <Route path="neet-ug" element={<NeetugPage />} />
+      </Route> */}
+
+      <Route path="/dashboard" element={<DashboardLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="neet-pg" element={<NeetpgPage />} />
       </Route>
     </Routes>
   );
