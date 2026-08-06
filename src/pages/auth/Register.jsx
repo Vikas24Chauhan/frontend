@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import Image from "../../assets/images/login_image.webp";
+import "./Register.css";
 
 import { registerUser } from "../../services/authService";
 
@@ -64,70 +66,83 @@ function Register() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Register</h1>
+    <div className="register-section">
+      <div className="register-image">
+        <img src={Image} alt="Register" />
+      </div>
 
-      <br />
+      <div className="register-form">
+        <img
+          src="https://cdn.dribbble.com/userupload/48551110/file/f730ea2ceb0ebb81692e526e355c1c90.png"
+          alt="Logo"
+        />
 
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value={formData.name}
-        onChange={handleChange}
-      />
+        <form onSubmit={handleSubmit}>
+          <h1>Create Account</h1>
 
-      <br />
-      <br />
+          <br />
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-      />
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+          />
 
-      <br />
-      <br />
+          <br />
+          <br />
 
-      <input
-        type="number"
-        name="age"
-        placeholder="Age"
-        value={formData.age}
-        onChange={handleChange}
-      />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
 
-      <br />
-      <br />
+          <br />
+          <br />
 
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={formData.password}
-        onChange={handleChange}
-      />
+          <input
+            type="number"
+            name="age"
+            placeholder="Age"
+            value={formData.age}
+            onChange={handleChange}
+          />
 
-      <br />
-      <br />
+          <br />
+          <br />
 
-      <input
-        type="password"
-        name="confirmPassword"
-        placeholder="Confirm Password"
-        value={formData.confirmPassword}
-        onChange={handleChange}
-      />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+          />
 
-      <br />
-      <br />
+          <br />
+          <br />
 
-      <button type="submit" disabled={loading}>
-        {loading ? "Registering..." : "Register"}
-      </button>
-    </form>
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+          />
+
+          <br />
+          <br />
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Creating Account..." : "Register"}
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
 
