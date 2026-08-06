@@ -13,11 +13,14 @@ import {
 } from "lucide-react";
 import "./TermsConditions.css";
 import Terms from "../../assets/images/terms.svg";
+import SEO from "../../seo/SEO";
+import { pageSEO } from "../../seo/pageSEO";
 
 function TermsConditions() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = useRef([]);
+  const seo = pageSEO["/terms"];
 
   useEffect(() => {
     setIsVisible(true);
@@ -131,98 +134,104 @@ function TermsConditions() {
   ];
 
   return (
-    <div className="tc-page">
-      {/* Hero */}
-      <header className="tc-hero">
-        <div className="tc-hero-blob tc-hero-blob--1" />
-        <div className="tc-hero-blob tc-hero-blob--2" />
-        <div className={`tc-hero-inner ${isVisible ? "tc-is-visible" : ""}`}>
-          <div className="tc-hero-copy">
-            <h1 className="tc-h1">Terms & Conditions</h1>
-            <p className="tc-lead">
-              Clear, fair terms that protect both you and us. Everything you
-              need to know about using our platform, effective from January
-              2025.
-            </p>
-          </div>
+    <div>
+      <SEO {...seo} />
 
-          <div className="tc-hero-img">
-            <img src={Terms} alt="" />
-          </div>
-        </div>
-      </header>
+      <div className="tc-page">
+        {/* Hero */}
+        <header className="tc-hero">
+          <div className="tc-hero-blob tc-hero-blob--1" />
+          <div className="tc-hero-blob tc-hero-blob--2" />
+          <div className={`tc-hero-inner ${isVisible ? "tc-is-visible" : ""}`}>
+            <div className="tc-hero-copy">
+              <h1 className="tc-h1">Terms & Conditions</h1>
+              <p className="tc-lead">
+                Clear, fair terms that protect both you and us. Everything you
+                need to know about using our platform, effective from January
+                2025.
+              </p>
+            </div>
 
-      {/* Trust strip */}
-      <section className="tc-trust">
-        <div className="tc-trust-inner">
-          <div className="tc-trust-card">
-            <Zap className="tc-trust-icon" />
-            <h3 className="tc-trust-title">Always Free</h3>
-            <p className="tc-trust-desc">No hidden costs or surprise charges</p>
+            <div className="tc-hero-img">
+              <img src={Terms} alt="" />
+            </div>
           </div>
-          <div className="tc-trust-card">
-            <Scale className="tc-trust-icon" />
-            <h3 className="tc-trust-title">Fair Terms</h3>
-            <p className="tc-trust-desc">Clear and reasonable conditions</p>
-          </div>
-          <div className="tc-trust-card">
-            <GraduationCap className="tc-trust-icon" />
-            <h3 className="tc-trust-title">Student-First</h3>
-            <p className="tc-trust-desc">
-              Terms designed with students in mind
-            </p>
-          </div>
-        </div>
-      </section>
+        </header>
 
-      {/* Main content: TOC + articles */}
-      <section className="tc-content">
-        <div className="tc-content-inner">
-          <aside className="tc-toc">
-            <span className="tc-toc-label">On this page</span>
-            <nav>
-              <ul className="tc-toc-list">
-                {sections.map((section, index) => (
-                  <li key={section.num}>
-                    <a
-                      href={`#article-${section.num}`}
-                      className={`tc-toc-link ${activeSection === index ? "tc-toc-link--active" : ""}`}
-                    >
-                      <span className="tc-toc-num">{section.num}</span>
-                      {section.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </aside>
+        {/* Trust strip */}
+        <section className="tc-trust">
+          <div className="tc-trust-inner">
+            <div className="tc-trust-card">
+              <Zap className="tc-trust-icon" />
+              <h3 className="tc-trust-title">Always Free</h3>
+              <p className="tc-trust-desc">
+                No hidden costs or surprise charges
+              </p>
+            </div>
+            <div className="tc-trust-card">
+              <Scale className="tc-trust-icon" />
+              <h3 className="tc-trust-title">Fair Terms</h3>
+              <p className="tc-trust-desc">Clear and reasonable conditions</p>
+            </div>
+            <div className="tc-trust-card">
+              <GraduationCap className="tc-trust-icon" />
+              <h3 className="tc-trust-title">Student-First</h3>
+              <p className="tc-trust-desc">
+                Terms designed with students in mind
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className="tc-articles">
-            {sections.map((section, index) => (
-              <article
-                key={section.num}
-                id={`article-${section.num}`}
-                data-index={index}
-                ref={(el) => (sectionRefs.current[index] = el)}
-                className="tc-article"
-              >
-                <div className="tc-article-head">
-                  <div className="tc-article-icon">{section.icon}</div>
-                  <h2 className="tc-h2">{section.title}</h2>
-                </div>
-                <ul className="tc-article-list">
-                  {section.content.map((item, itemIndex) => (
-                    <li key={itemIndex} className="tc-article-item">
-                      <span className="tc-item-marker" />
-                      <span className="tc-para">{item}</span>
+        {/* Main content: TOC + articles */}
+        <section className="tc-content">
+          <div className="tc-content-inner">
+            <aside className="tc-toc">
+              <span className="tc-toc-label">On this page</span>
+              <nav>
+                <ul className="tc-toc-list">
+                  {sections.map((section, index) => (
+                    <li key={section.num}>
+                      <a
+                        href={`#article-${section.num}`}
+                        className={`tc-toc-link ${activeSection === index ? "tc-toc-link--active" : ""}`}
+                      >
+                        <span className="tc-toc-num">{section.num}</span>
+                        {section.title}
+                      </a>
                     </li>
                   ))}
                 </ul>
-              </article>
-            ))}
+              </nav>
+            </aside>
+
+            <div className="tc-articles">
+              {sections.map((section, index) => (
+                <article
+                  key={section.num}
+                  id={`article-${section.num}`}
+                  data-index={index}
+                  ref={(el) => (sectionRefs.current[index] = el)}
+                  className="tc-article"
+                >
+                  <div className="tc-article-head">
+                    <div className="tc-article-icon">{section.icon}</div>
+                    <h2 className="tc-h2">{section.title}</h2>
+                  </div>
+                  <ul className="tc-article-list">
+                    {section.content.map((item, itemIndex) => (
+                      <li key={itemIndex} className="tc-article-item">
+                        <span className="tc-item-marker" />
+                        <span className="tc-para">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

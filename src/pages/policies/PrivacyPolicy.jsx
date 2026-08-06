@@ -10,11 +10,14 @@ import {
 } from "lucide-react";
 import "./PrivacyPolicy.css";
 import PP from "../../assets/images/pp.svg";
+import SEO from "../../seo/SEO";
+import { pageSEO } from "../../seo/pageSEO";
 
 function PrivacyPolicy() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = useRef([]);
+  const seo = pageSEO["/privacy"];
 
   useEffect(() => {
     setIsVisible(true);
@@ -111,107 +114,113 @@ function PrivacyPolicy() {
   ];
 
   return (
-    <div className="pp-page">
-      {/* Hero */}
-      <header className="pp-hero">
-        <div className="pp-hero-blob pp-hero-blob--1" />
-        <div className="pp-hero-blob pp-hero-blob--2" />
+    <div>
+      <SEO {...seo} />
 
-        <div className={`pp-hero-inner ${isVisible ? "pp-is-visible" : ""}`}>
-          <div className="pp-hero-copy">
-            <h1 className="pp-h1">Privacy Policy</h1>
+      <div className="pp-page">
+        {/* Hero */}
+        <header className="pp-hero">
+          <div className="pp-hero-blob pp-hero-blob--1" />
+          <div className="pp-hero-blob pp-hero-blob--2" />
 
-            <p className="pp-lead">
-              This document explains, in plain terms, what information we
-              collect from students preparing for NEET counselling, how we use
-              it, and the rights you hold over it.
-            </p>
+          <div className={`pp-hero-inner ${isVisible ? "pp-is-visible" : ""}`}>
+            <div className="pp-hero-copy">
+              <h1 className="pp-h1">Privacy Policy</h1>
+
+              <p className="pp-lead">
+                This document explains, in plain terms, what information we
+                collect from students preparing for NEET counselling, how we use
+                it, and the rights you hold over it.
+              </p>
+            </div>
+
+            <div className="pp-hero-img">
+              <img src={PP} alt="Privacy Policy" />
+            </div>
           </div>
+        </header>
 
-          <div className="pp-hero-img">
-            <img src={PP} alt="Privacy Policy" />
+        {/* Trust Strip */}
+        <section className="pp-trust">
+          <div className="pp-trust-inner">
+            <div className="pp-trust-card">
+              <CheckCircle className="pp-trust-icon" />
+              <h3 className="pp-trust-title">100% Free</h3>
+              <p className="pp-trust-desc">
+                No hidden charges or premium plans
+              </p>
+            </div>
+
+            <div className="pp-trust-card">
+              <Lock className="pp-trust-icon" />
+              <h3 className="pp-trust-title">Secure</h3>
+              <p className="pp-trust-desc">
+                Your data is encrypted and protected
+              </p>
+            </div>
+
+            <div className="pp-trust-card">
+              <Users className="pp-trust-icon" />
+              <h3 className="pp-trust-title">Confidential</h3>
+              <p className="pp-trust-desc">Never shared without your consent</p>
+            </div>
           </div>
-        </div>
-      </header>
+        </section>
 
-      {/* Trust Strip */}
-      <section className="pp-trust">
-        <div className="pp-trust-inner">
-          <div className="pp-trust-card">
-            <CheckCircle className="pp-trust-icon" />
-            <h3 className="pp-trust-title">100% Free</h3>
-            <p className="pp-trust-desc">No hidden charges or premium plans</p>
-          </div>
+        {/* Content */}
+        <section className="pp-content">
+          <div className="pp-content-inner">
+            <aside className="pp-toc">
+              <span className="pp-toc-label">On this page</span>
 
-          <div className="pp-trust-card">
-            <Lock className="pp-trust-icon" />
-            <h3 className="pp-trust-title">Secure</h3>
-            <p className="pp-trust-desc">
-              Your data is encrypted and protected
-            </p>
-          </div>
-
-          <div className="pp-trust-card">
-            <Users className="pp-trust-icon" />
-            <h3 className="pp-trust-title">Confidential</h3>
-            <p className="pp-trust-desc">Never shared without your consent</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Content */}
-      <section className="pp-content">
-        <div className="pp-content-inner">
-          <aside className="pp-toc">
-            <span className="pp-toc-label">On this page</span>
-
-            <nav>
-              <ul className="pp-toc-list">
-                {sections.map((section, index) => (
-                  <li key={section.num}>
-                    <a
-                      href={`#article-${section.num}`}
-                      className={`pp-toc-link ${
-                        activeSection === index ? "pp-toc-link--active" : ""
-                      }`}
-                    >
-                      <span className="pp-toc-num">{section.num}</span>
-                      {section.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </aside>
-
-          <div className="pp-articles">
-            {sections.map((section, index) => (
-              <article
-                key={section.num}
-                id={`article-${section.num}`}
-                data-index={index}
-                ref={(el) => (sectionRefs.current[index] = el)}
-                className="pp-article"
-              >
-                <div className="pp-article-head">
-                  <div className="pp-article-icon">{section.icon}</div>
-
-                  <h2 className="pp-h2">{section.title}</h2>
-                </div>
-
-                <ul className="pp-article-list">
-                  {section.content.map((item, itemIndex) => (
-                    <li key={itemIndex} className="pp-article-item">
-                      <span className="pp-item-marker" />
-                      <span className="pp-para">{item}</span>
+              <nav>
+                <ul className="pp-toc-list">
+                  {sections.map((section, index) => (
+                    <li key={section.num}>
+                      <a
+                        href={`#article-${section.num}`}
+                        className={`pp-toc-link ${
+                          activeSection === index ? "pp-toc-link--active" : ""
+                        }`}
+                      >
+                        <span className="pp-toc-num">{section.num}</span>
+                        {section.title}
+                      </a>
                     </li>
                   ))}
                 </ul>
-              </article>
-            ))}
+              </nav>
+            </aside>
+
+            <div className="pp-articles">
+              {sections.map((section, index) => (
+                <article
+                  key={section.num}
+                  id={`article-${section.num}`}
+                  data-index={index}
+                  ref={(el) => (sectionRefs.current[index] = el)}
+                  className="pp-article"
+                >
+                  <div className="pp-article-head">
+                    <div className="pp-article-icon">{section.icon}</div>
+
+                    <h2 className="pp-h2">{section.title}</h2>
+                  </div>
+
+                  <ul className="pp-article-list">
+                    {section.content.map((item, itemIndex) => (
+                      <li key={itemIndex} className="pp-article-item">
+                        <span className="pp-item-marker" />
+                        <span className="pp-para">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
