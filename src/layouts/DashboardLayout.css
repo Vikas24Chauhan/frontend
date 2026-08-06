@@ -28,6 +28,11 @@
   flex-shrink: 0;
 }
 
+.dashboard-sidebar h2 {
+  font-size: 28px;
+  color: #0f172a;
+}
+
 .dashboard-sidebar a {
   display: flex;
   align-items: center;
@@ -73,6 +78,10 @@
     overflow-y: hidden;
     padding: 12px;
     gap: 10px;
+  }
+
+  .dashboard-sidebar h2 {
+    font-size: 24px;
   }
 
   .dashboard-sidebar a {

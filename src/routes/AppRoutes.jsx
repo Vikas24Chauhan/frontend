@@ -29,8 +29,9 @@ import TermsConditions from "../pages/policies/TermsConditions";
 import NotFound from "../pages/NotFound";
 
 // Protected
-import Dashboard from "../pages/dashboard/Dashboard";
-import Users from "../pages/users/Users";
+import NeetpgDashboard from "../pages/dashboard/NeetpgDashboard";
+import NeetugDashboard from "../pages/dashboard/NeetugDashboard";
+import InicetDashboard from "../pages/dashboard/InicetDashboard";
 
 function AppRoutes() {
   return (
@@ -75,14 +76,15 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       >
-        <Route index element={<Dashboard />} />
-        <Route path="neet-pg" element={<NeetpgPage />} />
-        <Route path="neet-ug" element={<NeetugPage />} />
+       <Route path="neet-pg" element={<NeetpgDashboard />} />
+        <Route path="neet-ug" element={<NeetugDashboard />} />
+        <Route path="inicet" element={<InicetDashboard />} />
       </Route> */}
 
       <Route path="/dashboard" element={<DashboardLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="neet-pg" element={<NeetpgPage />} />
+        <Route path="neet-pg" element={<NeetpgDashboard />} />
+        <Route path="neet-ug" element={<NeetugDashboard />} />
+        <Route path="inicet" element={<InicetDashboard />} />
       </Route>
     </Routes>
   );

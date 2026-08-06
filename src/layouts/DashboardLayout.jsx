@@ -19,10 +19,7 @@ function DashboardLayout() {
       <div className="dashboard-body">
         {/* Sidebar */}
         <aside className="dashboard-sidebar">
-          <NavLink to="/dashboard" end>
-            <LayoutDashboard size={18} />
-            Dashboard
-          </NavLink>
+          <h2>Dashboard</h2>
 
           <NavLink to="/dashboard/neet-pg">
             <Stethoscope size={18} />
