@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./BlogHome.css";
 import blogData from "../../assets/data/blogData";
-import { Helmet } from "react-helmet";
+import { pageSEO } from "../../seo/pageSEO";
+import SEO from "../../seo/SEO";
 
 const BLOGS_PER_LOAD = 9;
 
@@ -27,6 +28,7 @@ const BlogHome = () => {
   const [visibleCount, setVisibleCount] = useState(BLOGS_PER_LOAD);
   const [activeCategory, setActiveCategory] = useState("All Topics");
   const [searchQuery, setSearchQuery] = useState("");
+  const seo = pageSEO["/blog"];
 
   const latestBlog = blogData[0];
 
@@ -68,13 +70,7 @@ const BlogHome = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Blogs - Believers Consultancy</title>
-        <meta
-          name="description"
-          content="Checkout blog on believersconsultancy to know expert's opinion, latest updates, effective methods of INI CET preparation & counselling strategies."
-        />
-      </Helmet>
+      <SEO {...seo} />
 
       <div className="bh-wrapper">
         {/* Latest Blog Hero */}
@@ -133,7 +129,7 @@ const BlogHome = () => {
           <div className="bh-section-header">
             <div className="bh-section-label">
               <div className="bh-section-accent"></div>
-              <h2 className="bh-section-title">Recent Articles</h2>
+              <h2 className="bh-section-title">Recent Blogs</h2>
               <span className="bh-section-count">
                 {filteredBlogs.length} total
               </span>
@@ -188,7 +184,7 @@ const BlogHome = () => {
         </main>
 
         {/* Newsletter Strip */}
-        <div className="bh-newsletter-strip">
+        {/* <div className="bh-newsletter-strip">
           <div className="bh-newsletter-text">
             <h3>Plan Your Medical Counselling with Confidence</h3>
             <p>
@@ -200,7 +196,7 @@ const BlogHome = () => {
           <NavLink className="bh-newsletter-btn" target="_blank" to="/login">
             Start Free Counselling →
           </NavLink>
-        </div>
+        </div> */}
       </div>
     </>
   );
