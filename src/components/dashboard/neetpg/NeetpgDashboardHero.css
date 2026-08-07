@@ -335,10 +335,7 @@
   color: #f59e0b;
 }
 
-/* ---------- Responsive ---------- */
-
-@media (max-width: 900px) {
-}
+/* -------------------------- Responsive --------------------- */
 
 @media (max-width: 868px) {
   .npgd-hero-title {
