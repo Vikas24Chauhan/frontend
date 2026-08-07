@@ -14,28 +14,24 @@ const CARDS = [
   {
     id: "allotments",
     title: "Allotments",
-    tag: "Round-wise",
     desc: "Track every round of seat allotment as it is released.",
     Icon: FiClipboard,
   },
   {
     id: "closing-ranks",
     title: "Closing Ranks",
-    tag: "College · Course",
     desc: "Compare the last rank admitted, category-wise.",
     Icon: FiTrendingUp,
   },
   {
     id: "seat-matrix",
     title: "Seat Matrix",
-    tag: "All India + State",
     desc: "See how many seats each institute is offering.",
     Icon: FiGrid,
   },
   {
     id: "fee-stipend-bond",
     title: "Fee, Stipend & Bond",
-    tag: "Cost of study",
     desc: "Tuition, monthly stipend and bond terms, side by side.",
     Icon: FiDollarSign,
   },
@@ -236,7 +232,6 @@ function NeetpgDashboardHero() {
               <span className="npgd-hero-card-icon">
                 <card.Icon />
               </span>
-              <span className="npgd-hero-card-tag">{card.tag}</span>
               <span className="npgd-hero-card-title">{card.title}</span>
               <span className="npgd-hero-card-desc">{card.desc}</span>
               <span className="npgd-hero-card-cta">
