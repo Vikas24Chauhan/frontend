@@ -10,20 +10,10 @@ import {
   FiList,
   FiHome,
   FiExternalLink,
+  FiAlertCircle,
 } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
-
-/* ------------------------------------------------------------------ */
-/* Content — exactly as provided, not reworded                        */
-/* ------------------------------------------------------------------ */
-
-const TIMELINE_ITEMS = [
-  { title: "Registration", status: "Started", details: "MCC Portal Open" },
-  { title: "Round 1", status: "Coming Soon", details: "Choice Filling" },
-  { title: "Seat Allotment", status: "Round 1", details: "Result Declaration" },
-  { title: "Joining", status: "Round 1", details: "Documentation" },
-];
 
 const RESULT_STEPS = [
   "Visit the official NBE website – https://nbe.edu.in/",
@@ -46,48 +36,61 @@ const SPECIALTIES = [
   { specialty: "Pathology", seats: "1,000+", demand: "Moderate" },
 ];
 
-const REGISTRATION_PHASE = [
+/* Single continuous journey: registration -> choice filling -> seat allotment.
+   Grouped by phase, but rendered as one connected timeline since the
+   steps genuinely happen in this order, one after another. */
+const JOURNEY = [
   {
-    title: "Register on MCC Portal",
-    details: ["Create an account with your NEET PG credentials."],
-    Icon: FiUser,
+    phase: "Registration Phase",
+    steps: [
+      {
+        title: "Register on MCC Portal",
+        details: ["Create an account with your NEET PG credentials."],
+        Icon: FiUser,
+        marker: "primary",
+      },
+      {
+        title: "Pay Registration Fee",
+        details: ["₹5,000 for AIQ.", "₹2,000 for Deemed Universities."],
+        Icon: FiCreditCard,
+        marker: "primary",
+      },
+      {
+        title: "Upload Documents",
+        details: ["Upload all required certificates and documents."],
+        Icon: FiUpload,
+        marker: "primary",
+      },
+    ],
   },
   {
-    title: "Pay Registration Fee",
-    details: ["₹5,000 for AIQ.", "₹2,000 for Deemed Universities."],
-    Icon: FiCreditCard,
-  },
-  {
-    title: "Upload Documents",
-    details: ["Upload all required certificates and documents."],
-    Icon: FiUpload,
+    phase: "Choice Filling & Seat Allotment",
+    steps: [
+      {
+        title: "Fill Choices",
+        details: [
+          "Select colleges and specialties according to your preference.",
+        ],
+        Icon: FiList,
+        marker: "secondary",
+      },
+      {
+        title: "Seat Allotment",
+        details: [
+          "Seats are allotted by MCC based on rank and submitted choices.",
+        ],
+        Icon: FiCheckCircle,
+        marker: "secondary",
+      },
+      {
+        title: "Report to College",
+        details: ["Complete admission formalities at the allotted college."],
+        Icon: FiHome,
+        marker: "cta",
+      },
+    ],
   },
 ];
-
-const CHOICE_PHASE = [
-  {
-    title: "Fill Choices",
-    details: ["Select colleges and specialties according to your preference."],
-    Icon: FiList,
-  },
-  {
-    title: "Seat Allotment",
-    details: ["Seats are allotted by MCC based on rank and submitted choices."],
-    Icon: FiCheckCircle,
-  },
-  {
-    title: "Report to College",
-    details: ["Complete admission formalities at the allotted college."],
-    Icon: FiHome,
-  },
-];
-
-/* status → visual class (Started / Coming Soon / Round 1) */
-const STATUS_CLASS = {
-  Started: "npgd-info-status-started",
-  "Coming Soon": "npgd-info-status-soon",
-  "Round 1": "npgd-info-status-round",
-};
 
 /* demand → visual class (Very High / High / Rising / Moderate) */
 const DEMAND_CLASS = {
@@ -95,6 +98,12 @@ const DEMAND_CLASS = {
   High: "npgd-info-demand-high",
   Rising: "npgd-info-demand-rising",
   Moderate: "npgd-info-demand-moderate",
+};
+
+const MARKER_CLASS = {
+  primary: "npgd-info-timeline-marker-primary",
+  secondary: "npgd-info-timeline-marker-secondary",
+  cta: "npgd-info-timeline-marker-cta",
 };
 
 /* Renders a step's text, turning a bare URL inside it into a real link
@@ -144,26 +153,18 @@ function NeetpgCounsellingInfo() {
         });
       });
 
-      // Timeline connector line draws in as the timeline scrolls into view
-      const line = rootRef.current.querySelector(
-        ".npgd-info-timeline-line-fill",
-      );
-      if (line) {
-        gsap.fromTo(
-          line,
-          { scaleY: 0 },
-          {
-            scaleY: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: ".npgd-info-timeline",
-              start: "top 75%",
-              end: "bottom 60%",
-              scrub: 0.6,
-            },
-          },
-        );
-      }
+      // Ticket steps stagger in
+      gsap.from(".npgd-info-step", {
+        opacity: 0,
+        x: -14,
+        duration: 0.45,
+        stagger: 0.07,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".npgd-info-ticket",
+          start: "top 80%",
+        },
+      });
 
       // Table rows stagger in
       gsap.from(".npgd-info-table tbody tr", {
@@ -177,6 +178,26 @@ function NeetpgCounsellingInfo() {
           start: "top 80%",
         },
       });
+
+      // Timeline connector lines draw in + nodes pop as they scroll into view
+      gsap.utils.toArray(".npgd-info-timeline-node").forEach((node) => {
+        gsap.from(
+          node.querySelectorAll(
+            ".npgd-info-timeline-marker, .npgd-info-timeline-card",
+          ),
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.5,
+            ease: "power3.out",
+            stagger: 0.08,
+            scrollTrigger: {
+              trigger: node,
+              start: "top 85%",
+            },
+          },
+        );
+      });
     }, rootRef);
 
     return () => ctx.revert();
@@ -184,145 +205,127 @@ function NeetpgCounsellingInfo() {
 
   return (
     <div className="npgd-info-root" ref={rootRef}>
-      {/* ---------------- Section 1: Timeline ---------------- */}
-      <section className="npgd-info-section npgd-info-timeline-section">
-        <h2 className="npgd-info-heading npgd-info-reveal">
-          NEET PG 2025 Counselling Timeline
-        </h2>
-        <p className="npgd-info-para npgd-info-reveal">
-          Important dates and events for NEET PG 2025 counselling process.
-        </p>
-
-        <div className="npgd-info-timeline">
-          <span className="npgd-info-timeline-line">
-            <span className="npgd-info-timeline-line-fill" />
+      <section className="npgd-info-section npgd-info-bg-light npgd-info-results-section">
+        <div className="npgd-info-section-inner">
+          <span className="npgd-info-eyebrow npgd-info-reveal">
+            <span className="npgd-info-eyebrow-dot" />
+            Results Declared
           </span>
+          <h2 className="npgd-info-heading npgd-info-reveal">
+            How to Check NEET PG 2025 Results?
+          </h2>
+          <p className="npgd-info-para npgd-info-reveal">
+            Follow these steps to check your NEET PG 2025 results and download
+            your scorecard.
+          </p>
 
-          {TIMELINE_ITEMS.map((item) => (
-            <div
-              className="npgd-info-timeline-item npgd-info-reveal"
-              key={item.title}
-            >
-              <span className="npgd-info-timeline-dot" />
-              <div className="npgd-info-timeline-card">
-                <div className="npgd-info-timeline-head">
-                  <h3 className="npgd-info-timeline-title">{item.title}</h3>
-                  <span
-                    className={`npgd-info-status-badge ${STATUS_CLASS[item.status] || ""}`}
-                  >
-                    {item.status}
+          <div className="npgd-info-ticket npgd-info-reveal">
+            <ol className="npgd-info-steps">
+              {RESULT_STEPS.map((step, i) => (
+                <li className="npgd-info-step" key={i}>
+                  <span className="npgd-info-step-num">{i + 1}</span>
+                  <span className="npgd-info-step-text">
+                    <StepText text={step} />
                   </span>
-                </div>
-                <p className="npgd-info-timeline-details">{item.details}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ---------------- Section 2: How to check results ---------------- */}
-      <section className="npgd-info-section npgd-info-results-section">
-        <h2 className="npgd-info-heading npgd-info-reveal">
-          How to Check NEET PG 2025 Results?
-        </h2>
-        <p className="npgd-info-para npgd-info-reveal">
-          Follow these steps to check your NEET PG 2025 results and download
-          your scorecard.
-        </p>
-
-        <ol className="npgd-info-steps">
-          {RESULT_STEPS.map((step, i) => (
-            <li className="npgd-info-step npgd-info-reveal" key={i}>
-              <span className="npgd-info-step-num">{i + 1}</span>
-              <span className="npgd-info-step-text">
-                <StepText text={step} />
-              </span>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* ---------------- Section 3: Popular specialties ---------------- */}
-      <section className="npgd-info-section npgd-info-specialties-section">
-        <h2 className="npgd-info-heading npgd-info-reveal">
-          Popular NEET PG 2025 Specialties
-        </h2>
-        <p className="npgd-info-para npgd-info-reveal">
-          Top specialties with highest demand and career opportunities.
-        </p>
-
-        <div className="npgd-info-table-wrap npgd-info-reveal">
-          <table className="npgd-info-table">
-            <thead>
-              <tr>
-                <th>Specialty</th>
-                <th>Seats</th>
-                <th>Demand</th>
-              </tr>
-            </thead>
-            <tbody>
-              {SPECIALTIES.map((row) => (
-                <tr key={row.specialty}>
-                  <td>{row.specialty}</td>
-                  <td>{row.seats}</td>
-                  <td>
-                    <span
-                      className={`npgd-info-demand-badge ${DEMAND_CLASS[row.demand] || ""}`}
-                    >
-                      {row.demand}
-                    </span>
-                  </td>
-                </tr>
+                </li>
               ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* ---------------- Section 4: Counselling process ---------------- */}
-      <section className="npgd-info-section npgd-info-process-section">
-        <h2 className="npgd-info-heading npgd-info-reveal">
-          NEET PG 2025 Counselling Process
-        </h2>
-        <p className="npgd-info-para npgd-info-reveal">
-          Complete step-by-step guide for NEET PG 2025 counselling registration.
-        </p>
-
-        <div className="npgd-info-phase npgd-info-reveal">
-          <h3 className="npgd-info-phase-title">Registration Phase</h3>
-          <div className="npgd-info-phase-grid">
-            {REGISTRATION_PHASE.map((step) => (
-              <div className="npgd-info-phase-step" key={step.title}>
-                <span className="npgd-info-phase-icon">
-                  <step.Icon />
-                </span>
-                <h4 className="npgd-info-phase-step-title">{step.title}</h4>
-                {step.details.map((d, i) => (
-                  <p className="npgd-info-phase-step-desc" key={i}>
-                    {d}
-                  </p>
-                ))}
-              </div>
-            ))}
+            </ol>
+            <div className="npgd-info-ticket-foot">
+              <FiAlertCircle />
+              <span>
+                <strong>Keep it safe:</strong> your scorecard is required again
+                during MCC counselling registration.
+              </span>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="npgd-info-phase npgd-info-reveal">
-          <h3 className="npgd-info-phase-title">
-            Choice Filling &amp; Seat Allotment
-          </h3>
-          <div className="npgd-info-phase-grid">
-            {CHOICE_PHASE.map((step) => (
-              <div className="npgd-info-phase-step" key={step.title}>
-                <span className="npgd-info-phase-icon">
-                  <step.Icon />
-                </span>
-                <h4 className="npgd-info-phase-step-title">{step.title}</h4>
-                {step.details.map((d, i) => (
-                  <p className="npgd-info-phase-step-desc" key={i}>
-                    {d}
-                  </p>
+      <section className="npgd-info-section npgd-info-bg-white npgd-info-specialties-section">
+        <div className="npgd-info-section-inner">
+          <span className="npgd-info-eyebrow npgd-info-reveal">
+            <span className="npgd-info-eyebrow-dot" />
+            Choose Wisely
+          </span>
+          <h2 className="npgd-info-heading npgd-info-reveal">
+            Popular NEET PG 2025 Specialties
+          </h2>
+          <p className="npgd-info-para npgd-info-reveal">
+            Top specialties with highest demand and career opportunities.
+          </p>
+
+          <div className="npgd-info-table-wrap npgd-info-reveal">
+            <table className="npgd-info-table">
+              <thead>
+                <tr>
+                  <th>Specialty</th>
+                  <th>Seats</th>
+                  <th>Demand</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SPECIALTIES.map((row) => (
+                  <tr key={row.specialty}>
+                    <td>{row.specialty}</td>
+                    <td>
+                      <span className="npgd-info-seat-count">{row.seats}</span>
+                    </td>
+                    <td>
+                      <span
+                        className={`npgd-info-demand-badge ${DEMAND_CLASS[row.demand] || ""}`}
+                      >
+                        {row.demand}
+                      </span>
+                    </td>
+                  </tr>
                 ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section className="npgd-info-section npgd-info-bg-light npgd-info-process-section">
+        <div className="npgd-info-section-inner">
+          <span className="npgd-info-eyebrow npgd-info-reveal">
+            <span className="npgd-info-eyebrow-dot" />
+            Your Path to Admission
+          </span>
+          <h2 className="npgd-info-heading npgd-info-reveal">
+            NEET PG 2025 Counselling Process
+          </h2>
+          <p className="npgd-info-para npgd-info-reveal">
+            Complete step-by-step guide for NEET PG 2025 counselling
+            registration.
+          </p>
+
+          <div className="npgd-info-timeline npgd-info-reveal">
+            {JOURNEY.map((block) => (
+              <div className="npgd-info-phase-block" key={block.phase}>
+                <h3 className="npgd-info-timeline-phase-label">
+                  {block.phase}
+                </h3>
+                <div className="npgd-info-timeline-track">
+                  {block.steps.map((step) => (
+                    <div className="npgd-info-timeline-node" key={step.title}>
+                      <span
+                        className={`npgd-info-timeline-marker ${MARKER_CLASS[step.marker]}`}
+                      >
+                        <step.Icon />
+                      </span>
+                      <div className="npgd-info-timeline-card">
+                        <h4 className="npgd-info-timeline-step-title">
+                          {step.title}
+                        </h4>
+                        {step.details.map((d, i) => (
+                          <p className="npgd-info-timeline-step-desc" key={i}>
+                            {d}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
