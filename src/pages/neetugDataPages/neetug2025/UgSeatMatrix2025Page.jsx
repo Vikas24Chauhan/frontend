@@ -628,9 +628,7 @@ const UgSeatMatrix2025Page = () => {
 
         {dataError && (
           <div className="ug25-sm-error-banner">
-            ⚠️ Data file not found. Add{" "}
-            <code>/data/neetug/ug_seat_matrix_2025.csv</code> to enable this
-            page.
+            ⚠️ Data not found. Check the data Place.
           </div>
         )}
 

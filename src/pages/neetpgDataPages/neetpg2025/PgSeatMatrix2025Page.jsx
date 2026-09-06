@@ -542,9 +542,7 @@ const PgSeatMatrix2025Page = () => {
 
         {dataError && (
           <div className="pg25-sm-error-banner">
-            ⚠️ Data file not found. Add{" "}
-            <code>/data/neetpg/pg_seat_matrix_2025.csv</code> to enable this
-            page.
+            ⚠️ Data not found. Check the data Place.{" "}
           </div>
         )}
 

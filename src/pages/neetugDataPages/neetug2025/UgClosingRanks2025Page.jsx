@@ -477,9 +477,7 @@ const UgClosingRanks2025Page = () => {
 
         {dataError && (
           <div className="ug25-cr-error-banner">
-            ⚠️ Data not found. Add{" "}
-            <code>/data/neetug/ug_closing_ranks_2025.csv</code> to enable this
-            page.
+            ⚠️ Data not found. Check the data Place.{" "}
           </div>
         )}
 
@@ -631,7 +629,7 @@ const UgClosingRanks2025Page = () => {
                     className="ug25-cr-table-empty"
                   >
                     {dataError
-                      ? "CSV not found — add /data/neetug/ug_closing_ranks_2025.csv."
+                      ? "Unable to load the data. Please refresh the page and try again."
                       : "No records found for the selected filters."}
                   </td>
                 </tr>

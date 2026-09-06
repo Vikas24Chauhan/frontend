@@ -480,9 +480,7 @@ const PgClosingRanks2025Page = () => {
 
         {dataError && (
           <div className="pg25-cr-error-banner">
-            ⚠️ Data not found. Add{" "}
-            <code>/data/neetpg/pg_closing_ranks_2025.csv</code> to enable this
-            page.
+            ⚠️ Data not found. Check the data Place.{" "}
           </div>
         )}
 
@@ -633,7 +631,7 @@ const PgClosingRanks2025Page = () => {
                     className="pg25-cr-table-empty"
                   >
                     {dataError
-                      ? "CSV not found — add /data/neetpg/pg_closing_ranks_2025.csv."
+                      ? "Unable to load the data. Please refresh the page and try again."
                       : "No records found for the selected filters."}
                   </td>
                 </tr>
