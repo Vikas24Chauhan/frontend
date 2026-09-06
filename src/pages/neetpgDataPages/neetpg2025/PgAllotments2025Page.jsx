@@ -13,6 +13,9 @@ import {
 } from "lucide-react";
 import "./PgAllotments2025Page.css";
 
+const API_URL = "https://node-mysql-661s.onrender.com/allotments/pg/2025";
+// const API_URL = "http://localhost:5000/allotments/pg/2025";
+
 const COL_DEFS = [
   { key: "Round", label: "Round" },
   { key: "AI Rank", label: "AI Rank" },
@@ -44,8 +47,9 @@ const DEFAULT_VIS = {
 const CustomSelect = ({ value, onChange, options, allLabel }) => {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
+
   const filtered = options.filter((opt) =>
-    opt.toLowerCase().includes(search.toLowerCase()),
+    String(opt).toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
@@ -58,13 +62,18 @@ const CustomSelect = ({ value, onChange, options, allLabel }) => {
         <span className="pg25-al-cs-button-label">
           {value === "all" ? allLabel : value}
         </span>
+
         <ChevronDown
-          className={`pg25-al-cs-chevron ${open ? "pg25-al-cs-chevron-open" : ""}`}
+          className={`pg25-al-cs-chevron ${
+            open ? "pg25-al-cs-chevron-open" : ""
+          }`}
         />
       </button>
+
       {open && (
         <>
           <div className="pg25-al-cs-overlay" onClick={() => setOpen(false)} />
+
           <div className="pg25-al-cs-dropdown">
             <input
               type="text"
@@ -74,21 +83,28 @@ const CustomSelect = ({ value, onChange, options, allLabel }) => {
               onClick={(e) => e.stopPropagation()}
               className="pg25-al-cs-search-input"
             />
+
             <div className="pg25-al-cs-options-list">
               {filtered.map((opt) => (
                 <button
                   type="button"
-                  key={opt}
+                  key={String(opt)}
                   onClick={() => {
                     onChange(opt);
                     setSearch("");
                     setOpen(false);
                   }}
-                  className={`pg25-al-cs-option ${value === opt ? "pg25-al-cs-option-selected" : ""}`}
+                  className={`pg25-al-cs-option ${
+                    value === opt ? "pg25-al-cs-option-selected" : ""
+                  }`}
                 >
                   {opt === "all" ? allLabel : opt}
                 </button>
               ))}
+
+              {filtered.length === 0 && (
+                <div className="pg25-al-cs-option">No options found</div>
+              )}
             </div>
           </div>
         </>
@@ -98,12 +114,15 @@ const CustomSelect = ({ value, onChange, options, allLabel }) => {
 };
 
 const RankCell = ({ val }) => {
-  if (!val || val === "-" || val === "")
+  if (val === null || val === undefined || val === "-" || val === "") {
     return <span className="pg25-al-rank-empty">—</span>;
+  }
 
-  const digits = val.match(/\d+/);
-  const rank = digits ? parseInt(digits[0], 10) : NaN;
-  if (isNaN(rank)) return <span className="pg25-al-rank-empty">—</span>;
+  const rank = Number(val);
+
+  if (Number.isNaN(rank)) {
+    return <span className="pg25-al-rank-empty">—</span>;
+  }
 
   const tier =
     rank <= 100
@@ -116,57 +135,120 @@ const RankCell = ({ val }) => {
             ? "pg25-al-rank-tier-4"
             : "pg25-al-rank-tier-5";
 
-  return <span className={`pg25-al-rank-value ${tier}`}>{val}</span>;
+  return (
+    <span className={`pg25-al-rank-value ${tier}`}>
+      {rank.toLocaleString("en-IN")}
+    </span>
+  );
 };
 
 const formatCurrency = (val) => {
-  if (!val || val === "-" || val === "") return "—";
-  const numeric = Number(String(val).replace(/[^0-9.]/g, ""));
-  if (!numeric || Number.isNaN(numeric)) return val;
+  if (val === null || val === undefined || val === "" || val === "-") {
+    return "—";
+  }
+
+  const numeric = Number(val);
+
+  if (Number.isNaN(numeric)) {
+    return val;
+  }
+
   return `₹${numeric.toLocaleString("en-IN")}`;
 };
 
 const formatBondYrs = (val) => {
-  if (!val || val === "-" || val === "") return "—";
-  const numeric = Number(String(val).replace(/[^0-9.]/g, ""));
-  if (!numeric || Number.isNaN(numeric)) return val;
+  if (val === null || val === undefined || val === "" || val === "-") {
+    return "—";
+  }
+
+  const numeric = Number(val);
+
+  if (Number.isNaN(numeric)) {
+    return val;
+  }
+
   return `${numeric} yrs`;
 };
 
 const categoryBadgeClass = (category) => {
-  if (category === "UR" || category === "GEN" || category === "Open")
+  if (category === "UR" || category === "GEN" || category === "Open") {
     return "pg25-al-badge-cat-gray";
-  if (category === "OBC") return "pg25-al-badge-cat-yellow";
-  if (category === "SC") return "pg25-al-badge-cat-red";
-  if (category === "ST") return "pg25-al-badge-cat-blue";
-  if (category === "EWS") return "pg25-al-badge-cat-green";
+  }
+
+  if (category === "OBC") {
+    return "pg25-al-badge-cat-yellow";
+  }
+
+  if (category === "SC") {
+    return "pg25-al-badge-cat-red";
+  }
+
+  if (category === "ST") {
+    return "pg25-al-badge-cat-blue";
+  }
+
+  if (category === "EWS") {
+    return "pg25-al-badge-cat-green";
+  }
+
   return "pg25-al-badge-cat-purple";
 };
 
 const PgAllotments2025Page = () => {
   const navigate = useNavigate();
+
   const [data, setData] = useState([]);
+
   const [loading, setLoading] = useState(true);
   const [dataError, setDataError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [searchTerm, setSearchTerm] = useState("");
+
   const [selState, setSelState] = useState("all");
   const [selQuota, setSelQuota] = useState("all");
   const [selCategory, setSelCategory] = useState("all");
   const [selCourse, setSelCourse] = useState("all");
   const [selRound, setSelRound] = useState("all");
+
   const [minRank, setMinRank] = useState("");
   const [maxRank, setMaxRank] = useState("");
+
   const [showAdv, setShowAdv] = useState(false);
   const [showColModal, setShowColModal] = useState(false);
+
   const [colVis, setColVis] = useState(DEFAULT_VIS);
+
   const [page, setPage] = useState(1);
+
+  const [pagination, setPagination] = useState({
+    page: 1,
+    limit: 50,
+    total: 0,
+    totalPages: 1,
+    hasNextPage: false,
+    hasPreviousPage: false,
+  });
 
   const PER_PAGE = 50;
 
   const toggleCol = (key) =>
-    setColVis((prev) => ({ ...prev, [key]: !prev[key] }));
+    setColVis((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+
   const showAll = () =>
-    setColVis(COL_DEFS.reduce((acc, { key }) => ({ ...acc, [key]: true }), {}));
+    setColVis(
+      COL_DEFS.reduce(
+        (acc, { key }) => ({
+          ...acc,
+          [key]: true,
+        }),
+        {},
+      ),
+    );
+
   const hideAll = () =>
     setColVis(
       COL_DEFS.reduce(
@@ -178,102 +260,167 @@ const PgAllotments2025Page = () => {
       ),
     );
 
-  const FIELD_MAP = {
-    ROUND: "Round",
-    "AI RANK": "AI Rank",
-    STATE: "State",
-    INSTITUTE: "Institute",
-    COURSE: "Course",
-    QUOTA: "Quota",
-    CATEGORY: "Category",
-    FEE: "Fee",
-    STIPEND: "Stipend",
-    "BOND YRS": "Bond Yrs",
-    BEDS: "Beds",
-  };
-
-  const parseCSV = (text) => {
-    const clean = text.replace(/^\uFEFF/, "");
-    if (clean.includes("<html") || clean.includes("<!DOCTYPE"))
-      throw new Error("Invalid CSV");
-    const lines = clean.trim().split(/\r?\n/).filter(Boolean);
-    if (lines.length < 2) throw new Error("No data");
-
-    const header = lines[0]
-      .split(",")
-      .map((h) => h.trim().replace(/^"|"$/g, ""))
-      .map((h) => FIELD_MAP[h.toUpperCase()] || h);
-
-    return lines.slice(1).map((line) => {
-      const values = [];
-      let current = "";
-      let inQuotes = false;
-
-      for (let i = 0; i < line.length; i++) {
-        const ch = line[i];
-        if (ch === '"') {
-          if (inQuotes && line[i + 1] === '"') {
-            current += '"';
-            i += 1;
-          } else {
-            inQuotes = !inQuotes;
-          }
-        } else if (ch === "," && !inQuotes) {
-          values.push(current.trim());
-          current = "";
-        } else {
-          current += ch;
-        }
-      }
-      values.push(current.trim());
-
-      const row = header.reduce((acc, key, index) => {
-        acc[key] = values[index]
-          ? values[index].replace(/^"|"$/g, "").trim()
-          : "";
-        return acc;
-      }, {});
-
-      return {
-        Round: row.Round || "",
-        "AI Rank": row["AI Rank"] || "",
-        State: row.State || "",
-        Institute: row.Institute || "",
-        Course: row.Course || "",
-        Quota: row.Quota || "",
-        Category: row.Category || "",
-        Fee: row.Fee || "",
-        Stipend: row.Stipend || "",
-        "Bond Yrs": row["Bond Yrs"] || "",
-        Beds: row.Beds || "",
-      };
-    });
-  };
+  /*
+   * ==========================================
+   * FETCH DATA FROM POSTGRESQL API
+   * ==========================================
+   */
 
   useEffect(() => {
-    fetch("/data/neetpg/pg_allotments_2025.csv")
-      .then((res) => {
-        if (!res.ok) throw new Error("Fetch failed");
-        return res.text();
-      })
-      .then((text) => {
-        setData(parseCSV(text));
-        setDataError(false);
-      })
-      .catch(() => {
-        setDataError(true);
-        setData([]);
-      })
-      .finally(() => setLoading(false));
-  }, []);
+    const controller = new AbortController();
 
-  const rounds = useMemo(
-    () =>
-      Array.from(
-        new Set(data.map((item) => item.Round).filter(Boolean)),
-      ).sort(),
-    [data],
-  );
+    const fetchAllotments = async () => {
+      try {
+        setLoading(true);
+        setDataError(false);
+        setErrorMessage("");
+
+        const params = new URLSearchParams();
+
+        params.set("page", page);
+        params.set("limit", PER_PAGE);
+
+        if (selRound !== "all") {
+          params.set("round", selRound);
+        }
+
+        if (selState !== "all") {
+          params.set("state", selState);
+        }
+
+        if (selQuota !== "all") {
+          params.set("quota", selQuota);
+        }
+
+        if (selCategory !== "all") {
+          params.set("category", selCategory);
+        }
+
+        if (selCourse !== "all") {
+          params.set("course", selCourse);
+        }
+
+        if (minRank !== "") {
+          params.set("rankFrom", minRank);
+        }
+
+        if (maxRank !== "") {
+          params.set("rankTo", maxRank);
+        }
+
+        if (searchTerm.trim()) {
+          params.set("search", searchTerm.trim());
+        }
+
+        const response = await fetch(`${API_URL}?${params.toString()}`, {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          throw new Error(`API request failed with status ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (!result.success) {
+          throw new Error(result.message || "Failed to fetch allotments");
+        }
+
+        /*
+         * Convert PostgreSQL API fields
+         * into the fields used by your existing UI.
+         */
+
+        const formattedData = (result.data || []).map((item) => ({
+          id: item.id,
+
+          Round: item.round ?? "",
+          "AI Rank": item.ai_rank ?? "",
+
+          State: item.state ?? "",
+          Institute: item.institute ?? "",
+          Course: item.course ?? "",
+          Quota: item.quota ?? "",
+          Category: item.category ?? "",
+
+          Fee: item.fee ?? "",
+          Stipend: item.stipend ?? "",
+
+          "Bond Yrs": item.bond_years ?? "",
+          Beds: item.beds ?? "",
+        }));
+
+        setData(formattedData);
+
+        setPagination(
+          result.pagination || {
+            page,
+            limit: PER_PAGE,
+            total: formattedData.length,
+            totalPages: 1,
+            hasNextPage: false,
+            hasPreviousPage: false,
+          },
+        );
+
+        setDataError(false);
+      } catch (error) {
+        if (error.name === "AbortError") {
+          return;
+        }
+
+        console.error("PG 2025 API Error:", error);
+
+        setData([]);
+        setDataError(true);
+        setErrorMessage(error.message || "Unable to load data");
+      } finally {
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchAllotments();
+
+    return () => controller.abort();
+  }, [
+    page,
+    searchTerm,
+    selRound,
+    selState,
+    selQuota,
+    selCategory,
+    selCourse,
+    minRank,
+    maxRank,
+  ]);
+
+  /*
+   * ==========================================
+   * FILTER OPTIONS
+   * ==========================================
+   *
+   * These options are generated from the
+   * currently loaded API data.
+   */
+
+  const rounds = useMemo(() => {
+    return Array.from(
+      new Set(
+        data
+          .map((item) => item.Round)
+          .filter(
+            (value) => value !== null && value !== undefined && value !== "",
+          ),
+      ),
+    ).sort((a, b) => Number(a) - Number(b));
+  }, [data]);
+
   const states = useMemo(
     () => [
       "all",
@@ -283,6 +430,7 @@ const PgAllotments2025Page = () => {
     ],
     [data],
   );
+
   const quotas = useMemo(
     () => [
       "all",
@@ -292,6 +440,7 @@ const PgAllotments2025Page = () => {
     ],
     [data],
   );
+
   const categories = useMemo(
     () => [
       "all",
@@ -301,6 +450,7 @@ const PgAllotments2025Page = () => {
     ],
     [data],
   );
+
   const courses = useMemo(
     () => [
       "all",
@@ -311,42 +461,11 @@ const PgAllotments2025Page = () => {
     [data],
   );
 
-  const filtered = useMemo(() => {
-    const search = searchTerm.trim().toLowerCase();
-    return data.filter((item) => {
-      if (selRound !== "all" && item.Round !== selRound) return false;
-      if (selState !== "all" && item.State !== selState) return false;
-      if (selQuota !== "all" && item.Quota !== selQuota) return false;
-      if (selCategory !== "all" && item.Category !== selCategory) return false;
-      if (selCourse !== "all" && item.Course !== selCourse) return false;
-
-      if (minRank || maxRank) {
-        const digits = item["AI Rank"]?.match(/\d+/);
-        const rank = digits ? parseInt(digits[0], 10) : null;
-        if (rank === null) return false;
-        if (minRank && rank < parseFloat(minRank)) return false;
-        if (maxRank && rank > parseFloat(maxRank)) return false;
-      }
-
-      if (search) {
-        const haystack =
-          `${item.Institute} ${item.Course} ${item.State} ${item.Quota} ${item.Category}`.toLowerCase();
-        if (!haystack.includes(search)) return false;
-      }
-
-      return true;
-    });
-  }, [
-    data,
-    selRound,
-    selState,
-    selQuota,
-    selCategory,
-    selCourse,
-    minRank,
-    maxRank,
-    searchTerm,
-  ]);
+  /*
+   * ==========================================
+   * PAGE RESET WHEN FILTER CHANGES
+   * ==========================================
+   */
 
   useEffect(() => {
     setPage(1);
@@ -361,25 +480,50 @@ const PgAllotments2025Page = () => {
     maxRank,
   ]);
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
-  const paged = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+  /*
+   * ==========================================
+   * SERVER PAGINATION
+   * ==========================================
+   */
+
+  const totalRecords = pagination.total || 0;
+
+  const totalPages = Math.max(1, pagination.totalPages || 1);
+
+  const paged = data;
+
+  /*
+   * ==========================================
+   * CLEAR FILTERS
+   * ==========================================
+   */
 
   const clearAll = () => {
     setSearchTerm("");
+
     setSelRound("all");
     setSelState("all");
     setSelQuota("all");
     setSelCategory("all");
     setSelCourse("all");
+
     setMinRank("");
     setMaxRank("");
+
     setColVis(DEFAULT_VIS);
+
     setPage(1);
   };
 
   const visibleCols = COL_DEFS.filter(({ key }) => colVis[key]);
 
-  if (loading)
+  /*
+   * ==========================================
+   * LOADING
+   * ==========================================
+   */
+
+  if (loading && data.length === 0) {
     return (
       <div className="pg25-al-loading-screen">
         <div className="pg25-al-loading-box">
@@ -388,6 +532,7 @@ const PgAllotments2025Page = () => {
         </div>
       </div>
     );
+  }
 
   return (
     <div className="pg25-al-page-root">
@@ -396,6 +541,7 @@ const PgAllotments2025Page = () => {
           <div className="pg25-al-modal-box">
             <div className="pg25-al-modal-header">
               <h3>Show / Hide Columns</h3>
+
               <button
                 type="button"
                 onClick={() => setShowColModal(false)}
@@ -404,6 +550,7 @@ const PgAllotments2025Page = () => {
                 <X />
               </button>
             </div>
+
             <div className="pg25-al-modal-body">
               <div className="pg25-al-modal-actions">
                 <button
@@ -413,6 +560,7 @@ const PgAllotments2025Page = () => {
                 >
                   Show All
                 </button>
+
                 <button
                   type="button"
                   onClick={hideAll}
@@ -421,6 +569,7 @@ const PgAllotments2025Page = () => {
                   Hide All
                 </button>
               </div>
+
               {[
                 {
                   label: "Basic Info",
@@ -430,11 +579,18 @@ const PgAllotments2025Page = () => {
                   label: "Rank & Category",
                   keys: ["AI Rank", "Quota", "Category"],
                 },
-                { label: "Fee & Stipend", keys: ["Fee", "Stipend"] },
-                { label: "Other", keys: ["Bond Yrs", "Beds"] },
+                {
+                  label: "Fee & Stipend",
+                  keys: ["Fee", "Stipend"],
+                },
+                {
+                  label: "Other",
+                  keys: ["Bond Yrs", "Beds"],
+                },
               ].map((group) => (
                 <div key={group.label} className="pg25-al-col-group">
                   <p className="pg25-al-col-group-label">{group.label}</p>
+
                   {group.keys.map((key) => (
                     <label key={key} className="pg25-al-col-row">
                       <input
@@ -442,15 +598,18 @@ const PgAllotments2025Page = () => {
                         checked={colVis[key]}
                         onChange={() => toggleCol(key)}
                       />
+
                       <span>
                         {COL_DEFS.find((def) => def.key === key)?.label || key}
                       </span>
+
                       {colVis[key] ? <Eye /> : <EyeOff />}
                     </label>
                   ))}
                 </div>
               ))}
             </div>
+
             <div className="pg25-al-modal-footer">
               <button
                 type="button"
@@ -465,6 +624,10 @@ const PgAllotments2025Page = () => {
       )}
 
       <div className="pg25-al-content-wrapper">
+        {/* ==========================================
+            HEADER
+        ========================================== */}
+
         <div className="pg25-al-app-header">
           <div className="pg25-al-header-row">
             <div className="pg25-al-header-left">
@@ -475,38 +638,66 @@ const PgAllotments2025Page = () => {
               >
                 <ArrowLeft className="pg25-al-icon-sm" />
               </button>
+
               <div className="pg25-al-header-text">
                 <h1>Allotments</h1>
                 <p>NEET PG 2025</p>
               </div>
             </div>
+
             <span className="pg25-al-records-count">
-              {filtered.length.toLocaleString()} Records
+              {totalRecords.toLocaleString("en-IN")} Records
             </span>
           </div>
         </div>
 
+        {/* ==========================================
+            ERROR
+        ========================================== */}
+
         {dataError && (
           <div className="pg25-al-error-banner">
-            ⚠️ Data not found. Check the data File/Path
+            ⚠️ Unable to load allotment data.
+            {errorMessage && (
+              <span style={{ marginLeft: "8px" }}>{errorMessage}</span>
+            )}
           </div>
         )}
+
+        {/* ==========================================
+            ROUND PILLS + COLUMNS
+        ========================================== */}
 
         <div className="pg25-al-pills-row">
           {rounds.map((round) => (
             <button
               type="button"
               key={round}
-              onClick={() => setSelRound(round)}
-              className={`pg25-al-pill ${selRound === round ? "pg25-al-pill-active" : "pg25-al-pill-inactive"}`}
+              onClick={() => {
+                setSelRound(round);
+                setPage(1);
+              }}
+              className={`pg25-al-pill ${
+                selRound === round
+                  ? "pg25-al-pill-active"
+                  : "pg25-al-pill-inactive"
+              }`}
             >
               {`R${round}`}
             </button>
           ))}
+
           <button
             type="button"
-            onClick={() => setSelRound("all")}
-            className={`pg25-al-pill ${selRound === "all" ? "pg25-al-pill-active" : "pg25-al-pill-inactive"}`}
+            onClick={() => {
+              setSelRound("all");
+              setPage(1);
+            }}
+            className={`pg25-al-pill ${
+              selRound === "all"
+                ? "pg25-al-pill-active"
+                : "pg25-al-pill-inactive"
+            }`}
           >
             All Rounds
           </button>
@@ -516,13 +707,19 @@ const PgAllotments2025Page = () => {
             onClick={() => setShowColModal(true)}
             className="pg25-al-pill-icon-btn"
           >
-            <Eye className="pg25-al-icon-sm" /> Columns
+            <Eye className="pg25-al-icon-sm" />
+            Columns
           </button>
         </div>
+
+        {/* ==========================================
+            MAIN FILTERS
+        ========================================== */}
 
         <div className="pg25-al-filters-row">
           <div className="pg25-al-search-box">
             <Search />
+
             <input
               type="text"
               placeholder="Search institute, course, state..."
@@ -541,6 +738,7 @@ const PgAllotments2025Page = () => {
               options={states}
               allLabel="All States"
             />
+
             <CustomSelect
               value={selQuota}
               onChange={(value) => {
@@ -550,6 +748,7 @@ const PgAllotments2025Page = () => {
               options={quotas}
               allLabel="All Quotas"
             />
+
             <CustomSelect
               value={selCategory}
               onChange={(value) => {
@@ -559,19 +758,24 @@ const PgAllotments2025Page = () => {
               options={categories}
               allLabel="All Categories"
             />
+
             <button
               type="button"
               className="pg25-al-toggle-filter"
               onClick={() => setShowAdv((prev) => !prev)}
             >
-              <Filter className="pg25-al-icon-fl" /> {showAdv ? "Hide" : "More"}{" "}
-              Filters
+              <Filter className="pg25-al-icon-fl" />
+              {showAdv ? "Hide" : "More"} Filters
               <ChevronDown
                 className={showAdv ? "pg25-al-cs-chevron-open" : ""}
               />
             </button>
           </div>
         </div>
+
+        {/* ==========================================
+            ADVANCED FILTERS
+        ========================================== */}
 
         {showAdv && (
           <div className="pg25-al-advanced-filters">
@@ -584,6 +788,7 @@ const PgAllotments2025Page = () => {
               options={courses}
               allLabel="All Courses"
             />
+
             <div className="pg25-al-rank-inputs">
               <input
                 type="number"
@@ -594,6 +799,7 @@ const PgAllotments2025Page = () => {
                   setPage(1);
                 }}
               />
+
               <input
                 type="number"
                 placeholder="Max AI Rank"
@@ -604,6 +810,7 @@ const PgAllotments2025Page = () => {
                 }}
               />
             </div>
+
             <button
               type="button"
               className="pg25-al-clear-btn"
@@ -611,14 +818,20 @@ const PgAllotments2025Page = () => {
             >
               Clear Filters
             </button>
+
             <div className="pg25-al-filtered-count-row">
               <span className="pg25-al-filtered-count-num">
-                {filtered.length.toLocaleString()}
+                {totalRecords.toLocaleString("en-IN")}
               </span>
+
               <span>&nbsp;filtered results</span>
             </div>
           </div>
         )}
+
+        {/* ==========================================
+            TABLE
+        ========================================== */}
 
         <div className="pg25-al-table-wrapper">
           <table className="pg25-al-table">
@@ -634,6 +847,7 @@ const PgAllotments2025Page = () => {
                 ))}
               </tr>
             </thead>
+
             <tbody>
               {paged.length === 0 ? (
                 <tr>
@@ -648,20 +862,29 @@ const PgAllotments2025Page = () => {
                 </tr>
               ) : (
                 paged.map((item, index) => (
-                  <tr key={`${item.Institute}-${index}`}>
+                  <tr
+                    key={
+                      item.id || `${item.Institute}-${item["AI Rank"]}-${index}`
+                    }
+                  >
                     {colVis.Round && <td>{item.Round || "—"}</td>}
+
                     {colVis["AI Rank"] && (
                       <td className="pg25-al-td-rank">
                         <RankCell val={item["AI Rank"]} />
                       </td>
                     )}
+
                     {colVis.State && <td>{item.State || "—"}</td>}
+
                     {colVis.Institute && (
                       <td className="pg25-al-td-institute">
                         {item.Institute || "—"}
                       </td>
                     )}
+
                     {colVis.Course && <td>{item.Course || "—"}</td>}
+
                     {colVis.Quota && (
                       <td>
                         <span className="pg25-al-badge-quota">
@@ -669,30 +892,37 @@ const PgAllotments2025Page = () => {
                         </span>
                       </td>
                     )}
+
                     {colVis.Category && (
                       <td>
                         <span
-                          className={`pg25-al-badge-category-base ${categoryBadgeClass(item.Category)}`}
+                          className={`pg25-al-badge-category-base ${categoryBadgeClass(
+                            item.Category,
+                          )}`}
                         >
                           {item.Category || "—"}
                         </span>
                       </td>
                     )}
+
                     {colVis.Fee && (
                       <td className="pg25-al-td-fee">
                         {formatCurrency(item.Fee)}
                       </td>
                     )}
+
                     {colVis.Stipend && (
                       <td className="pg25-al-td-stipend">
                         {formatCurrency(item.Stipend)}
                       </td>
                     )}
+
                     {colVis["Bond Yrs"] && (
                       <td className="pg25-al-td-muted">
                         {formatBondYrs(item["Bond Yrs"])}
                       </td>
                     )}
+
                     {colVis.Beds && (
                       <td className="pg25-al-td-muted">{item.Beds || "—"}</td>
                     )}
@@ -703,43 +933,63 @@ const PgAllotments2025Page = () => {
           </table>
         </div>
 
+        {/* ==========================================
+            PAGINATION
+        ========================================== */}
+
         <div className="pg25-al-pagination-row">
           <div className="pg25-al-pagination-info">
-            Showing {filtered.length > 0 ? (page - 1) * PER_PAGE + 1 : 0}–
-            {Math.min(page * PER_PAGE, filtered.length)} of{" "}
-            {filtered.length.toLocaleString()}
+            Showing {totalRecords > 0 ? (page - 1) * PER_PAGE + 1 : 0}–
+            {Math.min(page * PER_PAGE, totalRecords)} of{" "}
+            {totalRecords.toLocaleString("en-IN")}
           </div>
+
           <div className="pg25-al-pagination-controls">
             <button
               type="button"
               onClick={() => setPage((prev) => Math.max(1, prev - 1))}
-              disabled={page === 1}
+              disabled={page === 1 || loading || !pagination.hasPreviousPage}
             >
               <PrevIcon />
             </button>
-            {Array.from({ length: Math.min(5, totalPages) }, (_, idx) => {
-              const start = Math.max(1, Math.min(page - 2, totalPages - 4));
-              const pageNum = start + idx;
-              if (pageNum > totalPages) return null;
-              return (
-                <button
-                  key={pageNum}
-                  type="button"
-                  onClick={() => setPage(pageNum)}
-                  className={
-                    pageNum === page
-                      ? "pg25-al-page-active"
-                      : "pg25-al-page-btn"
-                  }
-                >
-                  {pageNum}
-                </button>
-              );
-            })}
+
+            {Array.from(
+              {
+                length: Math.min(5, totalPages),
+              },
+              (_, idx) => {
+                const start = Math.max(1, Math.min(page - 2, totalPages - 4));
+
+                const pageNum = start + idx;
+
+                if (pageNum > totalPages) {
+                  return null;
+                }
+
+                return (
+                  <button
+                    key={pageNum}
+                    type="button"
+                    onClick={() => setPage(pageNum)}
+                    disabled={loading}
+                    className={
+                      pageNum === page
+                        ? "pg25-al-page-active"
+                        : "pg25-al-page-btn"
+                    }
+                  >
+                    {pageNum}
+                  </button>
+                );
+              },
+            )}
+
             <button
               type="button"
               onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
-              disabled={page === totalPages}
+              disabled={
+                page === totalPages || loading || !pagination.hasNextPage
+              }
             >
               <NextIcon />
             </button>
