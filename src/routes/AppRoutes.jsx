@@ -49,6 +49,7 @@ import PgFeesStipendBond2024Page from "../pages/neetpgDataPages/neetpg2024/PgFee
 import PgFeesStipendBond2025Page from "../pages/neetpgDataPages/neetpg2025/PgFeesStipendBond2025Page";
 import PgSeatMatrix2025Page from "../pages/neetpgDataPages/neetpg2025/PgSeatMatrix2025Page";
 import PgClosingRanks2025Page from "../pages/neetpgDataPages/neetpg2025/PgClosingRanks2025Page";
+import PgAllotments2025Page from "../pages/neetpgDataPages/neetpg2025/PgAllotments2025Page";
 
 // NEET UG Data Pages
 import UgFeesStipendBond2025Page from "../pages/neetugDataPages/neetug2025/UgFeesStipendBond2025Page";
@@ -156,6 +157,10 @@ function AppRoutes() {
       <Route
         path="/dashboard/neetpg-closing-ranks-2025"
         element={<PgClosingRanks2025Page />}
+      />
+      <Route
+        path="/dashboard/neetpg-allotments-2025"
+        element={<PgAllotments2025Page />}
       />
 
       {/* NEET UG */}
