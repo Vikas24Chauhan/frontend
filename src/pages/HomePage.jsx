@@ -1,9 +1,12 @@
 import React from "react";
-import Hero from "../components/ui/home/Hero";
-import Chaos from "../components/ui/home/Chaos";
-import Features from "../components/ui/home/Features";
-import SupportSection from "../components/ui/home/SupportSection";
-import HomeFaqs from "../components/ui/home/HomeFaqs";
+import WhyBelievers from "../components/ui/home/WhyBelievers";
+import DataAdvantage from "../components/ui/home/DataAdvantage";
+import FindCollegesSection from "../components/ui/home/FindCollegesSection";
+import CounsellingJourney from "../components/ui/home/CounsellingJourney";
+import FreeResourcesSection from "../components/ui/home/FreeResourcesSection";
+import CorePromise from "../components/ui/home/CorePromise";
+import FinalCTA from "../components/ui/home/FinalCTA";
+import LightBackground from "../components/ui/home/LightBackground";
 import { pageSEO } from "../seo/pageSEO";
 import SEO from "../seo/SEO";
 
@@ -14,11 +17,14 @@ function HomePage() {
     <div>
       <SEO {...seo} />
 
-      <Hero />
-      <Chaos />
-      <Features />
-      <SupportSection />
-      <HomeFaqs />
+      <LightBackground />
+      <WhyBelievers />
+      <DataAdvantage />
+      <FindCollegesSection />
+      <CounsellingJourney />
+      <FreeResourcesSection />
+      <CorePromise />
+      <FinalCTA />
     </div>
   );
 }
