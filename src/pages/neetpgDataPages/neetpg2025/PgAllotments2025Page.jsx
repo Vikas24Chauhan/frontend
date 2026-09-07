@@ -12,9 +12,7 @@ import {
   ChevronRight as NextIcon,
 } from "lucide-react";
 import "./PgAllotments2025Page.css";
-
-const API_URL = "https://node-mysql-661s.onrender.com/allotments/pg/2025";
-// const API_URL = "http://localhost:5000/allotments/pg/2025";
+import api from "../../../api/axios";
 
 const COL_DEFS = [
   { key: "Round", label: "Round" },
@@ -230,6 +228,21 @@ const PgAllotments2025Page = () => {
     hasPreviousPage: false,
   });
 
+  /*
+   * ==========================================
+   * FILTER OPTIONS (from the dedicated /filters API,
+   * covers the full dataset — not just the current page)
+   * ==========================================
+   */
+
+  const [filterOptions, setFilterOptions] = useState({
+    rounds: [],
+    states: [],
+    quotas: [],
+    categories: [],
+    courses: [],
+  });
+
   const PER_PAGE = 50;
 
   const toggleCol = (key) =>
@@ -260,11 +273,47 @@ const PgAllotments2025Page = () => {
       ),
     );
 
-  /*
-   * ==========================================
-   * FETCH DATA FROM POSTGRESQL API
-   * ==========================================
-   */
+  /* =========================== FETCH FILTER OPTIONS (ONCE, ON MOUNT) ============================= */
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const fetchFilters = async () => {
+      try {
+        const response = await api.get("/allotments/pg/2025/filters", {
+          signal: controller.signal,
+        });
+
+        const result = response.data;
+
+        console.log("PG 2025 /filters raw response:", result);
+
+        if (!result.success) {
+          throw new Error(result.message || "Failed to fetch filters");
+        }
+
+        setFilterOptions({
+          rounds: result.filters?.rounds || [],
+          states: result.filters?.states || [],
+          quotas: result.filters?.quotas || [],
+          categories: result.filters?.categories || [],
+          courses: result.filters?.courses || [],
+        });
+      } catch (error) {
+        if (error.name === "AbortError" || error.code === "ERR_CANCELED") {
+          return;
+        }
+
+        console.error("PG 2025 Filters API Error:", error);
+      }
+    };
+
+    fetchFilters();
+
+    return () => controller.abort();
+  }, []);
+
+  /* ==================== FETCH DATA FROM POSTGRESQL API =============================== */
 
   useEffect(() => {
     const controller = new AbortController();
@@ -312,19 +361,14 @@ const PgAllotments2025Page = () => {
           params.set("search", searchTerm.trim());
         }
 
-        const response = await fetch(`${API_URL}?${params.toString()}`, {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
+        const response = await api.get(
+          `/allotments/pg/2025?${params.toString()}`,
+          {
+            signal: controller.signal,
           },
-          signal: controller.signal,
-        });
+        );
 
-        if (!response.ok) {
-          throw new Error(`API request failed with status ${response.status}`);
-        }
-
-        const result = await response.json();
+        const result = response.data;
 
         if (!result.success) {
           throw new Error(result.message || "Failed to fetch allotments");
@@ -405,60 +449,79 @@ const PgAllotments2025Page = () => {
    * FILTER OPTIONS
    * ==========================================
    *
-   * These options are generated from the
-   * currently loaded API data.
+   * Primary source: the dedicated /filters API (filterOptions),
+   * which covers the full dataset. As a safety net — in case that
+   * endpoint returns empty/partial data — we merge in whatever
+   * values are present on the currently loaded page of `data`, so
+   * the dropdowns and round pills never end up empty.
    */
 
+  const dataRounds = useMemo(
+    () =>
+      data
+        .map((item) => item.Round)
+        .filter((v) => v !== null && v !== undefined && v !== ""),
+    [data],
+  );
+
+  const dataStates = useMemo(
+    () => data.map((item) => item.State).filter(Boolean),
+    [data],
+  );
+
+  const dataQuotas = useMemo(
+    () => data.map((item) => item.Quota).filter(Boolean),
+    [data],
+  );
+
+  const dataCategories = useMemo(
+    () => data.map((item) => item.Category).filter(Boolean),
+    [data],
+  );
+
+  const dataCourses = useMemo(
+    () => data.map((item) => item.Course).filter(Boolean),
+    [data],
+  );
+
   const rounds = useMemo(() => {
-    return Array.from(
-      new Set(
-        data
-          .map((item) => item.Round)
-          .filter(
-            (value) => value !== null && value !== undefined && value !== "",
-          ),
-      ),
-    ).sort((a, b) => Number(a) - Number(b));
-  }, [data]);
+    return Array.from(new Set([...filterOptions.rounds, ...dataRounds])).sort(
+      (a, b) => Number(a) - Number(b),
+    );
+  }, [filterOptions.rounds, dataRounds]);
 
   const states = useMemo(
     () => [
       "all",
-      ...Array.from(
-        new Set(data.map((item) => item.State).filter(Boolean)),
-      ).sort(),
+      ...Array.from(new Set([...filterOptions.states, ...dataStates])).sort(),
     ],
-    [data],
+    [filterOptions.states, dataStates],
   );
 
   const quotas = useMemo(
     () => [
       "all",
-      ...Array.from(
-        new Set(data.map((item) => item.Quota).filter(Boolean)),
-      ).sort(),
+      ...Array.from(new Set([...filterOptions.quotas, ...dataQuotas])).sort(),
     ],
-    [data],
+    [filterOptions.quotas, dataQuotas],
   );
 
   const categories = useMemo(
     () => [
       "all",
       ...Array.from(
-        new Set(data.map((item) => item.Category).filter(Boolean)),
+        new Set([...filterOptions.categories, ...dataCategories]),
       ).sort(),
     ],
-    [data],
+    [filterOptions.categories, dataCategories],
   );
 
   const courses = useMemo(
     () => [
       "all",
-      ...Array.from(
-        new Set(data.map((item) => item.Course).filter(Boolean)),
-      ).sort(),
+      ...Array.from(new Set([...filterOptions.courses, ...dataCourses])).sort(),
     ],
-    [data],
+    [filterOptions.courses, dataCourses],
   );
 
   /*
