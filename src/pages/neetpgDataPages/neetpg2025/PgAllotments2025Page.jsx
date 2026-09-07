@@ -286,8 +286,6 @@ const PgAllotments2025Page = () => {
 
         const result = response.data;
 
-        console.log("PG 2025 /filters raw response:", result);
-
         if (!result.success) {
           throw new Error(result.message || "Failed to fetch filters");
         }

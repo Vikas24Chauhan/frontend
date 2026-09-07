@@ -358,7 +358,7 @@
 }
 
 .pg25-al-search-box {
-  flex: 1 1 320px;
+  flex: 1;
   position: relative;
   display: flex;
   align-items: center;
@@ -990,15 +990,34 @@
     align-items: stretch;
   }
 
+  .pg25-al-advanced-filters .pg25-al-cs-wrapper {
+    width: 100%;
+    flex: none;
+  }
+
   .pg25-al-rank-inputs {
     flex-direction: row;
+    width: 100%;
+  }
+
+  .pg25-al-rank-inputs input {
+    flex: 1 1 0;
+    width: auto;
+  }
+
+  .pg25-al-clear-btn {
+    width: 100%;
+  }
+
+  .pg25-al-filtered-count-row {
+    width: 100%;
   }
 
   .pg25-al-pill-icon-btn {
     margin-left: 0;
   }
 
-  .pg25-al-cs-wrapper {
+  .pg25-al-filter-selects .pg25-al-cs-wrapper {
     min-width: 0;
     flex: 1 1 140px;
   }
