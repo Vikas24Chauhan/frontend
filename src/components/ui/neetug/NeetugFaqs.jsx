@@ -83,7 +83,7 @@ function NeetugFaqs() {
             <p>Everything is FREE | No subscriptions | No catch</p>
 
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/dashboard/neet-ug")}
               className="ug-faq-cta-btn"
             >
               <span>Get started - FREE Access</span>

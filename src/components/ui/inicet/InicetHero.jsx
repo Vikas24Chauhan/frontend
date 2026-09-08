@@ -30,7 +30,7 @@ const InicetHero = () => {
 
           <div className="inicet-hero-actions">
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/dashboard/inicet")}
               className="inicet-hero-btn"
             >
               Get started - FREE &rarr;

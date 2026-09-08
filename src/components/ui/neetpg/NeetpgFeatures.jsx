@@ -140,7 +140,7 @@ function NeetpgFeatures() {
 
               <button
                 type="button"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/dashboard/neet-pg")}
                 className="pg-feature-dark-card-btn"
               >
                 Start Free &rarr;

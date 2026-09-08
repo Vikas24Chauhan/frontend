@@ -173,7 +173,7 @@ function NeetpgFaqs() {
             <p>Everything is FREE | No subscriptions | No catch</p>
 
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/dashboard/neet-pg")}
               className="pg-faq-cta-btn"
             >
               <span>Get started - FREE Access</span>

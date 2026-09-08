@@ -140,7 +140,7 @@ function InicetFeatures() {
 
               <button
                 type="button"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/dashboard/inicet")}
                 className="inicet-feature-dark-card-btn"
               >
                 Start Free &rarr;

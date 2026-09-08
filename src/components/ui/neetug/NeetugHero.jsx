@@ -33,7 +33,7 @@ const NeetugHero = () => {
 
           <div className="neetug-hero-actions">
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/dashboard/neet-ug")}
               className="neetug-hero-btn"
             >
               Get started - FREE &rarr;

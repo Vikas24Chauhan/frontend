@@ -140,7 +140,7 @@ function NeetugFeatures() {
 
               <button
                 type="button"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/dashboard/neet-ug")}
                 className="ug-feature-dark-card-btn"
               >
                 Start Free &rarr;

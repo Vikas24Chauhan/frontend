@@ -83,7 +83,7 @@ function InicetFaqs() {
             <p>Everything is FREE | No subscriptions | No catch</p>
 
             <button
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/dashboard/inicet")}
               className="inicet-faq-cta-btn"
             >
               <span>Get started - FREE Access</span>
