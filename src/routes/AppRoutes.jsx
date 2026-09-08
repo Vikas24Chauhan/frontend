@@ -58,130 +58,136 @@ import UgClosingRanks2025Page from "../pages/neetugDataPages/neetug2025/UgClosin
 import UgAllotments2025Page from "../pages/neetugDataPages/neetug2025/UgAllotments2025Page";
 
 import NewHomePage from "../pages/NewHomePage";
+import AiSensyWidget from "../components/common/AiSensyWidget";
 
 function AppRoutes() {
   return (
-    <Routes>
-      {/* ================= PUBLIC WEBSITE ================= */}
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/home" element={<NewHomePage />} />
-        <Route path="/neet-ug" element={<NeetugPage />} />
-        <Route path="/neet-pg" element={<NeetpgPage />} />
-        <Route path="/inicet" element={<InicetPage />} />
-        <Route path="/neet-ss" element={<NeetssPage />} />
-        <Route path="/blogs" element={<BlogHome />} />
-        <Route path="/blog/:blogId" element={<BlogPage />} />
-        <Route path="/announcements" element={<AnnouncementsPage />} />
-        <Route path="/contact-us" element={<ContactUsPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms" element={<TermsConditions />} />
-        <Route path="/coming-soon" element={<ComingSoonPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
+    <>
+      <AiSensyWidget />
+      <Routes>
+        {/* ================= PUBLIC WEBSITE ================= */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<NewHomePage />} />
+          <Route path="/neet-ug" element={<NeetugPage />} />
+          <Route path="/neet-pg" element={<NeetpgPage />} />
+          <Route path="/inicet" element={<InicetPage />} />
+          <Route path="/neet-ss" element={<NeetssPage />} />
+          <Route path="/blogs" element={<BlogHome />} />
+          <Route path="/blog/:blogId" element={<BlogPage />} />
+          <Route path="/announcements" element={<AnnouncementsPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsConditions />} />
+          <Route path="/coming-soon" element={<ComingSoonPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
 
-      {/* ================= Public Route ================= */}
-      <Route
-        element={
-          <PublicRoute>
-            <AuthLayout />
-          </PublicRoute>
-        }
-      >
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/verify-otp" element={<VerifyOtp />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-      </Route>
+        {/* ================= Public Route ================= */}
+        <Route
+          element={
+            <PublicRoute>
+              <AuthLayout />
+            </PublicRoute>
+          }
+        >
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/verify-otp" element={<VerifyOtp />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+        </Route>
 
-      {/* ================= Protected Route ================= */}
-      {/* <Route
-        path="/dashboard"
-        element={
-          <ProtectedRoute>
-            <DashboardLayout />
-          </ProtectedRoute>
-        }
-      >
-       <Route path="neet-pg" element={<NeetpgDashboard />} />
-        <Route path="neet-ug" element={<NeetugDashboard />} />
-        <Route path="inicet" element={<InicetDashboard />} />
-      </Route> */}
+        {/* ================= Protected Route ================= */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="neet-pg" element={<NeetpgDashboard />} />
+          <Route path="neet-ug" element={<NeetugDashboard />} />
+          <Route path="inicet" element={<InicetDashboard />} />
+        </Route>
 
-      <Route path="/dashboard" element={<DashboardLayout />}>
-        <Route path="neet-pg" element={<NeetpgDashboard />} />
-        <Route path="neet-ug" element={<NeetugDashboard />} />
-        <Route path="inicet" element={<InicetDashboard />} />
-      </Route>
+        {/* <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route path="neet-pg" element={<NeetpgDashboard />} />
+          <Route path="neet-ug" element={<NeetugDashboard />} />
+          <Route path="inicet" element={<InicetDashboard />} />
+        </Route> */}
 
-      {/* ================= Protected Data Route ================= */}
-      {/* INICET */}
-      <Route
-        path="/dashboard/inicet-closing-ranks-2025"
-        element={<InicetClosingRanks2025Page />}
-      />
-      <Route
-        path="/dashboard/inicet-closing-ranks-2026"
-        element={<InicetClosingRanks2026Page />}
-      />
-      <Route
-        path="/dashboard/inicet-allotments-july-2026"
-        element={<InicetAllotmentsJuly2026Page />}
-      />
-      <Route
-        path="/dashboard/inicet-allotments-jan-2026"
-        element={<InicetAllotmentsJan2026Page />}
-      />
-      <Route
-        path="/dashboard/inicet-allotments-july-2025"
-        element={<InicetAllotmentsJuly2025Page />}
-      />
-      <Route
-        path="/dashboard/inicet-allotments-jan-2025"
-        element={<InicetAllotmentsJan2025Page />}
-      />
+        {/* ================= Protected Data Route ================= */}
+        <Route element={<ProtectedRoute />}>
+          {/* INICET */}
+          <Route
+            path="/dashboard/inicet-closing-ranks-2025"
+            element={<InicetClosingRanks2025Page />}
+          />
+          <Route
+            path="/dashboard/inicet-closing-ranks-2026"
+            element={<InicetClosingRanks2026Page />}
+          />
+          <Route
+            path="/dashboard/inicet-allotments-july-2026"
+            element={<InicetAllotmentsJuly2026Page />}
+          />
+          <Route
+            path="/dashboard/inicet-allotments-jan-2026"
+            element={<InicetAllotmentsJan2026Page />}
+          />
+          <Route
+            path="/dashboard/inicet-allotments-july-2025"
+            element={<InicetAllotmentsJuly2025Page />}
+          />
+          <Route
+            path="/dashboard/inicet-allotments-jan-2025"
+            element={<InicetAllotmentsJan2025Page />}
+          />
 
-      {/* NEET PG */}
-      <Route
-        path="/dashboard/neetpg-fee-stipend-bond-2024"
-        element={<PgFeesStipendBond2024Page />}
-      />
-      <Route
-        path="/dashboard/neetpg-fee-stipend-bond-2025"
-        element={<PgFeesStipendBond2025Page />}
-      />
-      <Route
-        path="/dashboard/neetpg-seat-matrix-2025"
-        element={<PgSeatMatrix2025Page />}
-      />
-      <Route
-        path="/dashboard/neetpg-closing-ranks-2025"
-        element={<PgClosingRanks2025Page />}
-      />
-      <Route
-        path="/dashboard/neetpg-allotments-2025"
-        element={<PgAllotments2025Page />}
-      />
+          {/* NEET PG */}
+          <Route
+            path="/dashboard/neetpg-fee-stipend-bond-2024"
+            element={<PgFeesStipendBond2024Page />}
+          />
+          <Route
+            path="/dashboard/neetpg-fee-stipend-bond-2025"
+            element={<PgFeesStipendBond2025Page />}
+          />
+          <Route
+            path="/dashboard/neetpg-seat-matrix-2025"
+            element={<PgSeatMatrix2025Page />}
+          />
+          <Route
+            path="/dashboard/neetpg-closing-ranks-2025"
+            element={<PgClosingRanks2025Page />}
+          />
+          <Route
+            path="/dashboard/neetpg-allotments-2025"
+            element={<PgAllotments2025Page />}
+          />
 
-      {/* NEET UG */}
-      <Route
-        path="/dashboard/neetug-fee-stipend-bond-2025"
-        element={<UgFeesStipendBond2025Page />}
-      />
-      <Route
-        path="/dashboard/neetug-seat-matrix-2025"
-        element={<UgSeatMatrix2025Page />}
-      />
-      <Route
-        path="/dashboard/neetug-closing-ranks-2025"
-        element={<UgClosingRanks2025Page />}
-      />
-      <Route
-        path="/dashboard/neetug-allotments-2025"
-        element={<UgAllotments2025Page />}
-      />
-    </Routes>
+          {/* NEET UG */}
+          <Route
+            path="/dashboard/neetug-fee-stipend-bond-2025"
+            element={<UgFeesStipendBond2025Page />}
+          />
+          <Route
+            path="/dashboard/neetug-seat-matrix-2025"
+            element={<UgSeatMatrix2025Page />}
+          />
+          <Route
+            path="/dashboard/neetug-closing-ranks-2025"
+            element={<UgClosingRanks2025Page />}
+          />
+          <Route
+            path="/dashboard/neetug-allotments-2025"
+            element={<UgAllotments2025Page />}
+          />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
