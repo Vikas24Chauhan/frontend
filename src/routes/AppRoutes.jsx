@@ -55,6 +55,7 @@ import PgAllotments2025Page from "../pages/neetpgDataPages/neetpg2025/PgAllotmen
 import UgFeesStipendBond2025Page from "../pages/neetugDataPages/neetug2025/UgFeesStipendBond2025Page";
 import UgSeatMatrix2025Page from "../pages/neetugDataPages/neetug2025/UgSeatMatrix2025Page";
 import UgClosingRanks2025Page from "../pages/neetugDataPages/neetug2025/UgClosingRanks2025Page";
+import UgAllotments2025Page from "../pages/neetugDataPages/neetug2025/UgAllotments2025Page";
 
 import NewHomePage from "../pages/NewHomePage";
 
@@ -176,10 +177,10 @@ function AppRoutes() {
         path="/dashboard/neetug-closing-ranks-2025"
         element={<UgClosingRanks2025Page />}
       />
-      {/* <Route
+      <Route
         path="/dashboard/neetug-allotments-2025"
-        element={<UgFeesStipendBond2025Page />}
-      /> */}
+        element={<UgAllotments2025Page />}
+      />
     </Routes>
   );
 }
