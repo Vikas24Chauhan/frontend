@@ -92,6 +92,11 @@ function Login() {
           <button type="submit" disabled={loading}>
             {loading ? "Logging in..." : "Login"}
           </button>
+
+          <p className="signup-text">
+            Don't have an account?{" "}
+            <span onClick={() => navigate("/register")}>Sign up</span>
+          </p>
         </form>
       </div>
     </div>

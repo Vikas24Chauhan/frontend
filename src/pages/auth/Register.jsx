@@ -5,9 +5,11 @@ import Image from "../../assets/images/login_image.webp";
 import "./Register.css";
 
 import { registerUser } from "../../services/authService";
+import { useAuth } from "../../context/AuthContext";
 
 function Register() {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const [loading, setLoading] = useState(false);
 
@@ -55,9 +57,11 @@ function Register() {
 
       const res = await registerUser(payload);
 
+      login(res.user, res.token);
+
       toast.success(res.message);
 
-      navigate("/login");
+      navigate("/", { replace: true });
     } catch (error) {
       toast.error(error.response?.data?.message || "Registration failed");
     } finally {
@@ -140,6 +144,11 @@ function Register() {
           <button type="submit" disabled={loading}>
             {loading ? "Creating Account..." : "Register"}
           </button>
+
+          <p className="login-text">
+            Already have an account?{" "}
+            <span onClick={() => navigate("/login")}>Log In</span>
+          </p>
         </form>
       </div>
     </div>

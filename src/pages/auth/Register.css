@@ -96,6 +96,23 @@
   cursor: not-allowed;
 }
 
+.login-text {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 15px;
+  color: #64748b;
+}
+
+.login-text span {
+  color: #155dfc;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-text span:hover {
+  text-decoration: underline;
+}
+
 /* ---------------- Responsive ---------------- */
 
 @media (max-width: 868px) {
