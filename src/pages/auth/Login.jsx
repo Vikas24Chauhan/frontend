@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Image from "../../assets/images/login_image.webp";
 
@@ -9,6 +9,7 @@ import { useAuth } from "../../context/AuthContext";
 
 function Login() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useAuth();
 
   const [loading, setLoading] = useState(false);
@@ -38,11 +39,15 @@ function Login() {
       const res = await loginUser(formData);
 
       // Save user & token in AuthContext + localStorage
+      const from = location.state?.from;
+
       login(res.user, res.token);
 
       toast.success(res.message);
 
-      navigate("/", { replace: true });
+      navigate(from?.pathname ? from.pathname + from.search + from.hash : "/", {
+        replace: true,
+      });
     } catch (error) {
       toast.error(error.response?.data?.message || "Login failed");
     } finally {
