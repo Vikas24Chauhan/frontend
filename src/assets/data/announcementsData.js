@@ -1,6 +1,93 @@
 export const announcements = [
   {
     title: "NEET PG 2026",
+    content: "NEET PG 2026 Answer Key Expected in Second Week of September",
+    date: "2026-08-31",
+    priority: "high",
+    category: "NEET PG",
+    link: "https://timesofindia.indiatimes.com/education/news/when-will-neet-pg-2026-answer-key-be-released-heres-what-you-need-to-know/articleshow/133647155.cms",
+    source: "The Times of India",
+    isActive: true,
+  },
+  {
+    title: "NEET PG 2026",
+    content:
+      "NEET PG 2026 Re-Exam on September 5 for Affected Jaipur Candidates; Revised Admit Cards to Be Issued",
+    date: "2026-08-30",
+    priority: "high",
+    category: "NEET PG",
+    link: "https://natboard.edu.in/viewNotice.php?NBE=OHl3RmZZSVdZc3NVUVJEVkxtODJoUT09",
+    source: "NBEMS",
+    isActive: true,
+  },
+  {
+    title: "NEET PG 2026",
+    content:
+      "NEET PG 2026 Admit Card Released: Candidates Can Download Admit Card Online",
+    date: "2026-08-26",
+    priority: "high",
+    category: "NEET PG",
+    link: "https://cdn3.digialm.com//EForms/configuredHtml/1815/94357/Index.html",
+    source: "NBEMS",
+    isActive: true,
+  },
+  {
+    title: "NEET PG 2026",
+    content:
+      "NEET PG 2026 Admit Card, NBEMS Admit Card 2026, NEET PG Hall Ticket, NEET PG Exam Date 2026, natboard.edu.in, NBEMS News, Medical Entrance Exam",
+    date: "2026-08-24",
+    priority: "high",
+    category: "NEET PG",
+    link: "https://indianexpress.com/article/education/neet-pg-2026-admit-cards-released-nbems-candidate-portal-download-link-exam-schedule-natboard-edu-in-10846858/?utm_source=chatgpt.com",
+    source: "The Indian Express",
+    isActive: true,
+  },
+  {
+    title: "NEET PG 2026",
+    content:
+      "NEET PG 2026 Test City Information Released: Check Allotted Exam City on NBEMS Portal",
+    date: "2026-08-12",
+    priority: "high",
+    category: "NEET PG",
+    link: "https://natboard.edu.in/viewNotice.php?NBE=bkJnSFp0enpHREVERWNZbTg4eVAvZz09",
+    source: "National Board of Examinations",
+    isActive: true,
+  },
+  {
+    title: "NEET UG 2026",
+    content:
+      "NEET UG Counselling 2026: MCC Revises Round 1 Choice Filling Schedule, Begins on August 8 at 12 Noon Published Date",
+    date: "2026-08-07",
+    priority: "high",
+    category: "NEET UG",
+    link: "https://cdnbbsr.s3waas.gov.in/s3e0f7a4d0ef9b84b83b693bbf3feb8e6e/uploads/2026/08/202608071497344176.pdf",
+    source: "Medical Counselling Committee",
+    isActive: true,
+  },
+  {
+    title: "NEET PG 2026",
+    content:
+      "NEET PG 2026: Single-Shift Exam, Fewer Questions & More Test Centres Announced",
+    date: "2026-08-01",
+    priority: "high",
+    category: "NEET PG",
+    link: "https://timesofindia.indiatimes.com/india/neet-pg-2026-gets-major-overhaul-centres-closer-to-home-single-shift-exam-less-questions-with-no-change-in-test-duration/articleshow/132793694.cms",
+    source: "The Times Of India",
+    isActive: true,
+  },
+  {
+    title: "NEET PG 2026",
+    content:
+      "NEET PG 2026 Selective Edit Window Opens Today: Correct Photograph, Signature & Thumb Impression by August 10",
+    date: "2026-07-31",
+    priority: "high",
+    category: "NEET PG",
+    link: "https://timesofindia.indiatimes.com/education/news/neet-pg-2026-selective-edit-window-opens-today-correct-application-images-by-august-10/articleshow/132754296.cms",
+    source: "The Times Of India",
+    isActive: true,
+  },
+  {
+    title: "NEET PG 2026",
     content: "NEET PG 2026 Application Correction Window Closes Today",
     date: "2026-07-28",
     priority: "high",
