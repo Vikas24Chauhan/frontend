@@ -38,7 +38,7 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .inid-info-bg-white .inid-info-eyebrow {
@@ -65,7 +65,7 @@
 }
 
 .inid-info-heading-accent {
-  background: linear-gradient(90deg, #155dfc, #7c3aed);
+  background: linear-gradient(90deg, #0464de, #032c7b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -77,7 +77,7 @@
   max-width: 640px;
   font-size: 18px;
   line-height: 1.6;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 /* ---------------- Resource link bar ---------------- */
@@ -98,13 +98,13 @@
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   font-size: 14px;
   font-weight: 600;
-  color: #155dfc;
+  color: #0464de;
   text-decoration: none;
   max-width: 90%;
 }
 
 .inid-info-resource-link:hover {
-  border-color: #155dfc;
+  border-color: #0464de;
   background: #eaf1ff;
 }
 
@@ -151,11 +151,11 @@
 .inid-info-info-card-title svg {
   width: 18px;
   height: 18px;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .inid-info-tint-secondary .inid-info-info-card-title svg {
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .inid-info-highlight-item {
@@ -174,7 +174,7 @@
   width: 19px;
   height: 19px;
   margin-top: 2px;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .inid-info-highlight-title {
@@ -196,7 +196,7 @@
   gap: 10px;
   margin-bottom: 11px;
   font-size: 14px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .inid-info-dot-item:last-child {
@@ -208,7 +208,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #7c3aed;
+  background: #032c7b;
 }
 
 /* ---------------- Section 2: Process map ---------------- */
@@ -241,15 +241,15 @@
 }
 
 .inid-info-phase-band-a {
-  background: linear-gradient(120deg, #155dfc, #7c3aed);
+  background: linear-gradient(120deg, #0464de, #032c7b);
 }
 
 .inid-info-phase-band-b {
-  background: linear-gradient(120deg, #0e4fdb, #155dfc);
+  background: linear-gradient(120deg, #0e4fdb, #0464de);
 }
 
 .inid-info-phase-band-c {
-  background: linear-gradient(120deg, #7c3aed, #ff732d);
+  background: linear-gradient(120deg, #032c7b, #ff732d);
 }
 
 .inid-info-phase-roman {
@@ -279,13 +279,13 @@
 
 .inid-info-phase-step-mini {
   background: #f8fafc;
-  border-left: 4px solid #155dfc;
+  border-left: 4px solid #0464de;
   border-radius: 10px;
   padding: 12px 14px;
 }
 
 .inid-info-process-col:nth-child(3) .inid-info-phase-step-mini {
-  border-left-color: #7c3aed;
+  border-left-color: #032c7b;
 }
 
 .inid-info-phase-step-mini p {
@@ -328,7 +328,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #155dfc, #7c3aed);
+  background: linear-gradient(135deg, #0464de, #032c7b);
   color: #ffffff;
   box-shadow: 0 8px 18px -6px rgba(21, 93, 252, 0.55);
 }
@@ -351,7 +351,7 @@
   font-size: 13px;
   font-weight: 700;
   background: #eaf1ff;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .inid-info-note-secondary {
@@ -361,7 +361,7 @@
 }
 
 .inid-info-note-secondary svg {
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 /* ---------------- Shared table shell ---------------- */
@@ -386,7 +386,7 @@
   font-size: 13px;
   font-weight: 700;
   color: #ffffff;
-  background: linear-gradient(90deg, #7c3aed, #6d28d9);
+  background: linear-gradient(90deg, #032c7b, #6d28d9);
   padding: 16px 20px;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -402,7 +402,7 @@
 .inid-info-table tbody td {
   padding: 14px 20px;
   font-size: 15px;
-  color: #334155;
+  color: #3f3f3f;
   border-bottom: 1px solid #eef2f6;
 }
 
@@ -507,7 +507,7 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #155dfc, #7c3aed);
+    background: linear-gradient(135deg, #0464de, #032c7b);
   }
 
   .inid-info-process-arrow-mobile svg {

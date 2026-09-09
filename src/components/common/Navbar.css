@@ -7,7 +7,7 @@
 }
 
 .navbar-container {
-  max-width: 1400px;
+  /* max-width: 1400px; */
   margin: auto;
   padding: 12px 24px;
   display: flex;
@@ -40,7 +40,7 @@
 
 .nav-menu > a:hover,
 .nav-dropdown-toggle:hover {
-  color: #155dfc;
+  color: #0464de;
 }
 
 .nav-dropdown {
@@ -86,7 +86,7 @@
 
 .nav-dropdown-menu a:hover {
   background: #eef4ff;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .nav-login-btn,
@@ -129,7 +129,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .desktop-auth {
@@ -215,7 +215,7 @@
   }
 
   .mobile-menu > a:hover {
-    color: #155dfc;
+    color: #0464de;
   }
 
   .mobile-menu .nav-login-btn,

@@ -37,7 +37,7 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .nugd-info-bg-white .nugd-info-eyebrow {
@@ -63,7 +63,7 @@
 }
 
 .nugd-info-heading-accent {
-  background: linear-gradient(90deg, #155dfc, #7c3aed);
+  background: linear-gradient(90deg, #0464de, #032c7b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -74,7 +74,7 @@
   max-width: 640px;
   font-size: 18px;
   line-height: 1.6;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .nugd-info-guide-grid {
@@ -99,11 +99,11 @@
 }
 
 .nugd-info-guide-band-primary {
-  background: linear-gradient(120deg, #155dfc, #3b7bff);
+  background: linear-gradient(120deg, #0464de, #3b7bff);
 }
 
 .nugd-info-guide-band-secondary {
-  background: linear-gradient(120deg, #7c3aed, #9a5cf5);
+  background: linear-gradient(120deg, #032c7b, #9a5cf5);
 }
 
 .nugd-info-guide-icon {
@@ -169,7 +169,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
   font-weight: 700;
   font-size: 14px;
@@ -196,7 +196,7 @@
   margin-top: 22px;
   padding: 11px 20px;
   border-radius: 12px;
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
   font-weight: 600;
   font-size: 14px;
@@ -235,7 +235,7 @@
 
 .nugd-info-tab-active {
   background: #ffffff;
-  color: #7c3aed;
+  color: #032c7b;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
 }
 
@@ -258,7 +258,7 @@
   height: 38px;
   border-radius: 11px;
   background: #f3ecfe;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .nugd-info-icon-step-chip svg {
@@ -282,14 +282,14 @@
   width: 18px;
   height: 18px;
   margin-top: 2px;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .nugd-info-tip-box p {
   margin: 0;
   font-size: 13.5px;
   line-height: 1.55;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .nugd-info-tip-box strong {
@@ -316,7 +316,7 @@
   font-size: 13px;
   font-weight: 700;
   color: #ffffff;
-  background: linear-gradient(90deg, #334155, #1e293b);
+  background: linear-gradient(90deg, #3f3f3f, #1e293b);
   padding: 16px 20px;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -332,7 +332,7 @@
 .nugd-info-table tbody td {
   padding: 14px 20px;
   font-size: 15px;
-  color: #334155;
+  color: #3f3f3f;
   border-bottom: 1px solid #eef2f6;
 }
 
@@ -363,7 +363,7 @@
 
 .nugd-info-cell-highlight {
   font-weight: 700;
-  color: #155dfc;
+  color: #0464de;
   background: #eaf1ff;
 }
 
@@ -393,14 +393,14 @@
 .nugd-info-insight-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-left: 4px solid #155dfc;
+  border-left: 4px solid #0464de;
   border-radius: 14px;
   padding: 18px 20px;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
 .nugd-info-insight-card.nugd-info-accent-secondary {
-  border-left-color: #7c3aed;
+  border-left-color: #032c7b;
 }
 
 .nugd-info-insight-card.nugd-info-accent-cta {
@@ -418,7 +418,7 @@
   margin: 0;
   font-size: 14px;
   line-height: 1.6;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .nugd-info-note {
@@ -460,7 +460,7 @@
   height: 48px;
   border-radius: 14px;
   background: #eaf1ff;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .nugd-info-course-head-icon svg {
@@ -517,7 +517,7 @@
   height: 40px;
   border-radius: 11px;
   background: #eaf1ff;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .nugd-info-course-icon svg {
@@ -552,12 +552,12 @@
 }
 
 .nugd-info-demand-high {
-  color: #155dfc;
+  color: #0464de;
   background: #eaf1ff;
 }
 
 .nugd-info-demand-rising {
-  color: #7c3aed;
+  color: #032c7b;
   background: #f3ecfe;
 }
 
@@ -578,7 +578,7 @@
 .nugd-info-course-bar-fill {
   height: 100%;
   border-radius: 999px;
-  background: #155dfc;
+  background: #0464de;
 }
 
 .nugd-info-course-bar-fill.nugd-info-accent-cta {
@@ -586,7 +586,7 @@
 }
 
 .nugd-info-course-bar-fill.nugd-info-accent-secondary {
-  background: #7c3aed;
+  background: #032c7b;
 }
 
 .nugd-info-course-bar-fill.nugd-info-accent-neutral {

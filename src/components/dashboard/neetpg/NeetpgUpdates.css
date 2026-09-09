@@ -23,7 +23,7 @@
   margin-bottom: 18px;
   border-radius: 30px;
   background: #e5edfe;
-  color: #155dfc;
+  color: #0464de;
   font-size: 13px;
   font-weight: 600;
 }
@@ -37,7 +37,7 @@
 }
 
 .neetpg-updates-title span {
-  background: linear-gradient(90deg, #155dfc, #7c3aed);
+  background: linear-gradient(90deg, #0464de, #032c7b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -46,7 +46,7 @@
 .neetpg-updates-description {
   margin: 0 auto;
   max-width: 680px;
-  color: #334155;
+  color: #3f3f3f;
   font-size: 17px;
   line-height: 1.7;
 }
@@ -64,7 +64,7 @@
   bottom: 0;
   left: 28px;
   width: 2px;
-  background: linear-gradient(to bottom, #155dfc, #7c3aed, #dbe4f0);
+  background: linear-gradient(to bottom, #0464de, #032c7b, #dbe4f0);
 }
 
 .neetpg-update-item {
@@ -89,15 +89,15 @@
   align-items: center;
   justify-content: center;
   background: #ffffff;
-  color: #155dfc;
+  color: #0464de;
   border: 2px solid #dbe4f0;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
 .neetpg-update-item.is-highlight .neetpg-update-marker {
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
-  border-color: #155dfc;
+  border-color: #0464de;
   box-shadow: 0 8px 24px rgba(21, 93, 252, 0.25);
 }
 
@@ -149,12 +149,12 @@
 
 .neetpg-update-status.completed {
   background: #e5edfe;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .neetpg-update-status.upcoming {
   background: #f1e9fd;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .neetpg-update-date {
@@ -242,7 +242,7 @@
 }
 
 .neetpg-reference-btn:hover {
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
   transform: translateY(-2px);
 }

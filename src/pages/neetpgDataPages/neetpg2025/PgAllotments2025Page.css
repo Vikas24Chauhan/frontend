@@ -23,12 +23,12 @@
 }
 
 .pg25-al-cs-button:hover {
-  border-color: #7c3aed;
+  border-color: #032c7b;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12);
 }
 
 .pg25-al-cs-button-label {
-  color: #334155;
+  color: #3f3f3f;
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -86,7 +86,7 @@
 
 .pg25-al-cs-search-input:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
   background-color: #ffffff;
 }
 
@@ -102,7 +102,7 @@
   padding: 0.55rem 0.9rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #334155;
+  color: #3f3f3f;
   cursor: pointer;
   border: none;
   background: transparent;
@@ -140,7 +140,7 @@
   width: 4rem;
   height: 4rem;
   border: 4px solid #ddd6fe;
-  border-top-color: #7c3aed;
+  border-top-color: #032c7b;
   border-radius: 9999px;
   animation: pg25-al-spin 0.9s linear infinite;
   margin: 0 auto 1rem;
@@ -188,11 +188,11 @@
 .pg25-al-icon-fl {
   width: 1rem;
   height: 1rem;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .pg25-al-app-header {
-  background-image: linear-gradient(120deg, #7c3aed, #155dfc 60%, #4338ca);
+  background-image: linear-gradient(120deg, #032c7b, #0464de 60%, #4338ca);
   color: #ffffff;
   padding: 1rem 1.25rem;
   box-shadow: 0 4px 16px rgba(76, 29, 149, 0.25);
@@ -299,14 +299,14 @@
 }
 
 .pg25-al-pill-active {
-  background: linear-gradient(to right, #155dfc, #2563eb);
+  background: linear-gradient(to right, #0464de, #2563eb);
   color: #ffffff;
   box-shadow: 0 4px 10px rgba(21, 93, 252, 0.32);
 }
 
 .pg25-al-pill-inactive {
   background-color: #dbeafe;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .pg25-al-pill-inactive:hover {
@@ -373,7 +373,7 @@
 }
 
 .pg25-al-search-box:focus-within {
-  border-color: #7c3aed;
+  border-color: #032c7b;
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
@@ -412,7 +412,7 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
-  color: #7c3aed;
+  color: #032c7b;
   border-radius: 0.75rem;
   border: 1.5px solid #e9d5ff;
   cursor: pointer;
@@ -469,7 +469,7 @@
 
 .pg25-al-rank-inputs input:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
   background-color: #ffffff;
 }
 
@@ -509,7 +509,7 @@
 
 .pg25-al-filtered-count-num {
   font-weight: 700;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .pg25-al-table-wrapper {
@@ -547,7 +547,7 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   white-space: nowrap;
-  color: #334155;
+  color: #3f3f3f;
   border-bottom: none;
   background: transparent;
 }
@@ -637,7 +637,7 @@
 }
 
 .pg25-al-td-institute {
-  color: #7c3aed;
+  color: #032c7b;
   cursor: pointer;
   font-weight: 600;
   min-width: 180px;
@@ -650,12 +650,12 @@
 }
 
 .pg25-al-td-airank {
-  color: #155dfc;
+  color: #0464de;
   font-weight: 700;
 }
 
 .pg25-al-td-fee {
-  color: #155dfc;
+  color: #0464de;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -702,7 +702,7 @@
 .pg25-al-pagination-controls > button {
   padding: 0.4rem;
   border: 1.5px solid #e2e8f0;
-  color: #334155;
+  color: #3f3f3f;
   border-radius: 0.55rem;
   background-color: #ffffff;
   cursor: pointer;
@@ -736,7 +736,7 @@
   font-weight: 600;
   border-radius: 0.55rem;
   border: 1.5px solid #e2e8f0;
-  color: #334155;
+  color: #3f3f3f;
   background-color: #ffffff;
   cursor: pointer;
   transition-property: background-color, color, box-shadow;
@@ -749,7 +749,7 @@
 }
 
 .pg25-al-page-active {
-  background: linear-gradient(to right, #7c3aed, #9333ea);
+  background: linear-gradient(to right, #032c7b, #9333ea);
   color: #ffffff;
   border-color: transparent;
   box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
@@ -787,7 +787,7 @@
   justify-content: space-between;
   padding: 1.1rem 1.25rem;
   border-bottom: 1px solid #f1f5f9;
-  background: linear-gradient(to right, #7c3aed, #155dfc);
+  background: linear-gradient(to right, #032c7b, #0464de);
   margin-bottom: 0;
 }
 
@@ -851,7 +851,7 @@
   font-size: 0.7rem;
   line-height: 1rem;
   font-weight: 700;
-  color: #7c3aed;
+  color: #032c7b;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.35rem;
@@ -874,14 +874,14 @@
 .pg25-al-col-row input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
-  accent-color: #7c3aed;
+  accent-color: #032c7b;
   border: 1px solid #d1d5db;
   border-radius: 0.25rem;
 }
 
 .pg25-al-col-row span {
   font-size: 0.875rem;
-  color: #334155;
+  color: #3f3f3f;
   font-weight: 500;
   flex: 1 1 0%;
 }
@@ -893,7 +893,7 @@
 }
 
 .pg25-al-col-row input:checked ~ svg {
-  color: #155dfc;
+  color: #0464de;
 }
 
 .pg25-al-modal-footer {
@@ -908,7 +908,7 @@
   padding: 0.55rem 1.2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  background: linear-gradient(to right, #7c3aed, #155dfc);
+  background: linear-gradient(to right, #032c7b, #0464de);
   color: #ffffff;
   border-radius: 0.65rem;
   border: none;
@@ -951,7 +951,7 @@
 }
 
 .pg25-al-rank-tier-3 {
-  color: #155dfc;
+  color: #0464de;
   font-weight: 600;
   background-color: #eff6ff;
 }

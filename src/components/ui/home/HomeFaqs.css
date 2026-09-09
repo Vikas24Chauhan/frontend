@@ -21,7 +21,7 @@
 
 .home-faq-header p {
   font-size: 18px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .home-faq-list {
@@ -40,7 +40,7 @@
 }
 
 .home-faq-card.active {
-  border-color: #155dfc;
+  border-color: #0464de;
   box-shadow: 0 20px 40px rgba(21, 93, 252, 0.08);
 }
 
@@ -67,7 +67,7 @@
   height: 52px;
   min-width: 52px;
   border-radius: 16px;
-  background: #155dfc;
+  background: #0464de;
   color: #fff;
   display: flex;
   align-items: center;
@@ -89,7 +89,7 @@
   min-width: 46px;
   border-radius: 50%;
   background: #f4f7fb;
-  color: #155dfc;
+  color: #0464de;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,7 +114,7 @@
   margin-left: 74px;
   font-size: 17px;
   line-height: 1.9;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .home-faq-cta {
@@ -166,7 +166,7 @@
   margin: 0 auto 20px;
   font-size: 18px;
   line-height: 1.8;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .home-faq-cta-btn {

@@ -24,7 +24,7 @@
 
 .footer-about p {
   font-size: 17px;
-  color: #334155;
+  color: #3f3f3f;
   line-height: 1.8;
   margin-bottom: 30px;
 }
@@ -41,13 +41,13 @@
   gap: 10px;
   margin-bottom: 16px;
   text-decoration: none;
-  color: #334155;
+  color: #3f3f3f;
   font-size: 17px;
   transition: 0.3s;
 }
 
 .footer-links a:hover {
-  color: #155dfc;
+  color: #0464de;
   transform: translateX(6px);
 }
 
@@ -63,7 +63,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #155dfc, #7c3aed);
+  background: linear-gradient(135deg, #0464de, #032c7b);
   color: #fff;
   font-size: 22px;
   text-decoration: none;

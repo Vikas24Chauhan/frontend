@@ -23,7 +23,7 @@
 .contact-subtitle {
   max-width: 760px;
   margin-bottom: 60px;
-  color: #334155;
+  color: #3f3f3f;
   font-size: 18px;
   line-height: 1.8;
 }
@@ -86,7 +86,7 @@
 
 .contact-item h3 {
   font-size: 28px;
-  color: #334155;
+  color: #3f3f3f;
   margin-bottom: 12px;
 }
 
@@ -95,13 +95,13 @@
 .contact-item span {
   display: block;
   font-size: 18px;
-  color: #334155;
+  color: #3f3f3f;
   line-height: 1.8;
   text-decoration: none;
 }
 
 .contact-item a:hover {
-  color: #155dfc;
+  color: #0464de;
 }
 
 .contact-social-row {
@@ -116,7 +116,7 @@
   border-radius: 14px;
   border: 1px solid rgba(21, 93, 252, 0.08);
   background: #f8fafc;
-  color: #334155;
+  color: #3f3f3f;
   text-decoration: none;
   font-weight: 600;
   transition: 0.35s ease;
@@ -160,7 +160,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #155dfc, #7c3aed);
+  background: linear-gradient(135deg, #0464de, #032c7b);
   color: white;
   font-size: 28px;
   margin-bottom: 22px;
@@ -168,7 +168,7 @@
 
 .contact-card h3 {
   font-size: 28px;
-  color: #334155;
+  color: #3f3f3f;
   margin-bottom: 18px;
 }
 
@@ -176,7 +176,7 @@
 .contact-card span,
 .contact-card a {
   display: block;
-  color: #334155;
+  color: #3f3f3f;
   font-size: 18px;
   line-height: 1.8;
   text-decoration: none;
@@ -215,14 +215,14 @@
 
 .contact-whatsapp-content h3 {
   font-size: 28px;
-  color: #334155;
+  color: #3f3f3f;
   margin-bottom: 14px;
 }
 
 .contact-whatsapp-content p,
 .contact-whatsapp-content small {
   font-size: 18px;
-  color: #334155;
+  color: #3f3f3f;
   line-height: 1.8;
   display: block;
 }
@@ -258,7 +258,7 @@
 .contact-one {
   width: 340px;
   height: 340px;
-  background: #155dfc;
+  background: #0464de;
   top: -120px;
   left: -100px;
 }
@@ -266,7 +266,7 @@
 .contact-two {
   width: 280px;
   height: 280px;
-  background: #7c3aed;
+  background: #032c7b;
   right: -80px;
   top: 260px;
 }

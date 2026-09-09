@@ -39,7 +39,7 @@
   gap: 12px;
   padding: 14px 16px;
   border-radius: 10px;
-  color: #334155;
+  color: #3f3f3f;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
@@ -47,11 +47,11 @@
 
 .dashboard-sidebar a:hover {
   background: #eef4ff;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .dashboard-sidebar a.active {
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
 }
 
@@ -121,7 +121,7 @@
   }
 
   .dashboard-sidebar-toggle:hover {
-    background: #155dfc;
+    background: #0464de;
     color: #ffffff;
   }
 

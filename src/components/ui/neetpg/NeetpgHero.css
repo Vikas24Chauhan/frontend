@@ -25,7 +25,7 @@
 }
 
 .neetpg-hero-content h1 span {
-  color: #155dfc;
+  color: #0464de;
 }
 
 .neetpg-hero-tag {
@@ -33,14 +33,14 @@
   padding: 10px 20px;
   border-radius: 50px;
   background: rgba(21, 93, 252, 0.08);
-  color: #155dfc;
+  color: #0464de;
   font-weight: 600;
 }
 
 .neetpg-hero-content p {
   font-size: 18px;
   line-height: 1.9;
-  color: #334155;
+  color: #3f3f3f;
   max-width: 700px;
 }
 
@@ -68,7 +68,7 @@
 
 .neetpg-hero-note {
   font-size: 18px;
-  color: #7c3aed;
+  color: #032c7b;
   font-weight: 600;
 }
 

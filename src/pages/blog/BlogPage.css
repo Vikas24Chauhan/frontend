@@ -1,6 +1,6 @@
 .bp-wrapper {
   width: 100%;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .bp-breadcrumb {
@@ -185,7 +185,7 @@
 
 .bp-article-content p {
   margin-bottom: 16px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .bp-article-content ul,
@@ -507,7 +507,7 @@
 
 .bp-related-card-desc {
   font-size: 16px;
-  color: #334155;
+  color: #3f3f3f;
   margin-bottom: 12px;
 }
 
@@ -516,7 +516,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .bp-rc-read {
@@ -591,7 +591,7 @@
 .bp-article-content td {
   padding: 11px 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .bp-article-content tr:nth-child(even) td {

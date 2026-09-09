@@ -57,7 +57,7 @@
   border-radius: 12px;
   padding: 0 18px;
   font-size: 16px;
-  color: #334155;
+  color: #3f3f3f;
   outline: none;
   transition: all 0.3s ease;
   background: #ffffff;
@@ -68,7 +68,7 @@
 }
 
 .register-form input:focus {
-  border-color: #155dfc;
+  border-color: #0464de;
   box-shadow: 0 0 0 4px rgba(21, 93, 252, 0.12);
 }
 
@@ -77,7 +77,7 @@
   height: 56px;
   border: none;
   border-radius: 12px;
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
   font-size: 17px;
   font-weight: 600;
@@ -104,7 +104,7 @@
 }
 
 .login-text span {
-  color: #155dfc;
+  color: #0464de;
   font-weight: 600;
   cursor: pointer;
 }

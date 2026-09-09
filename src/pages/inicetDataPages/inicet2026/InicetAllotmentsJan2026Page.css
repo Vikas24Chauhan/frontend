@@ -22,12 +22,12 @@
 }
 
 .inicet-jan26-cs-button:hover {
-  border-color: #7c3aed;
+  border-color: #032c7b;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12);
 }
 
 .inicet-jan26-cs-button-label {
-  color: #334155;
+  color: #3f3f3f;
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -89,7 +89,7 @@
 
 .inicet-jan26-cs-search-input:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
 }
 
 .inicet-jan26-cs-options-list {
@@ -116,7 +116,7 @@
 }
 
 .inicet-jan26-cs-option-default {
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .inicet-jan26-rank-empty {
@@ -144,7 +144,7 @@
 }
 
 .inicet-jan26-rank-tier-3 {
-  color: #155dfc;
+  color: #0464de;
   font-weight: 600;
   background-color: #eff6ff;
 }
@@ -177,7 +177,7 @@
   width: 4rem;
   height: 4rem;
   border: 4px solid #ddd6fe;
-  border-top-color: #7c3aed;
+  border-top-color: #032c7b;
   border-radius: 9999px;
   animation: inicet-jan26-spin 0.9s linear infinite;
   margin-left: auto;
@@ -226,7 +226,7 @@
 .inicet-jan26-icon-fl {
   width: 1rem;
   height: 1rem;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .inicet-jan26-modal-overlay {
@@ -262,7 +262,7 @@
   justify-content: space-between;
   padding: 1.1rem 1.25rem;
   border-bottom: 1px solid #f1f5f9;
-  background: linear-gradient(to right, #7c3aed, #155dfc);
+  background: linear-gradient(to right, #032c7b, #0464de);
 }
 
 .inicet-jan26-modal-title {
@@ -302,7 +302,7 @@
   line-height: 1.25rem;
   font-weight: 600;
   background-color: #dbeafe;
-  color: #155dfc;
+  color: #0464de;
   border-radius: 0.65rem;
   border: none;
   cursor: pointer;
@@ -338,7 +338,7 @@
   font-size: 14px;
   line-height: 1rem;
   font-weight: 700;
-  color: #7c3aed;
+  color: #032c7b;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 0.35rem;
@@ -369,7 +369,7 @@
 .inicet-jan26-col-checkbox {
   width: 1rem;
   height: 1rem;
-  accent-color: #7c3aed;
+  accent-color: #032c7b;
   border: 1px solid #d1d5db;
   border-radius: 0.25rem;
 }
@@ -377,14 +377,14 @@
 .inicet-jan26-col-row-text {
   margin-left: 0.75rem;
   font-size: 0.875rem;
-  color: #334155;
+  color: #3f3f3f;
   font-weight: 500;
 }
 
 .inicet-jan26-col-eye-icon {
   width: 1rem;
   height: 1rem;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .inicet-jan26-col-eyeoff-icon {
@@ -405,7 +405,7 @@
   padding: 0.55rem 1.2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  background: linear-gradient(to right, #7c3aed, #155dfc);
+  background: linear-gradient(to right, #032c7b, #0464de);
   color: #ffffff;
   border-radius: 0.65rem;
   border: none;
@@ -422,7 +422,7 @@
 }
 
 .inicet-jan26-app-header {
-  background-image: linear-gradient(120deg, #7c3aed, #155dfc 60%, #4338ca);
+  background-image: linear-gradient(120deg, #032c7b, #0464de 60%, #4338ca);
   color: #ffffff;
   padding: 1rem 1.25rem;
   box-shadow: 0 4px 16px rgba(76, 29, 149, 0.25);
@@ -509,7 +509,7 @@
 }
 
 .inicet-jan26-round-btn-active {
-  background-color: #155dfc;
+  background-color: #0464de;
   color: #ffffff;
 }
 
@@ -586,7 +586,7 @@
 
 .inicet-jan26-search-input:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
@@ -630,7 +630,7 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
-  color: #7c3aed;
+  color: #032c7b;
   border-radius: 0.75rem;
   border: 1.5px solid #e9d5ff;
   cursor: pointer;
@@ -684,7 +684,7 @@
 
 .inicet-jan26-range-input:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
 
@@ -721,7 +721,7 @@
 
 .inicet-jan26-filtered-count-num {
   font-weight: 700;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .inicet-jan26-filtered-count-label {
@@ -761,7 +761,7 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   white-space: nowrap;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .inicet-jan26-table-body {
@@ -798,7 +798,7 @@
   text-align: center;
   font-size: 14px;
   line-height: 1rem;
-  color: #334155;
+  color: #3f3f3f;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -867,7 +867,7 @@
   text-align: center;
   font-size: 14px;
   line-height: 1.1rem;
-  color: #7c3aed;
+  color: #032c7b;
   cursor: pointer;
   font-weight: 600;
   min-width: 180px;
@@ -884,7 +884,7 @@
   text-align: center;
   font-size: 14px;
   line-height: 1rem;
-  color: #334155;
+  color: #3f3f3f;
   white-space: nowrap;
 }
 
@@ -922,7 +922,7 @@
 .inicet-jan26-pagination-nav-btn {
   padding: 0.4rem;
   border: 1.5px solid #e2e8f0;
-  color: #334155;
+  color: #3f3f3f;
   border-radius: 0.55rem;
   background-color: #ffffff;
   transition:
@@ -966,14 +966,14 @@
 }
 
 .inicet-jan26-page-num-active {
-  background: linear-gradient(to right, #7c3aed, #9333ea);
+  background: linear-gradient(to right, #032c7b, #9333ea);
   color: #ffffff;
   box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
 }
 
 .inicet-jan26-page-num-inactive {
   border: 1.5px solid #e2e8f0;
-  color: #334155;
+  color: #3f3f3f;
   background-color: #ffffff;
 }
 

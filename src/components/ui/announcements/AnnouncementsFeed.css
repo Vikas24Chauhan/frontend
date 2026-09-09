@@ -4,7 +4,7 @@
   background: linear-gradient(135deg, #eef5ff 0%, #dbe8ff 45%, #f4f7ff 100%);
   overflow: hidden;
   position: relative;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .eca-announcements::before {
@@ -49,7 +49,7 @@
   max-width: 480px;
   font-size: 18px;
   line-height: 1.6;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .eca-stats {
@@ -71,13 +71,13 @@
 .eca-stat-value {
   font-size: 24px;
   font-weight: 800;
-  color: #155dfc;
+  color: #0464de;
   letter-spacing: -0.02em;
 }
 
 .eca-stat-label {
   font-size: 16px;
-  color: #334155;
+  color: #3f3f3f;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -100,13 +100,13 @@
   border: 1px solid #e4e7ee;
   border-radius: 14px;
   padding: 12px 16px;
-  color: #334155;
+  color: #3f3f3f;
   box-shadow: 0 16px 36px -22px rgba(0, 0, 0, 0.22);
   transition: border-color 0.2s ease;
 }
 
 .eca-search:focus-within {
-  border-color: #155dfc;
+  border-color: #0464de;
 }
 
 .eca-search input {
@@ -166,7 +166,7 @@
 .eca-year-label {
   font-size: 28px;
   font-weight: 700;
-  color: #155dfc;
+  color: #0464de;
   letter-spacing: -0.01em;
 }
 
@@ -174,14 +174,14 @@
   margin-left: auto;
   font-size: 14px;
   font-weight: 600;
-  color: #334155;
+  color: #3f3f3f;
   background: #eef2fb;
   padding: 5px 10px;
   border-radius: 999px;
 }
 
 .eca-chevron {
-  color: #155dfc;
+  color: #0464de;
   transition: transform 0.25s ease;
   flex-shrink: 0;
 }
@@ -239,7 +239,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #155dfc;
+  background: #0464de;
   flex-shrink: 0;
 }
 
@@ -253,14 +253,14 @@
   margin-left: auto;
   font-size: 14px;
   font-weight: 700;
-  color: #155dfc;
+  color: #0464de;
   background: #eaf0fe;
   padding: 3px 9px;
   border-radius: 999px;
 }
 
 .eca-chevron-sm {
-  color: #334155;
+  color: #3f3f3f;
   transition: transform 0.25s ease;
   flex-shrink: 0;
 }
@@ -289,7 +289,7 @@
 
 .eca-card:hover {
   transform: translateY(-2px);
-  border-color: #155dfc;
+  border-color: #0464de;
 }
 
 .eca-card-head {
@@ -303,7 +303,7 @@
 .eca-tag-new {
   padding: 3px 9px;
   border-radius: 999px;
-  background: #7c3aed;
+  background: #032c7b;
   color: #fff;
   font-size: 14px;
   font-weight: 800;
@@ -315,7 +315,7 @@
   padding: 3px 9px;
   border-radius: 999px;
   background: #efe6ff;
-  color: #7c3aed;
+  color: #032c7b;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -324,7 +324,7 @@
 .eca-card-date {
   margin-left: auto;
   font-size: 14px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .eca-card-title {
@@ -340,7 +340,7 @@
   margin: 0 0 12px;
   font-size: 16px;
   line-height: 1.6;
-  color: #334155;
+  color: #3f3f3f;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -357,7 +357,7 @@
 
 .eca-source {
   font-size: 14px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .eca-read-more {
@@ -366,13 +366,13 @@
   gap: 4px;
   font-size: 14px;
   font-weight: 700;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .eca-empty {
   padding: 60px 20px;
   text-align: center;
-  color: #334155;
+  color: #3f3f3f;
   font-size: 16px;
 }
 
@@ -436,14 +436,14 @@
 .eca-modal-date {
   margin: 0 0 16px;
   font-size: 14px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .eca-modal-content {
   margin: 0 0 22px;
   font-size: 18px;
   line-height: 1.7;
-  color: #334155;
+  color: #3f3f3f;
   white-space: pre-wrap;
 }
 
@@ -463,7 +463,7 @@
   gap: 6px;
   padding: 10px 18px;
   border-radius: 999px;
-  background: #155dfc;
+  background: #0464de;
   color: #fff;
   font-size: 14px;
   font-weight: 700;

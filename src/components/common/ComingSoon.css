@@ -38,7 +38,7 @@
   padding: 8px 16px;
   border-radius: 50px;
   background: #eef4ff;
-  color: #155dfc;
+  color: #0464de;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -53,7 +53,7 @@
 }
 
 .coming-soon-card h1 span {
-  color: #155dfc;
+  color: #0464de;
 }
 
 .coming-soon-card p {
@@ -73,7 +73,7 @@
   padding: 0 24px;
   border: none;
   border-radius: 12px;
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;

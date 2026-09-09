@@ -1,6 +1,6 @@
 .bh-wrapper {
   width: 100%;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .bh-hero {
@@ -66,7 +66,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #155dfc;
+  color: #0464de;
   margin-bottom: 12px;
 }
 
@@ -80,14 +80,14 @@
 
 .bh-hero-excerpt {
   font-size: 18px;
-  color: #334155;
+  color: #3f3f3f;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .bh-hero-meta {
   font-size: 14px;
-  color: #334155;
+  color: #3f3f3f;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -112,7 +112,7 @@
 }
 
 .bh-hero-cta:hover {
-  background: #155dfc;
+  background: #0464de;
 }
 
 .bh-breadcrumb {
@@ -127,7 +127,7 @@
 
 .bh-bc-link {
   font-size: 16px;
-  color: #155dfc;
+  color: #0464de;
   cursor: pointer;
   text-decoration: none;
 }
@@ -170,7 +170,7 @@
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.12);
   background: #ffffff;
-  color: #334155;
+  color: #3f3f3f;
   transition: all 0.2s;
 }
 
@@ -181,8 +181,8 @@
 }
 
 .bh-filter-tab:hover:not(.active) {
-  border-color: #155dfc;
-  color: #155dfc;
+  border-color: #0464de;
+  color: #0464de;
 }
 
 .bh-main {
@@ -215,12 +215,12 @@
 .bh-section-title {
   font-size: 28px;
   font-weight: 600;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .bh-section-count {
   font-size: 14px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .bh-blogs-grid {
@@ -289,12 +289,12 @@
 
 .bh-tag-neetpg {
   background: #e5edfe;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .bh-tag-inicet {
   background: #f1e9fd;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .bh-tag-neetug {
@@ -317,7 +317,7 @@
 
 .bh-blog-card-excerpt {
   font-size: 15px;
-  color: #334155;
+  color: #3f3f3f;
   line-height: 1.6;
   margin-bottom: 12px;
   flex: 1;
@@ -332,14 +332,14 @@
 
 .bh-card-meta {
   font-size: 14px;
-  color: #334155;
+  color: #3f3f3f;
   display: flex;
   gap: 12px;
 }
 
 .bh-card-read-more {
   font-size: 14px;
-  color: #155dfc;
+  color: #0464de;
   font-weight: 500;
 }
 
@@ -347,7 +347,7 @@
   font-size: 18px;
   text-align: center;
   padding: 60px 10px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 /* All Topics */
@@ -365,34 +365,34 @@
 
 /* NEET PG */
 .bh-filter-tab.tab-neetpg {
-  color: #155dfc;
-  border-color: #155dfc;
+  color: #0464de;
+  border-color: #0464de;
 }
 .bh-filter-tab.tab-neetpg.active {
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
-  border-color: #155dfc;
+  border-color: #0464de;
 }
 .bh-filter-tab.tab-neetpg:hover:not(.active) {
   background: #e5edfe;
-  color: #155dfc;
-  border-color: #155dfc;
+  color: #0464de;
+  border-color: #0464de;
 }
 
 /* INICET */
 .bh-filter-tab.tab-inicet {
-  color: #7c3aed;
-  border-color: #7c3aed;
+  color: #032c7b;
+  border-color: #032c7b;
 }
 .bh-filter-tab.tab-inicet.active {
-  background: #7c3aed;
+  background: #032c7b;
   color: #ffffff;
-  border-color: #7c3aed;
+  border-color: #032c7b;
 }
 .bh-filter-tab.tab-inicet:hover:not(.active) {
   background: #f1e9fd;
-  color: #7c3aed;
-  border-color: #7c3aed;
+  color: #032c7b;
+  border-color: #032c7b;
 }
 
 /* NEET UG */
@@ -450,7 +450,7 @@
 }
 
 .bh-load-more-btn:hover {
-  background: #155dfc;
+  background: #0464de;
   color: #ffffff;
 }
 
@@ -490,7 +490,7 @@
 }
 
 .bh-newsletter-btn:hover {
-  background-color: #155dfc;
+  background-color: #0464de;
   color: #ffffff;
 } */
 

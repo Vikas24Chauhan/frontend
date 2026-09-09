@@ -46,7 +46,7 @@
 
 .chaos-subtitle {
   font-size: 22px;
-  color: #334155;
+  color: #3f3f3f;
   line-height: 1.8;
 }
 
@@ -122,7 +122,7 @@
   line-height: 1.5;
   max-inline-size: 40ch;
   text-wrap: pretty;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .chaos-visual {
@@ -223,7 +223,7 @@
 }
 
 .chaos-content-3 {
-  --_chaos-text-gradient: linear-gradient(227deg, #7c3aed 0%, #c084fc 100%);
+  --_chaos-text-gradient: linear-gradient(227deg, #032c7b 0%, #c084fc 100%);
 }
 
 .chaos-content-4 {

@@ -37,7 +37,7 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #155dfc;
+  background: #0464de;
   box-shadow: 0 0 18px 4px rgba(21, 93, 252, 0.35);
 }
 
@@ -71,7 +71,7 @@
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #7c3aed;
+  background: #032c7b;
   box-shadow: 0 0 16px 3px rgba(124, 58, 237, 0.4);
 }
 
@@ -90,13 +90,13 @@
 .inid-hero-particle-1 {
   width: 6px;
   height: 6px;
-  background: #155dfc;
+  background: #0464de;
 }
 
 .inid-hero-particle-2 {
   width: 5px;
   height: 5px;
-  background: #7c3aed;
+  background: #032c7b;
 }
 
 .inid-hero-particle-3 {
@@ -197,7 +197,7 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
-  color: #7c3aed;
+  color: #032c7b;
   background: #f3ecfe;
   border: 1px solid #e4d4fd;
   border-radius: 999px;
@@ -217,7 +217,7 @@
 }
 
 .inid-hero-title-accent {
-  background: linear-gradient(90deg, #155dfc, #7c3aed);
+  background: linear-gradient(90deg, #0464de, #032c7b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -228,7 +228,7 @@
   margin: 0 auto 56px;
   font-size: 18px;
   line-height: 1.6;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .inid-hero-cards {
@@ -266,7 +266,7 @@
 }
 
 .inid-hero-card:focus-visible {
-  outline: 2px solid #155dfc;
+  outline: 2px solid #0464de;
   outline-offset: 3px;
 }
 
@@ -277,7 +277,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  color: #155dfc;
+  color: #0464de;
   background: #eaf1ff;
 }
 
@@ -295,7 +295,7 @@
 .inid-hero-card-desc {
   font-size: 16px;
   line-height: 1.5;
-  color: #334155;
+  color: #3f3f3f;
   flex: 1;
 }
 
@@ -306,7 +306,7 @@
   margin-top: 6px;
   font-size: 13px;
   font-weight: 600;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .inid-hero-card-cta svg {
@@ -353,7 +353,7 @@
   border: none;
   border-radius: 50%;
   background: #f1f5f9;
-  color: #334155;
+  color: #3f3f3f;
   cursor: pointer;
   transition:
     background 0.2s ease,
@@ -373,7 +373,7 @@
   height: 52px;
   margin-bottom: 14px;
   border-radius: 14px;
-  color: #155dfc;
+  color: #0464de;
   background: #eaf1ff;
 }
 
@@ -387,13 +387,13 @@
   font-size: 28px;
   line-height: 1.2;
   font-weight: 700;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .inid-hero-modal-hint {
   margin: 0 0 20px;
   font-size: 13.5px;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .inid-hero-period-list {
@@ -433,7 +433,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #334155;
+  color: #3f3f3f;
 }
 
 .inid-hero-period-value {

@@ -45,13 +45,13 @@
 }
 
 .pg25-sm-cs-select:hover {
-  border-color: #7c3aed;
+  border-color: #032c7b;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12);
 }
 
 .pg25-sm-cs-select:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
 
@@ -93,13 +93,13 @@
 }
 
 .pg25-sm-cs-trigger:hover {
-  border-color: #7c3aed;
+  border-color: #032c7b;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12);
 }
 
 .pg25-sm-cs-trigger:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
 
@@ -168,7 +168,7 @@
 
 .pg25-sm-select-search-input:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
 }
 
 .pg25-sm-select-options {
@@ -213,7 +213,7 @@
   width: 4rem;
   height: 4rem;
   border: 4px solid #ddd6fe;
-  border-top-color: #7c3aed;
+  border-top-color: #032c7b;
   border-radius: 9999px;
   margin: 0 auto 1rem;
   animation: pg25-sm-spin 0.9s linear infinite;
@@ -279,7 +279,7 @@
   justify-content: space-between;
   padding: 1.1rem 1.25rem;
   border-bottom: 1px solid #f1f5f9;
-  background: linear-gradient(to right, #7c3aed, #155dfc);
+  background: linear-gradient(to right, #032c7b, #0464de);
 }
 
 .pg25-sm-modal-title {
@@ -324,7 +324,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   background-color: #dbeafe;
-  color: #155dfc;
+  color: #0464de;
   border-radius: 0.65rem;
   border: none;
   cursor: pointer;
@@ -382,7 +382,7 @@
 .pg25-sm-col-checkbox {
   width: 1rem;
   height: 1rem;
-  accent-color: #7c3aed;
+  accent-color: #032c7b;
   border: 1px solid #d1d5db;
   border-radius: 0.25rem;
 }
@@ -397,7 +397,7 @@
 .pg25-sm-col-eye-icon {
   width: 1rem;
   height: 1rem;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .pg25-sm-col-eyeoff-icon {
@@ -419,7 +419,7 @@
   padding: 0.55rem 1.2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  background: linear-gradient(to right, #7c3aed, #155dfc);
+  background: linear-gradient(to right, #032c7b, #0464de);
   color: #ffffff;
   border-radius: 0.65rem;
   border: none;
@@ -436,7 +436,7 @@
 }
 
 .pg25-sm-header {
-  background-image: linear-gradient(120deg, #7c3aed, #155dfc 60%, #4338ca);
+  background-image: linear-gradient(120deg, #032c7b, #0464de 60%, #4338ca);
   color: #ffffff;
   padding: 1rem 1.25rem;
   box-shadow: 0 4px 16px rgba(76, 29, 149, 0.25);
@@ -527,12 +527,12 @@
 }
 
 .pg25-sm-pill-blue-active {
-  background-color: #155dfc;
+  background-color: #0464de;
   color: #ffffff;
 }
 
 .pg25-sm-pill-indigo-active {
-  background-color: #7c3aed;
+  background-color: #032c7b;
   color: #ffffff;
 }
 
@@ -627,7 +627,7 @@
 
 .pg25-sm-search-input:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
@@ -675,7 +675,7 @@
 
 .pg25-sm-morefilters-active {
   background-color: #f3e8ff;
-  color: #7c3aed;
+  color: #032c7b;
   border-color: #ddb4fb;
 }
 
@@ -738,7 +738,7 @@
 
 .pg25-sm-field-input:focus {
   outline: none;
-  border-color: #7c3aed;
+  border-color: #032c7b;
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
 
@@ -767,7 +767,7 @@
 
 .pg25-sm-stats-num-blue {
   font-weight: 700;
-  color: #155dfc;
+  color: #0464de;
 }
 
 .pg25-sm-stats-label {
@@ -780,7 +780,7 @@
 
 .pg25-sm-stats-num-emerald {
   font-weight: 700;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .pg25-sm-clearall-btn {
@@ -847,7 +847,7 @@
   text-align: center;
   font-size: 14px;
   font-weight: 700;
-  color: #155dfc;
+  color: #0464de;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
@@ -957,7 +957,7 @@
   padding: 0.75rem;
   text-align: center;
   font-size: 14px;
-  color: #7c3aed;
+  color: #032c7b;
   cursor: pointer;
   font-weight: 600;
   max-width: 280px;
@@ -1005,7 +1005,7 @@
 
 .pg25-sm-badge-degree-dm {
   background-color: #f3e8ff;
-  color: #7c3aed;
+  color: #032c7b;
 }
 
 .pg25-sm-badge-degree-mch {
@@ -1058,7 +1058,7 @@
 }
 
 .pg25-sm-seats-blue {
-  color: #155dfc;
+  color: #0464de;
 }
 
 .pg25-sm-seats-orange {
@@ -1137,7 +1137,7 @@
 }
 
 .pg25-sm-pagenum-active {
-  background: linear-gradient(to right, #7c3aed, #9333ea);
+  background: linear-gradient(to right, #032c7b, #9333ea);
   color: #ffffff;
   box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
   border: none;
