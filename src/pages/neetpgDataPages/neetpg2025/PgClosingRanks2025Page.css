@@ -405,7 +405,7 @@
   background: transparent;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .pg25-cr-filter-selects {
@@ -470,7 +470,7 @@
   border-radius: 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #0f172a;
+  color: #032c7b;
   background-color: #f8fafc;
   transition:
     border-color 150ms ease,

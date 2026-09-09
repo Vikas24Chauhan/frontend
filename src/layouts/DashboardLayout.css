@@ -29,7 +29,7 @@
 
 .dashboard-sidebar h2 {
   font-size: 28px;
-  color: #0f172a;
+  color: #032c7b;
   margin-bottom: 12px;
 }
 
@@ -111,7 +111,7 @@
     border: none;
     border-radius: 0 22px 22px 0;
     background: #ff732d;
-    color: #0f172a;
+    color: #032c7b;
     cursor: pointer;
     box-shadow: 4px 4px 15px rgba(15, 23, 42, 0.15);
     transition:

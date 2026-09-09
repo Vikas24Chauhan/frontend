@@ -427,7 +427,7 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 0.75rem;
   font-size: 0.875rem;
-  color: #0f172a;
+  color: #032c7b;
   background-color: #f8fafc;
   transition:
     border-color 0.15s ease,
@@ -507,7 +507,7 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 0.75rem;
   font-size: 0.875rem;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .ug25-fsb-number-input:focus {
@@ -772,7 +772,7 @@
   text-align: center;
   font-size: 14px;
   font-weight: 600;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .ug25-fsb-td-fee {

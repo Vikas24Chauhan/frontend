@@ -24,7 +24,7 @@
   line-height: 1.05;
   letter-spacing: -1px;
   font-weight: 700;
-  color: #ff732d;
+  color: #032c7b;
 }
 
 .hero-content h2 {
@@ -32,7 +32,7 @@
   font-size: 32px;
   line-height: 1.2;
   font-weight: 700;
-  color: #032c7b;
+  color: #0464de;
 }
 
 .hero-content p {
@@ -43,7 +43,7 @@
 }
 
 .hero-content b {
-  color: #032c7b;
+  color: #0464de;
 }
 
 .hero-actions {

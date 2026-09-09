@@ -73,7 +73,7 @@
 .bh-hero-title {
   font-size: 38px;
   font-weight: 700;
-  color: #0f172a;
+  color: #032c7b;
   line-height: 1.25;
   margin-bottom: 14px;
 }
@@ -141,7 +141,7 @@
 }
 
 .bh-bc-current {
-  color: #0f172a;
+  color: #032c7b;
   font-weight: 500;
 }
 
@@ -175,9 +175,9 @@
 }
 
 .bh-filter-tab.active {
-  background: #0f172a;
+  background: #032c7b;
   color: #ffffff;
-  border-color: #0f172a;
+  border-color: #032c7b;
 }
 
 .bh-filter-tab:hover:not(.active) {
@@ -284,7 +284,7 @@
 
 .bh-tag-all {
   background: #e2e5ea;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .bh-tag-neetpg {
@@ -310,7 +310,7 @@
 .bh-blog-card-title {
   font-size: 18px;
   font-weight: 600;
-  color: #0f172a;
+  color: #032c7b;
   line-height: 1.4;
   margin-bottom: 6px;
 }
@@ -352,15 +352,15 @@
 
 /* All Topics */
 .bh-filter-tab.tab-all {
-  color: #0f172a;
-  border-color: #0f172a;
+  color: #032c7b;
+  border-color: #032c7b;
 }
 
 .bh-filter-tab.tab-all.active,
 .bh-filter-tab.tab-all:hover:not(.active) {
-  background: #0f172a;
+  background: #032c7b;
   color: #ffffff;
-  border-color: #0f172a;
+  border-color: #032c7b;
 }
 
 /* NEET PG */
@@ -403,7 +403,7 @@
 
 .bh-filter-tab.tab-neetug.active {
   background: #ff732d;
-  color: #0f172a;
+  color: #032c7b;
   border-color: #ff732d;
 }
 
@@ -442,7 +442,7 @@
   font-weight: 600;
   border: none;
   background: #ff732d;
-  color: #0f172a;
+  color: #032c7b;
   cursor: pointer;
   transition:
     background 0.2s,
@@ -455,7 +455,7 @@
 }
 
 /* .bh-newsletter-strip {
-  background: #0f172a;
+  background: #032c7b;
   padding: 36px 5%;
   display: flex;
   align-items: center;
@@ -479,7 +479,7 @@
 .bh-newsletter-btn {
   text-decoration: none;
   background: #ff732d;
-  color: #0f172a;
+  color: #032c7b;
   border: none;
   padding: 12px 18px;
   border-radius: 8px;

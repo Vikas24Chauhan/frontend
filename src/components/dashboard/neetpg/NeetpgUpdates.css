@@ -30,7 +30,7 @@
 
 .neetpg-updates-title {
   margin: 0 0 16px;
-  color: #0f172a;
+  color: #032c7b;
   font-size: 38px;
   line-height: 1.2;
   font-weight: 700;
@@ -166,7 +166,7 @@
 
 .neetpg-update-event {
   margin: 0;
-  color: #0f172a;
+  color: #032c7b;
   font-size: 19px;
   line-height: 1.4;
   font-weight: 600;
@@ -179,7 +179,7 @@
   margin: 60px auto 0;
   padding: 22px 24px;
   border-radius: 16px;
-  background: #0f172a;
+  background: #032c7b;
   box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
 }
 
@@ -230,7 +230,7 @@
   padding: 11px 17px;
   border-radius: 9px;
   background: #ff732d;
-  color: #0f172a;
+  color: #032c7b;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;

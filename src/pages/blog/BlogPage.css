@@ -35,7 +35,7 @@
 }
 
 .bp-bc-current {
-  color: #0f172a;
+  color: #032c7b;
   font-weight: 400;
   font-size: 15px;
   flex: 1;
@@ -47,7 +47,7 @@
 
 .bp-hero {
   background-color: #f8fbff;
-  color: #0f172a;
+  color: #032c7b;
   padding: 40px 20px;
 }
 
@@ -165,7 +165,7 @@
 .bp-article-content h4 {
   font-size: 20px;
   font-weight: 600;
-  color: #0f172a;
+  color: #032c7b;
   margin: 28px 0 12px;
   padding-top: 8px;
   scroll-margin-top: 80px;
@@ -179,7 +179,7 @@
 .bp-article-content h5 {
   font-size: 17px;
   font-weight: 600;
-  color: #0f172a;
+  color: #032c7b;
   margin: 20px 0 8px;
 }
 
@@ -318,7 +318,7 @@
 .bp-sw-title {
   font-size: 14px;
   font-weight: 600;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .bp-sw-body {
@@ -326,7 +326,7 @@
 }
 
 .bp-cta-widget {
-  background: #0f172a;
+  background: #032c7b;
   border-radius: 10px;
   padding: 16px 12px;
   text-align: center;
@@ -356,7 +356,7 @@
   display: block;
   width: 100%;
   background: #feb122;
-  color: #0f172a;
+  color: #032c7b;
   border: none;
   padding: 8px 10px;
   border-radius: 8px;
@@ -400,7 +400,7 @@
 .bp-related-title {
   font-size: 20px;
   font-weight: 600;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .bp-related-cards {
@@ -464,7 +464,7 @@
 
 .bp-tag-navy {
   background: #e8eaf6;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .bp-tag-blue {
@@ -500,7 +500,7 @@
 .bp-related-card-title {
   font-size: 18px;
   font-weight: 600;
-  color: #0f172a;
+  color: #032c7b;
   line-height: 1.4;
   margin: 12px 0;
 }
@@ -537,7 +537,7 @@
 
 .bp-related-nav-btn {
   font-size: 14px;
-  color: #0f172a;
+  color: #032c7b;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -557,7 +557,7 @@
 
 .bp-not-found h2 {
   font-size: 24px;
-  color: #0f172a;
+  color: #032c7b;
   margin-bottom: 20px;
 }
 
@@ -580,7 +580,7 @@
 }
 
 .bp-article-content th {
-  background: #0f172a;
+  background: #032c7b;
   color: #ffffff;
   padding: 12px 16px;
   text-align: left;

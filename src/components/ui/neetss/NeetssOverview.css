@@ -68,7 +68,7 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  color: #0f172a;
+  color: #032c7b;
   margin: 0 0 16px;
 }
 
@@ -130,7 +130,7 @@
 .ss-overview-info-title {
   font-size: 19px;
   font-weight: 700;
-  color: #0f172a;
+  color: #032c7b;
   margin: 0 0 10px;
 }
 
@@ -155,7 +155,7 @@
   font-size: 28px;
   font-weight: 800;
   letter-spacing: -0.01em;
-  color: #0f172a;
+  color: #032c7b;
   margin: 0;
 }
 
@@ -184,7 +184,7 @@
 }
 
 .ss-overview-authority-card.is-navy {
-  background: #0f172a;
+  background: #032c7b;
   color: #ffffff;
 }
 
@@ -248,7 +248,7 @@
   font-size: 18px;
   font-weight: 700;
   margin: 0 0 10px;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .ss-overview-authority-desc {
@@ -326,7 +326,7 @@
   font-size: 14px;
   font-weight: 700;
   color: #ffffff;
-  background: #0f172a;
+  background: #032c7b;
   border-radius: 10px;
   padding: 9px 18px;
 }

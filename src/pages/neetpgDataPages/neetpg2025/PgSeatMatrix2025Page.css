@@ -33,7 +33,7 @@
   border-radius: 0.75rem;
   font-size: 0.875rem;
   background-color: #ffffff;
-  color: #0f172a;
+  color: #032c7b;
   appearance: none;
   min-width: 150px;
   width: 100%;
@@ -112,7 +112,7 @@
 
 .pg25-sm-cs-value {
   flex: 1;
-  color: #0f172a;
+  color: #032c7b;
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -617,7 +617,7 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 0.75rem;
   font-size: 0.875rem;
-  color: #0f172a;
+  color: #032c7b;
   background-color: #f8fafc;
   transition:
     border-color 0.15s ease,
@@ -732,7 +732,7 @@
   border: 1.5px solid #e2e8f0;
   border-radius: 0.75rem;
   font-size: 0.875rem;
-  color: #0f172a;
+  color: #032c7b;
   background-color: #ffffff;
 }
 
@@ -1087,7 +1087,7 @@
 
 .pg25-sm-pagination-info-bold {
   font-weight: 700;
-  color: #0f172a;
+  color: #032c7b;
 }
 
 .pg25-sm-pagination-controls {
