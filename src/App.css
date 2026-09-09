@@ -26,8 +26,14 @@ sub-heading → font-size:24px;
 para/desc → font-size: 16px
   } */
 
-/* Deep Navy Blue - #01092d
-Dark Azure - #032c7b
-Bright Royal Blue - #0464de
-Branding orange - #E85002
-Frost - #aee37b */
+/* heading → font-size:38px; / color: #032c7b
+sub-heading → font-size:28px; / color: #0464de
+para/desc → font-size: 18px / color: #3f3f3f
+cta color: #ff732d
+for background:#effff4
+
+@media (max-width: 868px) {
+  heading → font-size:32px;
+sub-heading → font-size:24px;
+para/desc → font-size: 16px
+  } */

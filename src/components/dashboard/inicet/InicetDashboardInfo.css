@@ -50,7 +50,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #f59e0b;
+  background: #ff732d;
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
 }
 
@@ -249,7 +249,7 @@
 }
 
 .inid-info-phase-band-c {
-  background: linear-gradient(120deg, #7c3aed, #f59e0b);
+  background: linear-gradient(120deg, #7c3aed, #ff732d);
 }
 
 .inid-info-phase-roman {
@@ -458,7 +458,7 @@
   width: 17px;
   height: 17px;
   margin-top: 2px;
-  color: #f59e0b;
+  color: #ff732d;
 }
 
 /* -------------------------- Responsive --------------------- */

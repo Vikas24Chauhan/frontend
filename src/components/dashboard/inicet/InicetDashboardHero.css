@@ -52,7 +52,7 @@
   right: 90px;
   width: 8px;
   height: 8px;
-  background: #f59e0b;
+  background: #ff732d;
   box-shadow: 0 0 14px 3px rgba(245, 158, 11, 0.4);
 }
 
@@ -102,7 +102,7 @@
 .inid-hero-particle-3 {
   width: 4px;
   height: 4px;
-  background: #f59e0b;
+  background: #ff732d;
 }
 
 .inid-hero-particle-4 {
@@ -424,8 +424,8 @@
 }
 
 .inid-hero-period-btn-active {
-  border-color: #f59e0b;
-  background: #f59e0b;
+  border-color: #ff732d;
+  background: #ff732d;
 }
 
 .inid-hero-period-label {
@@ -446,7 +446,7 @@
   margin: 18px 0 0;
   font-size: 12.5px;
   font-weight: 600;
-  color: #f59e0b;
+  color: #ff732d;
 }
 
 /* -------------------------- Responsive --------------------- */

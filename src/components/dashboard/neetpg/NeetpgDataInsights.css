@@ -54,7 +54,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #f59e0b;
+  background: #ff732d;
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
 }
 
@@ -177,7 +177,7 @@
 }
 
 .npgd-insights-insight-card.npgd-insights-accent-cta {
-  border-left-color: #f59e0b;
+  border-left-color: #ff732d;
 }
 
 .npgd-insights-insight-head {
@@ -206,7 +206,7 @@
 
 .npgd-insights-insight-card.npgd-insights-accent-cta
   .npgd-insights-insight-icon {
-  background: #f59e0b;
+  background: #ff732d;
 }
 
 .npgd-insights-insight-icon svg {
@@ -264,7 +264,7 @@
   width: 17px;
   height: 17px;
   margin-top: 2px;
-  color: #f59e0b;
+  color: #ff732d;
 }
 
 /* -------------------------- Responsive --------------------- */

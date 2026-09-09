@@ -99,8 +99,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #f59e0b;
-  color: #0f172a;
+  background: #ff732d;
+  color: #ffffff;
   padding: 13px 22px;
   border-radius: 8px;
   font-size: 15px;
@@ -113,7 +113,6 @@
 
 .bh-hero-cta:hover {
   background: #155dfc;
-  color: #ffffff;
 }
 
 .bh-breadcrumb {
@@ -209,7 +208,7 @@
 .bh-section-accent {
   width: 4px;
   height: 22px;
-  background: #f59e0b;
+  background: #ff732d;
   border-radius: 2px;
 }
 
@@ -398,20 +397,20 @@
 
 /* NEET UG */
 .bh-filter-tab.tab-neetug {
-  color: #f59e0b;
-  border-color: #f59e0b;
+  color: #ff732d;
+  border-color: #ff732d;
 }
 
 .bh-filter-tab.tab-neetug.active {
-  background: #f59e0b;
+  background: #ff732d;
   color: #0f172a;
-  border-color: #f59e0b;
+  border-color: #ff732d;
 }
 
 .bh-filter-tab.tab-neetug:hover:not(.active) {
   background: #fef3e0;
-  color: #f59e0b;
-  border-color: #f59e0b;
+  color: #ff732d;
+  border-color: #ff732d;
 }
 
 /* Others */
@@ -442,7 +441,7 @@
   font-size: 14px;
   font-weight: 600;
   border: none;
-  background: #f59e0b;
+  background: #ff732d;
   color: #0f172a;
   cursor: pointer;
   transition:
@@ -479,7 +478,7 @@
 
 .bh-newsletter-btn {
   text-decoration: none;
-  background: #f59e0b;
+  background: #ff732d;
   color: #0f172a;
   border: none;
   padding: 12px 18px;
