@@ -113,7 +113,43 @@
   text-decoration: underline;
 }
 
-/* -------------------- Responsive ------------------- */
+.forgot-password {
+  text-align: right;
+  margin: 10px 0 20px;
+}
+
+.forgot-password span {
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.forgot-password span:hover {
+  opacity: 0.6;
+}
+
+.auth-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 25px;
+}
+
+.email-display {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: -15px;
+  margin-bottom: 25px;
+  word-break: break-word;
+}
+
+.signup-text span {
+  cursor: pointer;
+}
+
+/* -------------------------------- Responsive ---------------------------- */
 
 @media (max-width: 868px) {
   .login-section {

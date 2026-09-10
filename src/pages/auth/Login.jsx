@@ -91,8 +91,11 @@ function Login() {
             onChange={handleChange}
           />
 
-          <br />
-          <br />
+          <p className="forgot-password">
+            <span onClick={() => navigate("/forgot-password")}>
+              Forgot Password?
+            </span>
+          </p>
 
           <button type="submit" disabled={loading}>
             {loading ? "Logging in..." : "Login"}
