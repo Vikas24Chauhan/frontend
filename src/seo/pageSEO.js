@@ -48,6 +48,13 @@ export const pageSEO = {
     keywords: "Announcements ",
   },
 
+  "/careers": {
+    title: "Careers at Believers Consultancy | Join Our Team",
+    description:
+      "Are you looking to build careers with Believers Consultancy? A one stop solution for career guidance & support at right time for NEET PG aspirants.",
+    keywords: "Careers",
+  },
+
   "/contact-us": {
     title: "Contact Us - Believers Consultancy",
     description:

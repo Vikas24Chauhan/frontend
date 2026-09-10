@@ -39,7 +39,7 @@ const NeetssHero = () => {
 
         <div className="ss-hero-image">
           <img
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900"
+            src="https://cdn.dribbble.com/userupload/48966004/file/ab28a36977d1cea0542b8036fe18bc4d.jpeg"
             alt="NEET PG Counselling"
           />
         </div>

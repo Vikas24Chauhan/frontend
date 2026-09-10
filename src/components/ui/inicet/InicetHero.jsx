@@ -44,7 +44,7 @@ const InicetHero = () => {
 
         <div className="inicet-hero-image">
           <img
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900"
+            src="https://cdn.dribbble.com/userupload/48966006/file/f3aff17bdd7218d97273fab749050993.jpeg"
             alt="INI-CET Counselling"
           />
         </div>

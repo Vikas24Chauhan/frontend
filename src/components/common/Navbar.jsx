@@ -52,6 +52,7 @@ function Navbar() {
 
           <Link to="/blogs">Blogs</Link>
           <Link to="/announcements">Announcements</Link>
+          <Link to="/careers">Careers</Link>
           <Link to="/contact-us">Contact Us</Link>
         </nav>
 
@@ -112,6 +113,9 @@ function Navbar() {
         </Link>
         <Link to="/announcements" onClick={closeMenu}>
           Announcements
+        </Link>
+        <Link to="/careers" onClick={closeMenu}>
+          Careers
         </Link>
         <Link to="/contact-us" onClick={closeMenu}>
           Contact Us

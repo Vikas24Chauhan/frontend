@@ -44,7 +44,7 @@ const NeetpgHero = () => {
 
         <div className="neetpg-hero-image">
           <img
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900"
+            src="https://cdn.dribbble.com/userupload/48966005/file/7793b6ca63d76bc470f066afbf43810d.webp"
             alt="NEET PG Counselling"
           />
         </div>

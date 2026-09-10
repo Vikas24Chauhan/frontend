@@ -25,6 +25,7 @@ import NeetssPage from "../pages/NeetssPage";
 import BlogHome from "../pages/blog/BlogHome";
 import BlogPage from "../pages/blog/BlogPage";
 import AnnouncementsPage from "../pages/AnnouncementsPage";
+import CareersPage from "../pages/CareersPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import PrivacyPolicy from "../pages/policies/PrivacyPolicy";
 import TermsConditions from "../pages/policies/TermsConditions";
@@ -76,6 +77,7 @@ function AppRoutes() {
           <Route path="/blogs" element={<BlogHome />} />
           <Route path="/blog/:blogId" element={<BlogPage />} />
           <Route path="/announcements" element={<AnnouncementsPage />} />
+          <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsConditions />} />
