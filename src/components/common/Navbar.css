@@ -173,6 +173,10 @@
 /* -------------------- Responsive ------------------- */
 
 @media (max-width: 992px) {
+  .navbar {
+    position: sticky;
+  }
+
   .nav-menu {
     display: none;
   }
@@ -191,6 +195,10 @@
   }
 
   .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     gap: 0;

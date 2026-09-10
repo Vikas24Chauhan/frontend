@@ -59,7 +59,7 @@ import UgClosingRanks2025Page from "../pages/neetugDataPages/neetug2025/UgClosin
 import UgAllotments2025Page from "../pages/neetugDataPages/neetug2025/UgAllotments2025Page";
 
 // Predictors
-import NeetPgPredictor from "../predictors/neetPg/NeetPgPredictor";
+import NeetpgPredictor from "../predictors/neetPg/NeetpgPredictor";
 
 import NewHomePage from "../pages/NewHomePage";
 import AiSensyWidget from "../components/common/AiSensyWidget";
@@ -86,8 +86,6 @@ function AppRoutes() {
           <Route path="/terms" element={<TermsConditions />} />
           <Route path="/coming-soon" element={<ComingSoonPage />} />
           <Route path="*" element={<NotFound />} />
-
-          <Route path="/predictor/neet-pg" element={<NeetPgPredictor />} />
         </Route>
 
         {/* ================= Public Route ================= */}
@@ -118,12 +116,6 @@ function AppRoutes() {
           <Route path="neet-ug" element={<NeetugDashboard />} />
           <Route path="inicet" element={<InicetDashboard />} />
         </Route>
-
-        {/* <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route path="neet-pg" element={<NeetpgDashboard />} />
-          <Route path="neet-ug" element={<NeetugDashboard />} />
-          <Route path="inicet" element={<InicetDashboard />} />
-        </Route> */}
 
         {/* ================= Protected Data Route ================= */}
         <Route element={<ProtectedRoute />}>
@@ -192,6 +184,18 @@ function AppRoutes() {
             path="/dashboard/neetug-allotments-2025"
             element={<UgAllotments2025Page />}
           />
+        </Route>
+
+        {/* ================= Protected Predictor Route ================= */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <MainLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="/predictor/neet-pg" element={<NeetpgPredictor />} />
         </Route>
       </Routes>
     </>

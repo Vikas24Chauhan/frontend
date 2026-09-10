@@ -1,8 +1,8 @@
 import { ArrowRight, BarChart3, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import "./NeetPgPredictorCTA.css";
+import "./NeetpgPredictorCTA.css";
 
-function NeetPgPredictorCTA() {
+function NeetpgPredictorCTA() {
   const navigate = useNavigate();
 
   return (
@@ -41,4 +41,4 @@ function NeetPgPredictorCTA() {
   );
 }
 
-export default NeetPgPredictorCTA;
+export default NeetpgPredictorCTA;

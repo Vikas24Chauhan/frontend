@@ -17,7 +17,7 @@ import {
   AlertCircle,
   LoaderCircle,
 } from "lucide-react";
-import "./NeetPgPredictor.css";
+import "./NeetpgPredictor.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -77,7 +77,7 @@ const getPredictionLabel = (prediction) => {
   }
 };
 
-function NeetPgPredictor() {
+function NeetpgPredictor() {
   const [form, setForm] = useState(initialForm);
   const [results, setResults] = useState([]);
   const [summary, setSummary] = useState(null);
@@ -735,4 +735,4 @@ function NeetPgPredictor() {
   );
 }
 
-export default NeetPgPredictor;
+export default NeetpgPredictor;

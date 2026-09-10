@@ -129,7 +129,7 @@
   }
 
   .hero-content h1 {
-    font-size: 46px;
+    font-size: 38px;
   }
 
   .hero-content h3 {
@@ -157,7 +157,8 @@
   }
 
   .hero-content h1 {
-    font-size: 42px;
+    font-size: 32px;
+    line-height: 1.25;
   }
 
   .hero-content h3 {
