@@ -1,7 +1,7 @@
 .seo-section-container {
   width: 100%;
   margin: 32px 0;
-  background: linear-gradient(135deg, #1d204b 0%, #1767be 50%, #feb122 100%);
+  background: linear-gradient(135deg, #1d204b 0%, #1767be 50%, #ff732d 100%);
   border-radius: 12px;
   padding: 20px 24px;
   position: relative;
@@ -92,7 +92,7 @@
 }
 
 .seo-explore-btn:hover {
-  background: #feb122;
+  background: #ff732d;
   color: #1d204b;
   transform: translateY(-2px);
 }

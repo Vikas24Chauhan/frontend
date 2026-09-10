@@ -58,6 +58,9 @@ import UgSeatMatrix2025Page from "../pages/neetugDataPages/neetug2025/UgSeatMatr
 import UgClosingRanks2025Page from "../pages/neetugDataPages/neetug2025/UgClosingRanks2025Page";
 import UgAllotments2025Page from "../pages/neetugDataPages/neetug2025/UgAllotments2025Page";
 
+// Predictors
+import NeetPgPredictor from "../predictors/neetPg/NeetPgPredictor";
+
 import NewHomePage from "../pages/NewHomePage";
 import AiSensyWidget from "../components/common/AiSensyWidget";
 
@@ -83,6 +86,8 @@ function AppRoutes() {
           <Route path="/terms" element={<TermsConditions />} />
           <Route path="/coming-soon" element={<ComingSoonPage />} />
           <Route path="*" element={<NotFound />} />
+
+          <Route path="/predictor/neet-pg" element={<NeetPgPredictor />} />
         </Route>
 
         {/* ================= Public Route ================= */}

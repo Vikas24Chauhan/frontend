@@ -223,7 +223,7 @@
 .bp-author-signature {
   font-style: italic;
   color: #6b7280;
-  border-left: 3px solid #feb122;
+  border-left: 3px solid #ff732d;
   padding-left: 16px;
   margin: 20px 0;
 }
@@ -311,7 +311,7 @@
 .bp-sw-accent {
   width: 3px;
   height: 18px;
-  background: #feb122;
+  background: #ff732d;
   border-radius: 2px;
 }
 
@@ -355,7 +355,7 @@
 .bp-cta-btn {
   display: block;
   width: 100%;
-  background: #feb122;
+  background: #ff732d;
   color: #032c7b;
   border: none;
   padding: 8px 10px;
@@ -393,7 +393,7 @@
 .bp-related-accent {
   width: 4px;
   height: 24px;
-  background: #feb122;
+  background: #ff732d;
   border-radius: 2px;
 }
 
